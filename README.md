@@ -3,8 +3,6 @@
 - Checkout the website at:  https://sasaschwartz.com
 - If for some reason you are unable to view the site, please feel free to contact me at seschwartz8@gmail.com
 
-#### Simple Pinterest clone react app that utilizes redux, Google OAuth, portals, redux forms, and react router to provide CRUD functionality.
-
 #### By Sarah "Sasa" Schwartz, Current Version: 2020
 
 ---
