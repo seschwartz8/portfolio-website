@@ -43,11 +43,11 @@ This portfolio website showcases my work in web development. It also provides ac
 
 ##### Homepage
 
-![Homepage](homepage.png)
+![Homepage](./img/homepage.png)
 
 ##### Contact Page
 
-![Contact](contact.png)
+![Contact](./img/contact.png)
 
 ## Known bugs
 
