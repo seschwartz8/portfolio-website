@@ -11,15 +11,15 @@ function About() {
         <div className='content-container'>
           <Square
             title='Who am I?'
-            content="I'm a software engineer with experience from Epicodus Full-Stack Bootcamp Program, various online courses, and personal projects. I am looking for an entry level position where I can advance my skills and contribute to a fast-paced team environment."
+            content="I'm a software engineer with experience from Epicodus Full-Stack Bootcamp Program, various online courses, and personal projects. This summer I will be working as a UI Developer intern at <a href='https://www.clearblade.com/'>ClearBlade Inc.</a> I am looking for a entry level front-end position where I can advance my skills and contribute to a fast-paced team environment."
           />
           <Square
             title='What are my skills?'
-            content='Python, C#/.NET, Javascript, React, HTML, CSS/SCSS, Java, MySQL, Git, Web Design, Photoshop.'
+            content='React, React-Router, Hooks, Redux, Javascript, Typescript, HTML, CSS/Sass, MySQL, Git, C#/.NET, Python, Photoshop, Figma, Responsive Web Design and Development, Unit Testing in Jest and MSTest, RESTful conventions.'
           />
           <Square
             title="When I'm not coding?"
-            content="I'm a licensed Speech-Language Pathologist with an occasional cider house bartending gig. I write and perform music, I love to brag about my yelp elite status, and I'm constantly in search of the perfect oolong tea."
+            content="I moved to Austin in May 2020, and I'm thoroughly enjoying the sunshine after my time in Seattle. I write and perform music, I love to brag about my yelp elite status, and I'm constantly in search of the perfect oolong tea."
           />
         </div>
       </main>
