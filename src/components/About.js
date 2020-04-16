@@ -11,7 +11,7 @@ function About() {
         <div className='content-container'>
           <Square
             title='Who am I?'
-            content="I'm a software engineer with experience from Epicodus Full-Stack Bootcamp Program, various online courses, and personal projects. This summer I will be working as a UI Developer intern at <a href='https://www.clearblade.com/'>ClearBlade Inc.</a> I am looking for a entry level front-end position where I can advance my skills and contribute to a fast-paced team environment."
+            content="I'm a software engineer with experience from Epicodus Full-Stack Bootcamp Program, various online courses, and personal projects. This summer I will be working as a UI Developer intern at ClearBlade Inc. I am looking for a entry level front-end position where I can advance my skills and contribute to a fast-paced team environment."
           />
           <Square
             title='What are my skills?'
