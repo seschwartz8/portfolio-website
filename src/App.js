@@ -31,22 +31,31 @@ class App extends Component {
             <Navbar />
             <Icon
               anchor={
-                <a href='https://github.com/seschwartz8' target='_blank'>
-                  <img src={githubIcon} id='github' width='40px' />
+                <a
+                  href='https://github.com/seschwartz8'
+                  rel='noopener noreferrer'
+                  target='_blank'
+                >
+                  <img
+                    src={githubIcon}
+                    id='github'
+                    alt='github icon'
+                    width='40px'
+                  />
                 </a>
               }
             />
             <Icon
               anchor={
-                <a target='_blank' href={resume}>
-                  <img src={resumeIcon} alt='resume' width='40px' />
+                <a target='_blank' rel='noopener noreferrer' href={resume}>
+                  <img src={resumeIcon} alt='resume icon' width='40px' />
                 </a>
               }
             />
             <Icon
               anchor={
                 <a href='mailto: seschwartz8@gmail.com'>
-                  <img src={emailIcon} alt='email' width='40px' />
+                  <img src={emailIcon} alt='email icon' width='40px' />
                 </a>
               }
             />
