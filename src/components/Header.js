@@ -10,12 +10,16 @@ import resume from '../images/resume.pdf';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.div`
-  border: 1px solid pink;
   position: absolute;
   width: 100%;
   top: 0;
   left: 0;
   padding: 2%;
+`;
+
+const IconContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const Header = () => {
@@ -28,19 +32,21 @@ const Header = () => {
       <Hamburger />
       <Navbar />
 
-      <Icon
-        href='https://github.com/seschwartz8'
-        newTab={true}
-        src={githubIcon}
-        alt='github icon'
-      />
-      <Icon href={resume} newTab={true} src={resumeIcon} alt='resume icon' />
-      <Icon
-        href='mailto: seschwartz8@gmail.com'
-        newTab={false}
-        src={emailIcon}
-        alt='email icon'
-      />
+      <IconContainer>
+        <Icon
+          href='https://github.com/seschwartz8'
+          newTab={true}
+          src={githubIcon}
+          alt='github icon'
+        />
+        <Icon href={resume} newTab={true} src={resumeIcon} alt='resume icon' />
+        <Icon
+          href='mailto: seschwartz8@gmail.com'
+          newTab={false}
+          src={emailIcon}
+          alt='email icon'
+        />
+      </IconContainer>
     </HeaderContainer>
   );
 };

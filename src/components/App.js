@@ -9,7 +9,6 @@ import Contact from './Contact';
 import styled from 'styled-components';
 
 const MainContent = styled.div`
-  border: 1px solid green;
   min-height: 100vh;
   background-color: yellow;
   position: relative;

@@ -3,9 +3,12 @@ import styled from 'styled-components';
 import { device } from '../utils';
 
 const IconContainer = styled.div`
-  border: 1px solid red;
-  background-color: black;
-  width: 40px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5%;
 `;
 
 const IconImg = styled.img`
