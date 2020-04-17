@@ -7,11 +7,29 @@ const FooterContainer = styled.div`
   left: 0;
   width: 100%;
   background-color: blue;
-  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
 `;
 
 const Footer = () => {
-  return <FooterContainer>Footer</FooterContainer>;
+  return (
+    <FooterContainer>
+      <div>
+        Created by{' '}
+        <a
+          rel='noopener noreferrer'
+          target='_blank'
+          href='https://github.com/seschwartz8'
+        >
+          Sasa Schwartz
+        </a>
+      </div>
+      <div>&copy; May 2020</div>
+    </FooterContainer>
+  );
 };
 
 export default Footer;
