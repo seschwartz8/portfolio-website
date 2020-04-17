@@ -23,17 +23,15 @@ const Navbar = () => {
   return (
     <ul className='navbar'>
       {routeMap.map((page) => (
-        <div>
-          <NavLink
-            key={page.id}
-            className='nav-item'
-            activeClassName='nav-item active'
-            exact
-            to={page.path}
-          >
-            {page.label}
-          </NavLink>
-        </div>
+        <NavLink
+          key={page.id}
+          className='nav-item'
+          activeClassName='nav-item active'
+          exact
+          to={page.path}
+        >
+          {page.label}
+        </NavLink>
       ))}
     </ul>
   );
