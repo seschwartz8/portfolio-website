@@ -8,6 +8,7 @@ import emailIcon from '../images/email-icon.png';
 import resumeIcon from '../images/resume-icon.png';
 import resume from '../images/resume.pdf';
 import styled from 'styled-components';
+import { fadeIn } from '../utils';
 
 const HeaderContainer = styled.div`
   position: absolute;
@@ -20,6 +21,9 @@ const HeaderContainer = styled.div`
 const IconContainer = styled.div`
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  animation: 1s ${fadeIn} 0.3s forwards;
+  animation-delay: 0.5s;
 `;
 
 const Header = () => {

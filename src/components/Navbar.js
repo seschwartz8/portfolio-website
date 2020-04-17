@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { device } from '../utils';
+import { device, fadeIn } from '../utils';
 
 const NavbarMenu = styled.ul`
   display: none;
@@ -12,6 +12,9 @@ const NavbarMenu = styled.ul`
 `;
 
 const NavItem = styled(NavLink)`
+  opacity: 0;
+  animation: 1s ${fadeIn} 0.3s forwards;
+  animation-delay: 0.5s;
   color: white;
   font-size: 1.1em;
   font-weight: 200;
