@@ -36,33 +36,27 @@ const Contact = () => {
           </p>
           <br />
           <IconsRow>
-            <LabeledIcon>
-              Github
-              <Icon
-                href='https://github.com/seschwartz8'
-                newTab={true}
-                src={githubIcon}
-                alt='github icon'
-              />
-            </LabeledIcon>
-            <LabeledIcon>
-              Resume
-              <Icon
-                href={resume}
-                newTab={true}
-                src={resumeIcon}
-                alt='resume icon'
-              />
-            </LabeledIcon>
-            <LabeledIcon>
-              Email
-              <Icon
-                href='mailto: seschwartz8@gmail.com'
-                newTab={false}
-                src={emailIcon}
-                alt='email icon'
-              />
-            </LabeledIcon>
+            <Icon
+              href='https://github.com/seschwartz8'
+              newTab={true}
+              src={githubIcon}
+              alt='github icon'
+              label='Github'
+            />
+            <Icon
+              href={resume}
+              newTab={true}
+              src={resumeIcon}
+              alt='resume icon'
+              label='Resume'
+            />
+            <Icon
+              href='mailto: seschwartz8@gmail.com'
+              newTab={false}
+              src={emailIcon}
+              alt='email icon'
+              label='Email'
+            />
           </IconsRow>
         </SingleContent>
       </Content>
