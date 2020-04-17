@@ -5,7 +5,7 @@ import { device, fadeIn } from '../utils';
 
 const NavbarMenu = styled.ul`
   display: none;
-  margin: 20px 0;
+  margin: 15px 0;
   @media ${device.tablet} {
     display: block;
   }
@@ -19,10 +19,6 @@ const NavItem = styled(NavLink)`
   font-size: 1.1em;
   font-weight: 200;
   margin-right: 20px;
-  &:hover {
-    color: white;
-    opacity: 0.8;
-  }
 `;
 
 const routeMap = [

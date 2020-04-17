@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { device, growShrink } from '../utils';
+import { growShrink } from '../utils';
 
 const IconContainer = styled.div`
-  width: 50px;
-  height: 50pxpx;
+  width: 30px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 15px;
+  margin: 10px 0;
 `;
 
 const IconImg = styled.img`
@@ -16,9 +16,6 @@ const IconImg = styled.img`
   &:hover {
     opacity: 0.8;
     animation: ${growShrink} 0.2s 1;
-  }
-  @media ${device.mobileL} {
-    width: 40px;
   }
 `;
 

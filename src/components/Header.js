@@ -15,7 +15,7 @@ const HeaderContainer = styled.div`
   width: 100%;
   top: 0;
   left: 0;
-  padding: 2%;
+  padding: 1% 4%;
 `;
 
 const IconContainer = styled.div`

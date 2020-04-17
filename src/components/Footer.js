@@ -7,7 +7,7 @@ const FooterContainer = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: ${colors.lightAqua};
+  background-color: ${colors.offBlack};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,7 +18,7 @@ const FooterContainer = styled.div`
 const Footer = () => {
   return (
     <FooterContainer>
-      <div>
+      <div style={{ color: 'white' }}>
         Created by{' '}
         <a
           rel='noopener noreferrer'
@@ -28,7 +28,7 @@ const Footer = () => {
           Sasa Schwartz
         </a>
       </div>
-      <div>&copy; May 2020</div>
+      <div style={{ color: 'white' }}>&copy; May 2020</div>
     </FooterContainer>
   );
 };

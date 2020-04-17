@@ -3,7 +3,7 @@
 * {
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.4;
   text-decoration: none;
   scroll-behavior: smooth;
@@ -18,10 +18,10 @@ body {
 }
 
 a {
-  color: #455f6e;
+  color: #b5d0d8;
   text-decoration: none;
 }
 
 a:hover {
-  color: #252525;
+  color: #7394a7;
 }

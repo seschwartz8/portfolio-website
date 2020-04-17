@@ -18,9 +18,9 @@ const MainContent = styled.div`
 
 const App = () => {
   return (
-    <React.Fragment>
+    <>
       <HashRouter basename='/'>
-        <React.Fragment>
+        <>
           <MainContent>
             <Header />
             <Route exact path='/' component={Landing} />
@@ -29,9 +29,9 @@ const App = () => {
             <Route path='/contact' component={Contact} />
           </MainContent>
           <Footer />
-        </React.Fragment>
+        </>
       </HashRouter>
-    </React.Fragment>
+    </>
   );
 };
 

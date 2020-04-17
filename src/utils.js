@@ -1,5 +1,6 @@
 import { keyframes } from 'styled-components';
 
+// SCREEN SIZES FOR MEDIA QUERIES
 const size = {
   mobileS: '320px',
   mobileM: '375px',
@@ -21,8 +22,10 @@ export const device = {
   desktopL: `(min-width: ${size.desktop})`,
 };
 
+// COLOR PALETTE
 export const colors = {
-  offWhite: '#E8ECF2',
+  offWhite: '#eff2f6',
+  superLightAqua: '#deeaed',
   lightAqua: '#B5D0D8',
   darkAqua: '#7394A7',
   darkerAqua: '#455f6e',
@@ -30,6 +33,7 @@ export const colors = {
   offBlack: '#252525',
 };
 
+// ANIMATION KEYFRAMES
 export const fadeIn = keyframes`
   100% {
     opacity: 1;
