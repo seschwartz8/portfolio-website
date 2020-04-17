@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { device } from '../utils';
+import { device, growShrink } from '../utils';
 
 const IconContainer = styled.div`
   width: 50px;
@@ -15,6 +15,7 @@ const IconImg = styled.img`
   width: 30px;
   &:hover {
     opacity: 0.8;
+    animation: ${growShrink} 0.2s 1;
   }
   @media ${device.mobileL} {
     width: 40px;

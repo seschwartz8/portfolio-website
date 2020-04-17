@@ -1,3 +1,5 @@
+import { keyframes } from 'styled-components';
+
 const size = {
   mobileS: '320px',
   mobileM: '375px',
@@ -27,3 +29,18 @@ export const colors = {
   grey: '#6B737E',
   offBlack: '#252525',
 };
+
+export const fadeIn = keyframes`
+  100% {
+    opacity: 1;
+  }
+`;
+
+export const growShrink = keyframes`
+  50% {
+    transform: scale(.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+`;
