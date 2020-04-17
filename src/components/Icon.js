@@ -1,17 +1,30 @@
 import React from 'react';
+import styled from 'styled-components';
+import { device } from '../utils';
+
+const IconContainer = styled.div`
+  border: 1px solid red;
+  background-color: black;
+  width: 40px;
+`;
+
+const IconImg = styled.img`
+  width: 30px;
+  @media ${device.mobileL} {
+    width: 40px;
+  }
+`;
 
 const Icon = ({ href, src, newTab, alt }) => {
   const rel = newTab ? 'noopener noreferrer' : null;
   const target = newTab ? '_blank' : null;
 
   return (
-    <div className='icon'>
-      <div className='icon-animate'>
-        <a href={href} rel={rel} target={target}>
-          <img src={src} alt={alt} width='40px' />
-        </a>
-      </div>
-    </div>
+    <IconContainer>
+      <a href={href} rel={rel} target={target}>
+        <IconImg src={src} alt={alt} />
+      </a>
+    </IconContainer>
   );
 };
 
