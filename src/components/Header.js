@@ -18,7 +18,7 @@ const HeaderContainer = styled.div`
   padding: 1% 4%;
 `;
 
-const IconContainer = styled.div`
+const Icons = styled.div`
   display: flex;
   flex-direction: column;
   opacity: 0;
@@ -33,7 +33,7 @@ const Header = () => {
       <Hamburger />
       <Navbar />
 
-      <IconContainer>
+      <Icons>
         <Icon
           href='https://github.com/seschwartz8'
           newTab={true}
@@ -47,7 +47,7 @@ const Header = () => {
           src={emailIcon}
           alt='email icon'
         />
-      </IconContainer>
+      </Icons>
     </HeaderContainer>
   );
 };

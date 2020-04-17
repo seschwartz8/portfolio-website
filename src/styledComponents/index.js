@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from '../utils';
+import { device, growShrink } from '../utils';
 
 export const Content = styled.main`
   background-color: white;
@@ -25,4 +25,21 @@ export const Title = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const IconContainer = styled.div`
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+`;
+
+export const IconImg = styled.img`
+  width: 30px;
+  &:hover {
+    opacity: 0.8;
+    animation: ${growShrink} 0.2s 1;
+  }
 `;
