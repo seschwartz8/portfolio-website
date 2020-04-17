@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import Landing from './Landing';
@@ -7,10 +7,11 @@ import About from './About';
 import Projects from './Projects';
 import Contact from './Contact';
 import styled from 'styled-components';
+import { colors } from '../utils';
 
 const MainContent = styled.div`
   min-height: 100vh;
-  background-color: yellow;
+  background-color: ${colors.offBlack};
   position: relative;
   z-index: 1;
 `;

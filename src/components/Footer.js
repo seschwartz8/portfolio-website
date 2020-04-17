@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { colors } from '../utils';
 
 const FooterContainer = styled.div`
   position: sticky;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: blue;
+  background-color: ${colors.lightAqua};
   display: flex;
   flex-direction: column;
   justify-content: center;

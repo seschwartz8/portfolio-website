@@ -5,8 +5,20 @@ import { device } from '../utils';
 
 const NavbarMenu = styled.ul`
   display: none;
+  margin: 20px 0;
   @media ${device.tablet} {
     display: block;
+  }
+`;
+
+const NavItem = styled(NavLink)`
+  color: white;
+  font-size: 1.1em;
+  font-weight: 200;
+  margin-right: 20px;
+  &:hover {
+    color: white;
+    opacity: 0.8;
   }
 `;
 
@@ -32,15 +44,14 @@ const Navbar = () => {
   return (
     <NavbarMenu>
       {routeMap.map((page) => (
-        <NavLink
+        <NavItem
           key={page.id}
-          className='nav-item'
-          activeClassName='nav-item active'
+          activeStyle={{ borderBottom: `solid 2px white` }}
           exact
           to={page.path}
         >
           {page.label}
-        </NavLink>
+        </NavItem>
       ))}
     </NavbarMenu>
   );

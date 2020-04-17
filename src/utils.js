@@ -18,3 +18,12 @@ export const device = {
   desktop: `(min-width: ${size.desktop})`,
   desktopL: `(min-width: ${size.desktop})`,
 };
+
+export const colors = {
+  offWhite: '#E8ECF2',
+  lightAqua: '#B5D0D8',
+  darkAqua: '#7394A7',
+  darkerAqua: '#455f6e',
+  grey: '#6B737E',
+  offBlack: '#252525',
+};

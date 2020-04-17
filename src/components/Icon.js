@@ -4,15 +4,18 @@ import { device } from '../utils';
 
 const IconContainer = styled.div`
   width: 50px;
-  height: 50px;
+  height: 50pxpx;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1.5%;
+  margin-top: 15px;
 `;
 
 const IconImg = styled.img`
   width: 30px;
+  &:hover {
+    opacity: 0.8;
+  }
   @media ${device.mobileL} {
     width: 40px;
   }

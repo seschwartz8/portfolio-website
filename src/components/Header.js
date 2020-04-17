@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Hamburger from './Hamburger';
-import { NavLink } from 'react-router-dom';
+import Name from './Name';
 import Icon from './Icon';
 import githubIcon from '../images/github-icon.png';
 import emailIcon from '../images/email-icon.png';
@@ -25,10 +25,7 @@ const IconContainer = styled.div`
 const Header = () => {
   return (
     <HeaderContainer>
-      <NavLink exact to='/' className='sasa-schwartz'>
-        Sasa Schwartz
-      </NavLink>
-
+      <Name />
       <Hamburger />
       <Navbar />
 
