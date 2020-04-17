@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device, growShrink } from '../utils';
+import { device, growShrink, fadeIn } from '../utils';
 
 export const Content = styled.main`
   background-color: white;
@@ -42,4 +42,22 @@ export const IconImg = styled.img`
     opacity: 0.8;
     animation: ${growShrink} 0.2s 1;
   }
+`;
+
+export const IconsColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  animation: 1s ${fadeIn} 0.3s forwards;
+  animation-delay: 0.5s;
+`;
+
+export const IconsRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  opacity: 0;
+  animation: 1s ${fadeIn} 0.3s forwards;
+  animation-delay: 0.5s;
 `;

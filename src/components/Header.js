@@ -8,7 +8,7 @@ import emailIcon from '../images/email-icon.png';
 import resumeIcon from '../images/resume-icon.png';
 import resume from '../images/resume.pdf';
 import styled from 'styled-components';
-import { fadeIn } from '../utils';
+import { IconsColumn } from '../styledComponents/index';
 
 const HeaderContainer = styled.div`
   position: absolute;
@@ -18,14 +18,6 @@ const HeaderContainer = styled.div`
   padding: 1% 4%;
 `;
 
-const Icons = styled.div`
-  display: flex;
-  flex-direction: column;
-  opacity: 0;
-  animation: 1s ${fadeIn} 0.3s forwards;
-  animation-delay: 0.5s;
-`;
-
 const Header = () => {
   return (
     <HeaderContainer>
@@ -33,7 +25,7 @@ const Header = () => {
       <Hamburger />
       <Navbar />
 
-      <Icons>
+      <IconsColumn>
         <Icon
           href='https://github.com/seschwartz8'
           newTab={true}
@@ -47,7 +39,7 @@ const Header = () => {
           src={emailIcon}
           alt='email icon'
         />
-      </Icons>
+      </IconsColumn>
     </HeaderContainer>
   );
 };

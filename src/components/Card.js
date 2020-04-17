@@ -5,7 +5,7 @@ import { colors, device } from '../utils';
 const CardContainer = styled.div`
   background-color: ${colors.superLightAqua};
   padding: 3%;
-  margin: 4% 2%;
+  margin: 3% 2%;
   width: 100%;
   @media ${device.laptop} {
     width: 32%;
