@@ -1,14 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from '../utils';
+import { colors, device } from '../utils';
 
 const CardContainer = styled.div`
   background-color: ${colors.superLightAqua};
   padding: 3%;
-  margin: 4% 1%;
+  margin: 4% 2%;
+  width: 100%;
+  @media ${device.laptop} {
+    width: 32%;
+  }
 `;
 
-function Card({ id, title, content, imgUrl, link, linkName }) {
+const CardTitle = styled.h4`
+  font-weight: 600;
+  font-size: 1.7em;
+  margin-bottom: 4%;
+`;
+
+const CardContent = styled.p`
+  font-size: 1.2em;
+`;
+
+function Card({
+  id,
+  title,
+  paragraphOne,
+  paragraphTwo,
+  imgUrl,
+  link,
+  linkName,
+}) {
   const imgAndLink =
     imgUrl && link && linkName ? (
       <>
@@ -22,8 +44,12 @@ function Card({ id, title, content, imgUrl, link, linkName }) {
 
   return (
     <CardContainer key={id}>
-      <h4>{title}</h4>
-      <p>{content}</p>
+      <CardTitle>{title}</CardTitle>
+      <CardContent>
+        <div>{paragraphOne}</div>
+        <br />
+        <div>{paragraphTwo}</div>
+      </CardContent>
       {imgAndLink}
     </CardContainer>
   );
