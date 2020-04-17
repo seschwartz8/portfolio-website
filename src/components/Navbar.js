@@ -1,5 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
+import { device } from '../utils';
+
+const NavbarMenu = styled.ul`
+  display: none;
+  @media ${device.tablet} {
+    display: block;
+  }
+`;
 
 const routeMap = [
   {
@@ -21,7 +30,7 @@ const routeMap = [
 
 const Navbar = () => {
   return (
-    <ul className='navbar'>
+    <NavbarMenu>
       {routeMap.map((page) => (
         <NavLink
           key={page.id}
@@ -33,7 +42,7 @@ const Navbar = () => {
           {page.label}
         </NavLink>
       ))}
-    </ul>
+    </NavbarMenu>
   );
 };
 
