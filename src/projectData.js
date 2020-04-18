@@ -1,9 +1,9 @@
-import apocalypseImg from './images/apocalypse.png';
-import blackjackImg from './images/blackjack.png';
-import githubbattleImg from './images/githubbattle.png';
-import portfolioImg from './images/portfolio.png';
-import pinterestCloneImg from './images/pinterest-clone.png';
-import typingGameImg from './images/typing-game.png';
+import apocalypseImg from './images/apocalypse-crop.png';
+import blackjackImg from './images/blackjack-crop.png';
+import githubbattleImg from './images/githubbattle-crop.png';
+import portfolioImg from './images/portfolio-crop.png';
+import pinterestCloneImg from './images/pinterest-clone-crop.png';
+import typingGameImg from './images/typing-game-crop.png';
 
 const linkName = 'Check out the code on github...';
 

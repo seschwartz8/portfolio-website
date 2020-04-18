@@ -17,6 +17,10 @@ body {
   margin: 0;
 }
 
+a {
+  color: #252525;
+}
+
 a:hover {
   color: #7394a7;
 }

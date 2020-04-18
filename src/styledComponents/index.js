@@ -100,11 +100,14 @@ export const IconsRow = styled.div`
   width: 100%;
   opacity: 0;
   animation: 1s ${fadeIn} 0.3s forwards;
-  animation-delay: 0.5s;
+  animation-delay: 0.5s;e
 `;
 
-export const CardContent = styled.p`
+export const CardContent = styled.div`
   font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const CardTitle = styled.h4`

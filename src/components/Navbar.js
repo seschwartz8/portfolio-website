@@ -19,6 +19,7 @@ const NavItem = styled(NavLink)`
   font-size: 1.1em;
   font-weight: 200;
   margin-right: 20px;
+  padding: 3px;
 `;
 
 const routeMap = [
