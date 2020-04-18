@@ -1,35 +1,22 @@
 import React from 'react';
-import { Content, Title, IconsRow } from '../styledComponents/index';
-import { colors } from '../utils';
+import {
+  Title,
+  IconsRow,
+  ContactContent,
+  SingleBox,
+} from '../styledComponents/index';
 import githubIcon from '../images/github-icon-black.png';
 import emailIcon from '../images/email-icon-black.png';
 import resumeIcon from '../images/resume-icon-black.png';
 import resume from '../images/resume.pdf';
 import Icon from './Icon';
-import styled from 'styled-components';
-
-const SingleContent = styled.div`
-  background-color: ${colors.superLightAqua};
-  padding: 8%;
-  display: flex;
-  flex-direction: column;
-  margin: 3% 2% 8% 2%;
-  width: 100%;
-  text-align: center;
-`;
-
-const LabeledIcon = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
 const Contact = () => {
   return (
     <>
       <Title>Contact</Title>
-      <Content>
-        <SingleContent>
+      <ContactContent>
+        <SingleBox>
           <p style={{ fontSize: '1.1em' }}>
             Feel free to reach out at any time, whether it be job opportunities,
             project ideas, or tea recommendations!
@@ -58,8 +45,8 @@ const Contact = () => {
               label='Email'
             />
           </IconsRow>
-        </SingleContent>
-      </Content>
+        </SingleBox>
+      </ContactContent>
     </>
   );
 };

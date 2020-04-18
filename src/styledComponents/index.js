@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { device, growShrink, fadeIn } from '../utils';
+import { device, growShrink, fadeIn, colors } from '../utils';
 
-export const Content = styled.main`
+export const AboutContent = styled.main`
   background-color: white;
   min-height: 100%;
   padding: 3%;
@@ -14,6 +14,47 @@ export const Content = styled.main`
     align-items: stretch;
     padding: 5% 3%;
   }
+`;
+
+export const ProjectsContent = styled.main`
+  background-color: white;
+  min-height: 100%;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  @media ${device.laptop} {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    padding: 5% 3%;
+  }
+`;
+
+export const ContactContent = styled.main`
+  background-color: white;
+  min-height: 100%;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  @media ${device.laptop} {
+    flex-direction: row;
+    align-items: stretch;
+    padding: 5% 3%;
+  }
+`;
+
+export const SingleBox = styled.div`
+  background-color: ${colors.superLightAqua};
+  padding: 8%;
+  display: flex;
+  flex-direction: column;
+  margin: 3% 2% 8% 2%;
+  width: 100%;
+  text-align: center;
 `;
 
 export const Title = styled.div`
@@ -60,4 +101,14 @@ export const IconsRow = styled.div`
   opacity: 0;
   animation: 1s ${fadeIn} 0.3s forwards;
   animation-delay: 0.5s;
+`;
+
+export const CardContent = styled.p`
+  font-size: 1.2em;
+`;
+
+export const CardTitle = styled.h4`
+  font-weight: 600;
+  font-size: 1.7em;
+  margin-bottom: 4%;
 `;

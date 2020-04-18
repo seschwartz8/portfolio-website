@@ -1,12 +1,12 @@
 import React from 'react';
 import Card from './Card.js';
-import { Content, Title } from '../styledComponents/index';
+import { AboutContent, Title } from '../styledComponents/index';
 
 const About = () => {
   return (
     <>
       <Title>About</Title>
-      <Content>
+      <AboutContent>
         <Card
           title='Who am I?'
           paragraphOne="I'm a software engineer with experience from Epicodus Full-Stack Bootcamp Program, various online courses, and personal projects. This summer I will be working as a UI Developer intern at ClearBlade Inc."
@@ -22,7 +22,7 @@ const About = () => {
           paragraphOne="I moved to Austin, TX in May 2020, and I'm thoroughly enjoying the sunshine after living in Seattle for a few years."
           paragraphTwo="I write and perform music, I love to brag about my yelp elite status, and I'm constantly in search of the perfect oolong tea."
         />
-      </Content>
+      </AboutContent>
     </>
   );
 };

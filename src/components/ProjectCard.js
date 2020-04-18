@@ -5,25 +5,38 @@ import { CardContent, CardTitle } from '../styledComponents/index';
 
 const CardContainer = styled.div`
   background-color: ${colors.superLightAqua};
-  padding: 3%;
+  padding: 2%;
   margin: 3% 2%;
   width: 100%;
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
   @media ${device.laptop} {
-    width: 32%;
+    width: 45%;
   }
 `;
 
-function Card({ title, paragraphOne, paragraphTwo }) {
+function ProjectCard({
+  title,
+  paragraphOne,
+  paragraphTwo,
+  imgUrl,
+  link,
+  linkName,
+  onClick,
+}) {
   return (
-    <CardContainer>
-      <CardTitle>{title}</CardTitle>
+    <CardContainer onClick={onClick}>
+      <CardTitle style={{ textAlign: 'center' }}>{title}</CardTitle>
+
       <CardContent>
-        <div>{paragraphOne}</div>
-        <br />
-        <div>{paragraphTwo}</div>
+        <img src={imgUrl} alt={title} style={{ width: '100%' }}></img>
       </CardContent>
     </CardContainer>
   );
 }
 
-export default Card;
+export default ProjectCard;
