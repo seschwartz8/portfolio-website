@@ -1,15 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { device, fadeIn } from '../utils';
-
-const NavbarMenu = styled.ul`
-  display: none;
-  margin: 15px 0;
-  @media ${device.tablet} {
-    display: block;
-  }
-`;
+import { fadeIn } from '../utils';
+import { NavbarMenu } from '../styledComponents/index';
 
 const NavItem = styled(NavLink)`
   opacity: 0;
@@ -19,10 +12,9 @@ const NavItem = styled(NavLink)`
   font-size: 1.2em;
   font-weight: 200;
   margin-right: 20px;
-  padding: 3px;
 `;
 
-const routeMap = [
+export const routeMap = [
   {
     label: 'About',
     id: 1,

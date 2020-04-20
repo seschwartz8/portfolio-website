@@ -19,10 +19,12 @@ const HeaderContainer = styled.div`
 `;
 
 const Header = () => {
+  const ICON_SIZE = '30px';
+
   return (
     <HeaderContainer>
       <Name />
-      <Hamburger />
+      <Hamburger size={ICON_SIZE} />
       <Navbar />
 
       <IconsColumn>
@@ -31,13 +33,21 @@ const Header = () => {
           newTab={true}
           src={githubIcon}
           alt='github icon'
+          size={ICON_SIZE}
         />
-        <Icon href={resume} newTab={true} src={resumeIcon} alt='resume icon' />
+        <Icon
+          href={resume}
+          newTab={true}
+          src={resumeIcon}
+          alt='resume icon'
+          size={ICON_SIZE}
+        />
         <Icon
           href='mailto: seschwartz8@gmail.com'
           newTab={false}
           src={emailIcon}
           alt='email icon'
+          size={ICON_SIZE}
         />
       </IconsColumn>
     </HeaderContainer>

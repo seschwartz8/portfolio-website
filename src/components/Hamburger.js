@@ -1,15 +1,22 @@
-import React from 'react';
-import styled from 'styled-components';
-import { device } from '../utils';
+import React, { useState } from 'react';
+import { routeMap } from './Navbar';
+import {
+  HamburgerMenu,
+  HamburgerTopLine,
+  HamburgerMiddleLine,
+  HamburgerBottomLine,
+} from '../styledComponents/index';
 
-const HamburgerMenu = styled.div`
-  @media ${device.tablet} {
-    display: none;
-  }
-`;
+const Hamburger = ({ size }) => {
+  const [open, setOpen] = useState(false);
 
-const Hamburger = () => {
-  return <HamburgerMenu>Hamburger</HamburgerMenu>;
+  return (
+    <HamburgerMenu size={size} onClick={() => setOpen((open) => !open)}>
+      <HamburgerTopLine open={open}></HamburgerTopLine>
+      <HamburgerMiddleLine open={open}></HamburgerMiddleLine>
+      <HamburgerBottomLine open={open}></HamburgerBottomLine>
+    </HamburgerMenu>
+  );
 };
 
 export default Hamburger;

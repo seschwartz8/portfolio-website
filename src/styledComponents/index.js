@@ -1,6 +1,56 @@
 import styled from 'styled-components';
 import { device, growShrink, fadeIn, colors } from '../utils';
 
+export const NavbarMenu = styled.ul`
+  display: none;
+  margin: 15px 0;
+  @media ${device.tablet} {
+    display: block;
+  }
+`;
+
+export const HamburgerMenu = styled.div`
+  opacity: 0;
+  animation: 1s ${fadeIn} 0.3s forwards;
+  animation-delay: 0.5s;
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: ${(props) => (props.size ? `calc(${props.size} - 5px)` : '30px')};
+  width: ${(props) => (props.size ? props.size : '30px')};
+
+  @media ${device.tablet} {
+    display: none;
+  }
+`;
+
+export const HamburgerTopLine = styled.div`
+  background-color: white;
+  width: 100%;
+  height: 2px;
+  transition: ${(props) => (props.open ? 'transform 0.8s' : null)};
+  transform: ${(props) =>
+    props.open ? 'translate(0, 7.5px) rotate(45deg)' : null};
+  transform-origin: center;
+`;
+export const HamburgerMiddleLine = styled.div`
+  background-color: white;
+  width: 100%;
+  height: 2px;
+  visibility: ${(props) => (props.open ? 'hidden' : 'visible')};
+  transform-origin: center;
+`;
+export const HamburgerBottomLine = styled.div`
+  background-color: white;
+  width: 100%;
+  height: 2px;
+  transition: ${(props) => (props.open ? 'transform 0.8s' : null)};
+  transform: ${(props) =>
+    props.open ? 'translate(0, -7.5px) rotate(-45deg)' : null};
+  transform-origin: center;
+`;
+
 export const AboutContent = styled.main`
   background-color: white;
   min-height: 100%;
