@@ -3,7 +3,7 @@ import { routeMap } from './Navbar';
 import { Modal, NavItem } from '../styledComponents/index';
 import { colors } from '../utils';
 
-const HamburgerModal = () => {
+const HamburgerModal = ({ onDismiss }) => {
   const color = colors.darkerAqua;
 
   return (
@@ -25,6 +25,7 @@ const HamburgerModal = () => {
             exact
             to={page.path}
             color={color}
+            onClick={onDismiss}
           >
             <h2>{page.label}</h2>
           </NavItem>

@@ -10,6 +10,10 @@ import {
 const Hamburger = ({ size }) => {
   const [open, setOpen] = useState(false);
 
+  const onModalDismiss = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <HamburgerMenu size={size} onClick={() => setOpen((open) => !open)}>
@@ -17,7 +21,7 @@ const Hamburger = ({ size }) => {
         <HamburgerMiddleLine open={open}></HamburgerMiddleLine>
         <HamburgerBottomLine open={open}></HamburgerBottomLine>
       </HamburgerMenu>
-      {open ? <HamburgerModal /> : null}
+      {open ? <HamburgerModal onDismiss={onModalDismiss} /> : null}
     </>
   );
 };

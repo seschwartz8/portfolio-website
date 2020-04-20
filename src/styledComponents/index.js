@@ -42,6 +42,7 @@ export const HamburgerMenu = styled.div`
 `;
 
 export const HamburgerTopLine = styled.div`
+  transition: transform 0.8s;
   background-color: white;
   width: 100%;
   height: 2px;
@@ -56,6 +57,7 @@ export const HamburgerTopLine = styled.div`
       : null}
 `;
 export const HamburgerMiddleLine = styled.div`
+  transition: transform 0.8s;
   background-color: white;
   width: 100%;
   height: 2px;
@@ -68,6 +70,7 @@ export const HamburgerMiddleLine = styled.div`
       : null}
 `;
 export const HamburgerBottomLine = styled.div`
+  transition: transform 0.8s;
   background-color: white;
   width: 100%;
   height: 2px;
