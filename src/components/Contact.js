@@ -29,6 +29,7 @@ const Contact = () => {
               src={githubIcon}
               alt='github icon'
               label='Github'
+              size='50px'
             />
             <Icon
               href={resume}
@@ -36,6 +37,7 @@ const Contact = () => {
               src={resumeIcon}
               alt='resume icon'
               label='Resume'
+              size='50px'
             />
             <Icon
               href='mailto: seschwartz8@gmail.com'
@@ -43,6 +45,7 @@ const Contact = () => {
               src={emailIcon}
               alt='email icon'
               label='Email'
+              size='50px'
             />
           </IconsRow>
         </SingleBox>

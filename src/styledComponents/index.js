@@ -78,7 +78,6 @@ export const IconContainer = styled.div`
 `;
 
 export const IconImg = styled.img`
-  width: 30px;
   &:hover {
     opacity: 0.8;
     animation: ${growShrink} 0.2s 1;
