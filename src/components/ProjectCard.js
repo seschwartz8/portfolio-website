@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { colors, device } from '../utils';
 import { CardContent, CardTitle } from '../styledComponents/index';
@@ -21,18 +21,13 @@ const Button = styled.button`
   margin-top: 5%;
 `;
 
-function ProjectCard({ title, content, imgUrl, link, linkName }) {
-  const [isFlipped, setIsFlipped] = useState(false);
-
+function ProjectCard({ title, content, imgUrl, link, flipped, onClick }) {
   return (
-    <CardContainer
-      onMouseEnter={() => setIsFlipped(true)}
-      onMouseLeave={() => setIsFlipped(false)}
-    >
+    <CardContainer onClick={onClick}>
       <CardTitle style={{ textAlign: 'center' }}>{title}</CardTitle>
 
       <CardContent>
-        {!isFlipped ? (
+        {!flipped ? (
           <img src={imgUrl} alt={title} style={{ width: '100%' }}></img>
         ) : (
           <>
