@@ -19,7 +19,6 @@ const Projects = () => {
           content={project.content}
           imgUrl={project.imgUrl}
           link={project.link}
-          linkName={project.linkName}
           flipped={activeCard === project.id ? true : false}
           onClick={() => onCardClick(project.id)}
         />

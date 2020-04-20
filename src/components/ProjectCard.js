@@ -8,6 +8,9 @@ const CardContainer = styled.div`
   padding: 3%;
   margin: 3% 2%;
   width: 100%;
+  &:hover {
+    opacity: ${(props) => (props.flipped ? '1' : '0.8')};
+  }
 
   @media ${device.laptop} {
     width: 45%;
@@ -19,11 +22,15 @@ const Button = styled.button`
   padding: 2.5%;
   border: none;
   margin-top: 5%;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 function ProjectCard({ title, content, imgUrl, link, flipped, onClick }) {
   return (
-    <CardContainer onClick={onClick}>
+    <CardContainer onClick={onClick} flipped={flipped}>
       <CardTitle style={{ textAlign: 'center' }}>{title}</CardTitle>
 
       <CardContent>
