@@ -31,9 +31,8 @@ This portfolio website showcases my work in web development. It also provides ac
 
 ## Technologies Used
 
-- HTML
-- CSS/Sass
 - React/Javascript
+- CSS/Sass with Styled Components
 - React-Router
 - Deployment via Github Pages
 
@@ -49,7 +48,7 @@ This portfolio website showcases my work in web development. It also provides ac
 
 ## Known bugs
 
-- "X" button on hamburger menu disappears on small screens when the modal opens
+- No known bugs, though I am just learning styled components and intend to revisit my implementation to allow greater reusability of components.
 
 ---
 

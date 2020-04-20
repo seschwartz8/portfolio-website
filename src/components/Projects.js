@@ -11,6 +11,7 @@ const Projects = () => {
   };
 
   const renderProjects = () => {
+    // THESE SIZE CORRECTLY BECAUSE THE IMAGES ARE ALL CROPPED AT RATIO 4:3
     return projectData.map((project) => {
       return (
         <ProjectCard

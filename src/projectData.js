@@ -11,7 +11,7 @@ const projectData = [
     imgUrl: portfolioImg,
     title: 'My Website',
     content:
-      'This is the website you are currently looking at. I built it from the ground up using React.',
+      'This is the website you are currently looking at. I built it from the ground up using React. My website is being continuously updated as I learn and grow as a developer.',
     link: 'https://github.com/seschwartz8/portfolio-website',
   },
   {
@@ -19,7 +19,7 @@ const projectData = [
     imgUrl: pinterestCloneImg,
     title: 'Simple Pinterest Clone',
     content:
-      'A simple Pinterest clone app. You can log in with google, post photos, view all photos, view specific photo details, edit/delete photos (but only if you were the one who posted them), search for photos with specific tags, and pin photos to your pin board. If you click on "Pins" you should see all the photos you have pinned, and you can remove them from your pin board as well. This app utilizes redux, Google OAuth, portals, redux forms, and react router to provide CRUD functionality.',
+      'You can log in/out, post photos, view photo details, edit/delete photos, search for photos with specific tags, and pin photos to your pin board. This app utilizes redux, Google OAuth, portals, redux forms, and react router to provide CRUD functionality.',
     link: 'https://github.com/seschwartz8/pinterest-clone-react-redux',
   },
   {
@@ -35,7 +35,7 @@ const projectData = [
     imgUrl: typingGameImg,
     title: 'Typing Game',
     content:
-      "This application allows you to see how fast you're typing, as well as race against your friends. You are provided with 100 words worth of dad jokes as you type. As you type, the text will shift and change color to display which letters you typed correctly and incorrectly. When you finish typing, the game will display your words per minute, characters per minute, and number of errors.",
+      'This app allows you to see how fast you type and race your friends. As you type, the text shifts and changes color to display which letters you typed correctly and incorrectly. The game will display your words per minute, characters per minute, and number of errors.',
     link: 'https://github.com/seschwartz8/typing-game',
   },
   {
