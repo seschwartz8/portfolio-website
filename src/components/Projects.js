@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ProjectCard from './ProjectCard.js';
+import Card from './Card.js';
 import { ProjectsContent, Title } from '../styledComponents/index';
 import projectData from '../projectData';
 
@@ -14,7 +14,7 @@ const Projects = () => {
     // THESE SIZE CORRECTLY BECAUSE THE IMAGES ARE ALL CROPPED AT RATIO 4:3
     return projectData.map((project) => {
       return (
-        <ProjectCard
+        <Card
           key={project.id}
           title={project.title}
           content={project.content}
@@ -22,6 +22,7 @@ const Projects = () => {
           link={project.link}
           flipped={activeCard === project.id ? true : false}
           onClick={() => onCardClick(project.id)}
+          project
         />
       );
     });

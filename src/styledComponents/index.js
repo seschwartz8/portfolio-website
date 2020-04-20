@@ -14,7 +14,7 @@ export const NavItem = styled(NavLink)`
   opacity: 0;
   animation: 1s ${fadeIn} 0.3s forwards;
   animation-delay: 0.5s;
-  color: ${(props) => (props ? props.color : 'white')};
+  color: ${(props) => (props.color ? props.color : 'white')};
   font-size: 1.2em;
   font-weight: 200;
   margin-right: 20px;
