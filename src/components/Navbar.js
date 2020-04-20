@@ -1,18 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
-import { fadeIn } from '../utils';
-import { NavbarMenu } from '../styledComponents/index';
-
-const NavItem = styled(NavLink)`
-  opacity: 0;
-  animation: 1s ${fadeIn} 0.3s forwards;
-  animation-delay: 0.5s;
-  color: white;
-  font-size: 1.2em;
-  font-weight: 200;
-  margin-right: 20px;
-`;
+import { NavbarMenu, NavItem } from '../styledComponents/index';
 
 export const routeMap = [
   {
@@ -33,14 +20,17 @@ export const routeMap = [
 ];
 
 const Navbar = () => {
+  const color = 'white';
+
   return (
     <NavbarMenu>
       {routeMap.map((page) => (
         <NavItem
           key={page.id}
-          activeStyle={{ borderBottom: `solid 2px white` }}
+          activeStyle={{ borderBottom: `solid 2px ${color}` }}
           exact
           to={page.path}
+          color={color}
         >
           {page.label}
         </NavItem>

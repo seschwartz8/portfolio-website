@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { device, growShrink, fadeIn, colors } from '../utils';
+import { NavLink } from 'react-router-dom';
 
 export const NavbarMenu = styled.ul`
   display: none;
@@ -7,6 +8,16 @@ export const NavbarMenu = styled.ul`
   @media ${device.tablet} {
     display: block;
   }
+`;
+
+export const NavItem = styled(NavLink)`
+  opacity: 0;
+  animation: 1s ${fadeIn} 0.3s forwards;
+  animation-delay: 0.5s;
+  color: ${(props) => (props ? props.color : 'white')};
+  font-size: 1.2em;
+  font-weight: 200;
+  margin-right: 20px;
 `;
 
 export const HamburgerMenu = styled.div`
@@ -77,6 +88,9 @@ export const Modal = styled.div`
   top: 0;
   left: 0;
   opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   animation: 1s ${fadeIn} 0.3s forwards;
 `;
 
