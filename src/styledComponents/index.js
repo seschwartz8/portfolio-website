@@ -115,3 +115,10 @@ export const CardTitle = styled.h4`
   font-size: 1.7em;
   margin-bottom: 4%;
 `;
+
+export const AquaLink = styled.a`
+  color: ${colors.lightAqua};
+  &:hover {
+    color: ${colors.darkAqua};
+  }
+`;

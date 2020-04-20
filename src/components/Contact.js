@@ -17,7 +17,7 @@ const Contact = () => {
       <Title>Contact</Title>
       <ContactContent>
         <SingleBox>
-          <p style={{ fontSize: '1.1em' }}>
+          <p style={{ fontSize: '1.3em' }}>
             Feel free to reach out at any time, whether it be job opportunities,
             project ideas, or tea recommendations!
           </p>

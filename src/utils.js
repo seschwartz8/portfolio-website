@@ -41,10 +41,7 @@ export const fadeIn = keyframes`
 `;
 
 export const growShrink = keyframes`
-  50% {
-    transform: scale(.7);
-  }
   100% {
-    transform: scale(1);
+    transform: scale(1.4);
   }
 `;

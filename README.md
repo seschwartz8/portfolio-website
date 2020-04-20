@@ -3,7 +3,7 @@
 - Checkout the website at:  https://sasaschwartz.com
 - If for some reason you are unable to view the site, please feel free to contact me at seschwartz8@gmail.com
 
-#### By Sarah "Sasa" Schwartz, Current Version: 2020
+#### By Sarah "Sasa" Schwartz, Current Version: May 2020
 
 ---
 
@@ -13,7 +13,7 @@
 2. [Installation](#installation)
 3. [Technologies Used](#technologies-used)
 4. [Sample Images](#sample-images)
-5. [Known Bugs](#known-bugs)
+5. [Areas For Growth](#areas-for-growth)
 
 ---
 
@@ -46,9 +46,9 @@ This portfolio website showcases my work in web development. It also provides ac
 
 ![Contact](./img/contact.png)
 
-## Known bugs
+## Areas For Growth
 
-- No known bugs, though I am just learning styled components and intend to revisit my implementation to allow greater reusability of components.
+- I am just learning styled components and intend to revisit my implementation to allow greater reusability of components.
 
 ---
 

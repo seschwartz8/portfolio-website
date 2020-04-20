@@ -19,7 +19,7 @@ const projectData = [
     imgUrl: pinterestCloneImg,
     title: 'Simple Pinterest Clone',
     content:
-      'You can log in/out, post photos, view photo details, edit/delete photos, search for photos with specific tags, and pin photos to your pin board. This app utilizes redux, Google OAuth, portals, redux forms, and react router to provide CRUD functionality.',
+      'Log in, post photos, view photo details, edit/delete photos, search for photos with specific tags, and pin photos to your pin board. This app utilizes redux, Google OAuth, portals, redux forms, and react router to provide CRUD functionality.',
     link: 'https://github.com/seschwartz8/pinterest-clone-react-redux',
   },
   {
@@ -27,7 +27,7 @@ const projectData = [
     imgUrl: githubbattleImg,
     title: 'Github Battle',
     content:
-      'This app finds popular github pages and lets you "battle" them against each other based on their stats. It was built for Tyler McGinnis\' online React course.',
+      'Find popular github pages and "battle" them against each other based on their stats. This app was built for Tyler McGinnis\' online React course.',
     link: 'https://github.com/seschwartz8/github-battle',
   },
   {
@@ -35,7 +35,7 @@ const projectData = [
     imgUrl: typingGameImg,
     title: 'Typing Game',
     content:
-      'This app allows you to see how fast you type and race your friends. As you type, the text shifts and changes color to display which letters you typed correctly and incorrectly. The game will display your words per minute, characters per minute, and number of errors.',
+      'See how fast you type and race your friends. As you type, the text shifts and changes color to display which letters you typed correctly and incorrectly. The game will display your words per minute, characters per minute, and number of errors.',
     link: 'https://github.com/seschwartz8/typing-game',
   },
   {

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../utils';
+import { AquaLink } from '../styledComponents/index';
 
 const FooterContainer = styled.div`
   position: sticky;
@@ -20,14 +21,13 @@ const Footer = () => {
     <FooterContainer>
       <div style={{ color: 'white' }}>
         Created by{' '}
-        <a
-          style={{ color: '#b5d0d8' }}
+        <AquaLink
           rel='noopener noreferrer'
           target='_blank'
           href='https://github.com/seschwartz8'
         >
           Sasa Schwartz
-        </a>
+        </AquaLink>
       </div>
       <div style={{ color: 'white' }}>&copy; May 2020</div>
     </FooterContainer>
