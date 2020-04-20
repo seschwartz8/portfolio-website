@@ -16,7 +16,7 @@ const NavItem = styled(NavLink)`
   animation: 1s ${fadeIn} 0.3s forwards;
   animation-delay: 0.5s;
   color: white;
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-weight: 200;
   margin-right: 20px;
   padding: 3px;

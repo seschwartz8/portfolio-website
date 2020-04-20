@@ -104,7 +104,7 @@ export const IconsRow = styled.div`
 `;
 
 export const CardContent = styled.div`
-  font-size: 1.2em;
+  font-size: 1.4em;
   display: flex;
   flex-direction: column;
   align-items: center;

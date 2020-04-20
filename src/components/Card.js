@@ -18,9 +18,9 @@ function Card({ title, paragraphOne, paragraphTwo }) {
     <CardContainer>
       <CardTitle>{title}</CardTitle>
       <CardContent>
-        <div>{paragraphOne}</div>
+        <div style={{ lineHeight: '2' }}>{paragraphOne}</div>
         <br />
-        <div>{paragraphTwo}</div>
+        <div style={{ lineHeight: '2' }}>{paragraphTwo}</div>
       </CardContent>
     </CardContainer>
   );

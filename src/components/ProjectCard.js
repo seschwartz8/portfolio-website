@@ -42,7 +42,7 @@ function ProjectCard({ title, content, imgUrl, link, flipped, onClick }) {
         {!flipped ? (
           <img src={imgUrl} alt={title} style={{ width: '100%' }}></img>
         ) : (
-          <p style={{ fontSize: '1.2em', padding: '0 5%' }}>{content}</p>
+          <p style={{ padding: '0 5%', lineHeight: '2' }}>{content}</p>
         )}
       </CardContent>
       {flipped ? (
