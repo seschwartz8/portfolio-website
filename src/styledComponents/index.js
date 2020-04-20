@@ -19,6 +19,8 @@ export const HamburgerMenu = styled.div`
   justify-content: space-around;
   height: ${(props) => (props.size ? `calc(${props.size} - 5px)` : '30px')};
   width: ${(props) => (props.size ? props.size : '30px')};
+  position: relative;
+  z-index: 30;
 
   @media ${device.tablet} {
     display: none;
@@ -29,26 +31,53 @@ export const HamburgerTopLine = styled.div`
   background-color: white;
   width: 100%;
   height: 2px;
-  transition: ${(props) => (props.open ? 'transform 0.8s' : null)};
-  transform: ${(props) =>
-    props.open ? 'translate(0, 7.5px) rotate(45deg)' : null};
-  transform-origin: center;
+  ${(props) =>
+    props.open
+      ? `
+    transform: translate(0, 7.5px) rotate(45deg);
+    transition: transform 0.8s;
+    transform-origin: center;
+    background-color: ${colors.darkAqua}
+  `
+      : null}
 `;
 export const HamburgerMiddleLine = styled.div`
   background-color: white;
   width: 100%;
   height: 2px;
-  visibility: ${(props) => (props.open ? 'hidden' : 'visible')};
-  transform-origin: center;
+  ${(props) =>
+    props.open
+      ? `
+    visibility: hidden;
+    transform-origin: center;
+  `
+      : null}
 `;
 export const HamburgerBottomLine = styled.div`
   background-color: white;
   width: 100%;
   height: 2px;
-  transition: ${(props) => (props.open ? 'transform 0.8s' : null)};
-  transform: ${(props) =>
-    props.open ? 'translate(0, -7.5px) rotate(-45deg)' : null};
-  transform-origin: center;
+  ${(props) =>
+    props.open
+      ? `
+      transition: transform 0.8s;
+      transform: translate(0, -7.5px) rotate(-45deg);
+      transform-origin: center;
+      background-color: ${colors.darkAqua}
+    `
+      : null}
+`;
+
+export const Modal = styled.div`
+  background-color: ${colors.offWhite};
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: 1s ${fadeIn} 0.3s forwards;
 `;
 
 export const AboutContent = styled.main`
