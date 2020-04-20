@@ -18,6 +18,9 @@ export const NavItem = styled(NavLink)`
   font-size: 1.2em;
   font-weight: 200;
   margin-right: 20px;
+  &:hover h2 {
+    color: #7394a7;
+  }
 `;
 
 export const HamburgerMenu = styled.div`
@@ -168,6 +171,9 @@ export const IconContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin: 10px 0;
+  &:hover h4 {
+    color: #7394a7;
+  }
 `;
 
 export const IconImg = styled.img`
