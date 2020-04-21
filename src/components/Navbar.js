@@ -1,23 +1,6 @@
 import React from 'react';
 import { NavbarMenu, NavItem } from '../styledComponents/index';
-
-export const routeMap = [
-  {
-    label: 'About',
-    id: 1,
-    path: '/about/',
-  },
-  {
-    label: 'Projects',
-    id: 2,
-    path: '/projects/',
-  },
-  {
-    label: 'Contact',
-    id: 3,
-    path: '/contact/',
-  },
-];
+import routeMap from '../routeMap';
 
 const Navbar = () => {
   const color = 'white';

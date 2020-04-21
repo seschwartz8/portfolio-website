@@ -85,7 +85,7 @@ export const HamburgerBottomLine = styled.div`
       : null}
 `;
 
-export const Modal = styled.div`
+export const ModalContainer = styled.div`
   background-color: ${colors.offWhite};
   position: fixed;
   width: 100%;
@@ -98,6 +98,15 @@ export const Modal = styled.div`
   justify-content: center;
   align-items: center;
   animation: 1s ${fadeIn} 0.3s forwards;
+`;
+
+export const ModalContents = styled.ul`
+  display: flex;
+  height: 40%;
+  width: 40%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 `;
 
 export const AboutContent = styled.main`
