@@ -21,7 +21,7 @@ export const HeaderContainer = styled.div`
 export const NavbarMenu = styled.ul`
   display: none;
   margin: 15px 0;
-  @media ${device.tablet} {
+  @media ${device.mobileL} {
     display: block;
   }
 `;
@@ -52,7 +52,7 @@ export const HamburgerMenu = styled.div`
   position: relative;
   z-index: 30;
 
-  @media ${device.tablet} {
+  @media ${device.mobileL} {
     display: none;
   }
 `;
@@ -130,6 +130,11 @@ export const LandingContainer = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  background-position: 70% 0;
+
+  @media ${device.mobileL} {
+    background-position: center center;
+  }
 `;
 
 export const NameContainer = styled(NavLink)`
