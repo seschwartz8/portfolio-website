@@ -1,20 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-import { colors } from '../utils';
-import { AquaLink } from '../styledComponents/index';
-
-const FooterContainer = styled.div`
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: ${colors.offBlack};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 3%;
-`;
+import { AquaLink, FooterContainer } from '../styledComponents/index';
 
 const Footer = () => {
   return (

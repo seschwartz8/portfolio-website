@@ -7,24 +7,15 @@ import githubIcon from '../images/github-icon.png';
 import emailIcon from '../images/email-icon.png';
 import resumeIcon from '../images/resume-icon.png';
 import resume from '../images/resume.pdf';
-import styled from 'styled-components';
-import { IconsColumn } from '../styledComponents/index';
-
-const HeaderContainer = styled.div`
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  padding: 1% 4%;
-`;
+import { IconsColumn, HeaderContainer } from '../styledComponents/index';
 
 const Header = () => {
-  const ICON_SIZE = '30px';
+  const iconSize = '30px';
 
   return (
     <HeaderContainer>
       <Name />
-      <Hamburger size={ICON_SIZE} />
+      <Hamburger size={iconSize} />
       <Navbar />
 
       <IconsColumn>
@@ -33,21 +24,21 @@ const Header = () => {
           newTab={true}
           src={githubIcon}
           alt='github icon'
-          size={ICON_SIZE}
+          size={iconSize}
         />
         <Icon
           href={resume}
           newTab={true}
           src={resumeIcon}
           alt='resume icon'
-          size={ICON_SIZE}
+          size={iconSize}
         />
         <Icon
           href='mailto: seschwartz8@gmail.com'
           newTab={false}
           src={emailIcon}
           alt='email icon'
-          size={ICON_SIZE}
+          size={iconSize}
         />
       </IconsColumn>
     </HeaderContainer>

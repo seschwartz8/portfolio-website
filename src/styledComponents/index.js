@@ -1,6 +1,22 @@
 import styled from 'styled-components';
 import { device, growShrink, fadeIn, colors } from '../utils';
 import { NavLink } from 'react-router-dom';
+import portrait from '../images/portrait.jpg';
+
+export const MainContent = styled.div`
+  min-height: 100vh;
+  background-color: ${colors.offBlack};
+  position: relative;
+  z-index: 1;
+`;
+
+export const HeaderContainer = styled.div`
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 1% 4%;
+`;
 
 export const NavbarMenu = styled.ul`
   display: none;
@@ -107,6 +123,21 @@ export const ModalContents = styled.ul`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+`;
+
+export const LandingContainer = styled.div`
+  background-image: url(${portrait});
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+`;
+
+export const NameContainer = styled(NavLink)`
+  opacity: 0;
+  animation: 1s ${fadeIn} 0.3s forwards;
+  color: white;
+  font-size: 2.3em;
+  font-weight: 700;
 `;
 
 export const AboutContent = styled.main`
@@ -226,9 +257,59 @@ export const CardTitle = styled.h4`
   margin-bottom: 4%;
 `;
 
+export const CardContainer = styled.div`
+  background-color: ${colors.superLightAqua};
+  padding: 3%;
+  margin: 3% 2%;
+  width: 100%;
+  ${(props) =>
+    props.project
+      ? `
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    &:hover {
+      opacity: ${(props) => (props.flipped ? '1' : '0.8')};
+    }
+
+    @media ${device.laptop} {
+      width: 45%;
+    }`
+      : `
+    @media ${device.laptop} {
+      width: 32%;
+    }`}
+`;
+
+export const Button = styled.button`
+  background: none;
+  padding: 5%;
+  border: none;
+  margin-top: 10%;
+  font-size: 1.5em;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
 export const AquaLink = styled.a`
   color: ${colors.lightAqua};
   &:hover {
     color: ${colors.darkAqua};
   }
+`;
+
+export const FooterContainer = styled.div`
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: ${colors.offBlack};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
 `;
