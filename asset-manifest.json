@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9680e12f.chunk.css",
+    "main.js": "/static/js/main.f6a6441e.chunk.js",
+    "main.js.map": "/static/js/main.f6a6441e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a5b7bec9.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a5b7bec9.js.map",
+    "static/js/2.6ac3f833.chunk.js": "/static/js/2.6ac3f833.chunk.js",
+    "static/js/2.6ac3f833.chunk.js.map": "/static/js/2.6ac3f833.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.2d35fca797721f89564a03f5db975d70.js": "/precache-manifest.2d35fca797721f89564a03f5db975d70.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.9680e12f.chunk.css.map": "/static/css/main.9680e12f.chunk.css.map",
+    "static/js/2.6ac3f833.chunk.js.LICENSE.txt": "/static/js/2.6ac3f833.chunk.js.LICENSE.txt",
+    "static/media/apocalypse-crop.png": "/static/media/apocalypse-crop.9ed1e78c.png",
+    "static/media/blackjack-crop.png": "/static/media/blackjack-crop.ccdb0784.png",
+    "static/media/githubbattle-crop.png": "/static/media/githubbattle-crop.63f6de26.png",
+    "static/media/pinterest-clone-crop.png": "/static/media/pinterest-clone-crop.735fa4c7.png",
+    "static/media/portfolio-crop.png": "/static/media/portfolio-crop.5e423382.png",
+    "static/media/portrait.jpg": "/static/media/portrait.be414c5c.jpg",
+    "static/media/resume.pdf": "/static/media/resume.8eafdb26.pdf",
+    "static/media/typing-game-crop.png": "/static/media/typing-game-crop.43c92e83.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a5b7bec9.js",
+    "static/js/2.6ac3f833.chunk.js",
+    "static/css/main.9680e12f.chunk.css",
+    "static/js/main.f6a6441e.chunk.js"
+  ]
+}
