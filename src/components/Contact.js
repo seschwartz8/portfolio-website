@@ -18,8 +18,8 @@ const Contact = () => {
       <ContactContent>
         <SingleBox>
           <p style={{ fontSize: '1.3em' }}>
-            Feel free to reach out at any time, whether it be job opportunities,
-            project ideas, or tea recommendations!
+            Feel free to reach out at any time, whether it be for job
+            opportunities, project ideas, or tea recommendations!
           </p>
           <br />
           <IconsRow>

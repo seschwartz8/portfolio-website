@@ -46,9 +46,9 @@ export const HamburgerMenu = styled.div`
   margin: 15px 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: ${(props) => (props.size ? `calc(${props.size} - 5px)` : '30px')};
-  width: ${(props) => (props.size ? props.size : '30px')};
+  justify-content: space-between;
+  height: 25px;
+  width: 30px;
   position: relative;
   z-index: 30;
 
@@ -65,15 +65,15 @@ export const HamburgerTopLine = styled.div`
   ${(props) =>
     props.open
       ? `
-    transform: translate(0, 7.5px) rotate(45deg);
+    transform: translate(0, 1px) rotate(45deg);
     transition: transform 0.8s;
-    transform-origin: center;
+    transform-origin: left;
     background-color: ${colors.darkAqua}
   `
       : null}
 `;
+
 export const HamburgerMiddleLine = styled.div`
-  transition: transform 0.8s;
   background-color: white;
   width: 100%;
   height: 2px;
@@ -81,10 +81,10 @@ export const HamburgerMiddleLine = styled.div`
     props.open
       ? `
     visibility: hidden;
-    transform-origin: center;
   `
       : null}
 `;
+
 export const HamburgerBottomLine = styled.div`
   transition: transform 0.8s;
   background-color: white;
@@ -94,8 +94,8 @@ export const HamburgerBottomLine = styled.div`
     props.open
       ? `
       transition: transform 0.8s;
-      transform: translate(0, -7.5px) rotate(-45deg);
-      transform-origin: center;
+      transform: translate(0, -1px) rotate(-45deg);
+      transform-origin: left;
       background-color: ${colors.darkAqua}
     `
       : null}
