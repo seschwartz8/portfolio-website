@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "21d2b6cbce416117bfd87775f829859d",
+    "revision": "fa7d0c3fc7cc3d9dd7f04abacce2e462",
     "url": "/index.html"
   },
   {
-    "revision": "cdf99ab03065d404afd2",
+    "revision": "df3ab3b3bb46e6ae2939",
     "url": "/static/css/main.9680e12f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.6ac3f833.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cdf99ab03065d404afd2",
-    "url": "/static/js/main.f2068dba.chunk.js"
+    "revision": "df3ab3b3bb46e6ae2939",
+    "url": "/static/js/main.7d3b615b.chunk.js"
   },
   {
     "revision": "8dd1ec03cd7bd48089e8",
@@ -48,11 +48,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/portrait.be414c5c.jpg"
   },
   {
-    "revision": "8eafdb26cf1548ec5628d3191bee1057",
-    "url": "/static/media/resume.8eafdb26.pdf"
+    "revision": "13ab0e550482b6bc67213ca6a3b496a9",
+    "url": "/static/media/resume.13ab0e55.pdf"
   },
   {
     "revision": "43c92e837defe8dcef8021b55e9d16b0",
     "url": "/static/media/typing-game-crop.43c92e83.png"
+  },
+  {
+    "revision": "75b4a4745baa7e578be7a2b1bb878afb",
+    "url": "/static/media/world-traveler.75b4a474.png"
   }
 ]);
