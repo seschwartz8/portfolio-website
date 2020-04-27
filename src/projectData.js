@@ -4,6 +4,7 @@ import githubbattleImg from './images/githubbattle-crop.png';
 import portfolioImg from './images/portfolio-crop.png';
 import pinterestCloneImg from './images/pinterest-clone-crop.png';
 import typingGameImg from './images/typing-game-crop.png';
+import worldTravelerImg from './images/world-traveler.png';
 
 const projectData = [
   {
@@ -24,11 +25,11 @@ const projectData = [
   },
   {
     id: '2',
-    imgUrl: githubbattleImg,
-    title: 'Github Battle',
+    imgUrl: worldTravelerImg,
+    title: 'World Traveler',
     content:
-      'Find popular github pages and "battle" them against each other based on their stats. This app was built for Tyler McGinnis\' online React course.',
-    link: 'https://github.com/seschwartz8/github-battle',
+      'A typescript travel app that displays information about each country and allows you to save your favorite destinations. You can search for specific countries by name and view the geographical locations you plan to visit as pins on a map.',
+    link: 'https://github.com/seschwartz8/world-traveler-react-ts',
   },
   {
     id: '3',
