@@ -9,13 +9,13 @@ const About = () => {
       <AboutContent>
         <Card
           title='Who am I?'
-          paragraphOne="I'm a software engineer with experience from Epicodus Full-Stack Bootcamp Program, various online courses, and personal projects. This summer I will be working as a UI Developer intern at ClearBlade Inc."
-          paragraphTwo='I am looking for an entry level front-end position where I can advance my skills and contribute to a fast-paced team environment.'
+          paragraphOne="I'm a software engineer with a specialty in React and UI/UX, currently working on the front-end development team at ClearBlade Inc. I have additional experience from Epicodus Full-Stack Bootcamp Program, various online courses, and personal projects."
+          paragraphTwo='I am looking for a front-end position where I can advance my skills and contribute to a fast-paced team environment.'
         />
         <Card
           title='What are my skills?'
-          paragraphOne='I enjoy building react applications with a focus on modularity, scalability, and responsiveness. I have experience with RESTful conventions, state management using redux and hooks, and building custom reusable components.'
-          paragraphTwo='React, Redux, Javascript, Typescript, HTML, CSS/Sass, MySQL, C#, .NET, Python, Git, Jest, Photoshop, Figma.'
+          paragraphOne='I enjoy building React applications with a focus on modularity, scalability, and responsiveness. I have experience with state management using hooks, recoil, and redux, building custom reusable components, and RESTful conventions.'
+          paragraphTwo='React, Redux, Recoil, Typescript, Javascript, HTML, CSS/Sass, Styled Components, MySQL, C#, Python, Git, Jest, Figma.'
         />
         <Card
           title="When I'm not coding?"
