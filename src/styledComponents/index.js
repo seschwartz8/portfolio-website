@@ -275,7 +275,8 @@ export const CardContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     &:hover {
-      opacity: ${(props) => (props.flipped ? '1' : '0.8')};
+      opacity: ${(props) => (props.flipped ? '1' : '0.7')};
+      cursor: pointer;
     }
 
     @media ${device.laptop} {
