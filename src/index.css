@@ -1,26 +1,86 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
 
-* {
-  box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  line-height: 1.4;
-  text-decoration: none;
-  scroll-behavior: smooth;
-  outline: none;
-  color: #252525;
-  margin: 0;
-  padding: 0;
+
+/* Removes the bounce on scroll */
+html {
+    height: 100%;
+    overflow: hidden;
 }
-
 body {
-  margin: 0;
+  height: 100%;
+  overflow: 'auto';
 }
 
-a {
-  color: #252525;
+/* Hamburger Menu Animation */
+#hamburger {
+  width: 35px;
+  height: 30px;
+  position: relative;
+  margin: 10px ;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
 }
 
-a:hover {
-  color: #7394a7;
+#hamburger #hamburgerLine {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 4px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+
+#hamburger #hamburgerLine:nth-child(1) {
+  top: 0px;
+}
+
+#hamburger #hamburgerLine:nth-child(2), #hamburgerLine:nth-child(3) {
+  top: 11px;
+}
+
+#hamburger #hamburgerLine:nth-child(4) {
+  top: 22px;
+}
+
+#hamburger.open #hamburgerLine:nth-child(1) {
+  top: 11px;
+  width: 0%;
+  left: 50%;
+}
+
+#hamburger.open #hamburgerLine:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#hamburger.open #hamburgerLine:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#hamburger.open #hamburgerLine:nth-child(4) {
+  top: 11px;
+  width: 0%;
+  left: 50%;
 }
