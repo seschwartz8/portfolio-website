@@ -12,7 +12,6 @@ function App() {
       <Box
         sx={{
           minHeight: '100vh',
-          backgroundColor: 'blue',
           position: 'relative',
           zIndex: zIndexMap.appContainer,
           overflow: 'hidden',
