@@ -33,7 +33,6 @@ This portfolio website showcases my work as a Front End Software Engineer. It al
 - React Typescript
 - Material UI
 - React Router
-- React Spring Animations
 - Deployment via Github Pages
 - Bulletproof React repository architecture
 
