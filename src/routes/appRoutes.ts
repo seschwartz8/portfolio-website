@@ -11,3 +11,9 @@ export const AppRouteLabels = {
   [appRoutes.projects]: 'Projects',
   [appRoutes.contact]: 'Contact',
 };
+
+export const navBarRoutes = [
+  appRoutes.about,
+  appRoutes.projects,
+  appRoutes.contact,
+];

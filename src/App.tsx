@@ -1,11 +1,11 @@
 import { Box, CircularProgress } from '@mui/material';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import './HamburgerMenu.css';
 import { Footer, NavBar } from './components';
-import AboutPage from './features/about/Loadable';
-import ContactPage from './features/contact/Loadable';
-import LandingPage from './features/landing/Loadable';
-import ProjectsPage from './features/projects/Loadable';
+import AboutPage from './features/about/index';
+import ContactPage from './features/contact/index';
+import LandingPage from './features/landing/index';
+import ProjectsPage from './features/projects/index';
 import { appRoutes } from './routes';
 import { zIndexMap } from './utils';
 import { Suspense } from 'react';
@@ -19,7 +19,7 @@ function App() {
         </Box>
       }
     >
-      <BrowserRouter basename={`${appRoutes.landing}/`}>
+      <BrowserRouter>
         <NavBar />
         <Box
           sx={{
@@ -30,14 +30,15 @@ function App() {
           }}
         >
           <Routes>
-            <Route
-              index
-              path={`${appRoutes.landing}/`}
-              Component={LandingPage}
-            />
-            <Route path={`${appRoutes.about}/*`} Component={AboutPage} />
-            <Route path={`${appRoutes.projects}/*`} Component={ProjectsPage} />
-            <Route path={`${appRoutes.contact}/*`} Component={ContactPage} />
+            <Route path={`${appRoutes.landing}/`} element={<Outlet />}>
+              <Route index Component={LandingPage} />
+              <Route path={`${appRoutes.about}/*`} Component={AboutPage} />
+              <Route
+                path={`${appRoutes.projects}/*`}
+                Component={ProjectsPage}
+              />
+              <Route path={`${appRoutes.contact}/*`} Component={ContactPage} />
+            </Route>
           </Routes>
         </Box>
         <Footer />
