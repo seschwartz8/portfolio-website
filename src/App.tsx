@@ -1,6 +1,7 @@
 import { Box, CircularProgress } from '@mui/material';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import './HamburgerMenu.css';
+import './EnvelopeAnimation.css';
 import { Footer, NavBar } from './components';
 import AboutPage from './features/about/index';
 import ContactPage from './features/contact/index';
