@@ -1,1 +1,1 @@
-export * from './useIsSmallScreen';
+export * from './useIsMobile';

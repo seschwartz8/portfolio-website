@@ -1,4 +1,3 @@
-import { Typography } from '@mui/material';
 import landingPortrait from '../../assets/landingPortrait.jpeg';
 
 export default function LandingPage() {
@@ -11,10 +10,6 @@ export default function LandingPage() {
         minHeight: '100vh',
         backgroundPosition: '70% 0',
       }}
-    >
-      {/* <Typography variant='h2' fontWeight={800} sx={{ color: 'black' }}>
-        Sasa Pettyjohn
-      </Typography> */}
-    </div>
+    ></div>
   );
 }
