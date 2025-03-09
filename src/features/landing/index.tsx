@@ -1,15 +1,27 @@
-import landingPortrait from '../../assets/landingPortrait.jpeg';
+import { Typography } from "@mui/material";
 
 export default function LandingPage() {
   return (
-    <div
-      style={{
-        backgroundImage: `url(${landingPortrait})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        minHeight: '100vh',
-        backgroundPosition: '70% 0',
-      }}
-    ></div>
+    <div>
+      <Typography variant="h1">Hi, I'm Sasa 👋🏻</Typography>
+      <Typography variant="h1">I am a Lead Software Engineer</Typography>
+    </div>
   );
 }
+
+// export default function LandingPage() {
+//   return (
+//     <div
+//       style={{
+//         backgroundImage: `url(${landing})`,
+//         backgroundRepeat: "no-repeat",
+//         minHeight: "100vh",
+//         backgroundSize: "cover",
+//         backgroundPosition: "center",
+//       }}
+//     >
+//       <Typography variant="h1">Hi, I'm Sasa 👋🏻</Typography>
+//       <Typography variant="h1">I am a Lead Software Engineer</Typography>
+//     </div>
+//   );
+// }

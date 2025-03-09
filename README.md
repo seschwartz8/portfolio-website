@@ -19,7 +19,7 @@
 
 ## Description
 
-This portfolio website showcases my work in web development. It also provides access to my contact information and resume. The website itself was built by me and is being continuously updated as I learn and grow as a developer.
+This portfolio website showcases my work in web development. It also provides access to my contact information and resume. The website itself was built by me and is ocassionally updated as needed.
 
 ## Installation
 
@@ -27,16 +27,16 @@ This portfolio website showcases my work in web development. It also provides ac
 - cd into the root directory
 
   - npm install
-  - npm start (starts app on localhost:3000)
+  - npm run dev (starts app on localhost:5173)
 
 ## Technologies Used
 
 - React/Typescript
-- CSS/Sass with Styled Components
+- Material UI and CSS
 - React-Router
 - Deployment via Github Pages
 
-## Sample Images
+## Sample Images UPDATE THESE
 
 ##### Homepage
 

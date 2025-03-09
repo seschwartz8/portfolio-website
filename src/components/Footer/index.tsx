@@ -1,34 +1,30 @@
-import { Box, Link } from '@mui/material';
-import { zIndexMap } from '../../utils';
+import { Box, Typography } from "@mui/material";
+import { ActionIcons } from "../ActionIcons.tsx/ActionIcons";
+import { footerHeight } from "./utils/footerHeight";
 
 export function Footer() {
   return (
     <Box
-      display='flex'
-      flexDirection='column'
-      justifyContent='center'
-      alignItems='center'
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      gap={1}
       sx={(theme) => ({
-        position: 'sticky',
-        bottom: 0,
-        left: 0,
-        width: '100%',
-        backgroundColor: 'green',
-        padding: theme.spacing(2),
-        zIndex: zIndexMap.appFooter,
+        height: footerHeight,
+        padding: 2,
+        zIndex: theme.zIndex.appFooter,
+        backgroundColor: theme.palette.text.primary,
       })}
     >
-      <Box sx={{ color: 'white' }}>
-        Created by{' '}
-        <Link
-          rel='noopener noreferrer'
-          target='_blank'
-          href='https://github.com/seschwartz8'
-        >
-          Sasa Schwartz
-        </Link>
-      </Box>
-      <Box sx={{ color: 'white' }}>&copy; August 2023</Box>
+      <Typography variant="body1" sx={{ color: "white" }}>
+        Created by Sasa Pettyjohn
+      </Typography>
+      <ActionIcons light />
+
+      <Typography variant="caption" sx={{ color: "white" }}>
+        &copy; March 2025
+      </Typography>
     </Box>
   );
 }

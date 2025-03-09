@@ -1,30 +1,33 @@
-import { Button, Grid } from '@mui/material';
-import AppBar from '@mui/material/AppBar';
-import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
-import { useIsMobile } from '../../hooks';
-import { AppRouteLabels, appRoutes, navBarRoutes } from '../../routes';
-import { NavBarHeight } from '../../utils';
-import { HamburgerMenu } from '../HamburgerMenu';
+import { Button, Grid } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
+import { useIsMobile } from "../../hooks";
+import { AppRouteLabels, appRoutes, navBarRoutes } from "../../routes";
+import { NavBarHeight } from "../../utils/constants";
+import { HamburgerMenu } from "../HamburgerMenu";
 
 export function NavBar() {
   const isMobile = useIsMobile();
 
   return (
     <AppBar
-      position='sticky'
-      sx={{ height: NavBarHeight, backgroundColor: '#646253' }}
+      position="sticky"
+      sx={(theme) => ({
+        height: NavBarHeight,
+        backgroundColor: theme.palette.text.primary,
+      })}
     >
       <Grid
         container
-        wrap='nowrap'
-        justifyContent='space-between'
-        alignItems='center'
-        sx={{ height: '100%', py: 1, px: 3 }}
+        wrap="nowrap"
+        justifyContent="space-between"
+        alignItems="center"
+        sx={{ height: "100%", py: 1, px: 3 }}
       >
         <Grid item>
-          <Link to={`${appRoutes.landing}/`}>
-            <Typography variant='h5' sx={{ color: 'white' }}>
+          <Link to={`${appRoutes.landing}/`} style={{ textDecoration: "none" }}>
+            <Typography variant="h5" sx={{ color: "white" }}>
               Sasa Pettyjohn
             </Typography>
           </Link>
@@ -45,8 +48,8 @@ export function NavBar() {
                     <Link to={`${page}/`}>
                       <Button>
                         <Typography
-                          variant='h6'
-                          sx={{ color: 'white', textTransform: 'none' }}
+                          variant="h6"
+                          sx={{ color: "white", textTransform: "none" }}
                         >
                           {AppRouteLabels[page]}
                         </Typography>

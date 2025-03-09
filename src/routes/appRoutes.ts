@@ -1,19 +1,13 @@
 export enum appRoutes {
-  landing = '',
-  about = 'about',
-  projects = 'projects',
-  contact = 'contact',
+  landing = "",
+  about = "about",
+  projects = "projects",
 }
 
 export const AppRouteLabels = {
-  [appRoutes.landing]: '',
-  [appRoutes.about]: 'About',
-  [appRoutes.projects]: 'Projects',
-  [appRoutes.contact]: 'Contact',
+  [appRoutes.landing]: "",
+  [appRoutes.about]: "About",
+  [appRoutes.projects]: "Projects",
 };
 
-export const navBarRoutes = [
-  appRoutes.about,
-  appRoutes.projects,
-  appRoutes.contact,
-];
+export const navBarRoutes = [appRoutes.about, appRoutes.projects];

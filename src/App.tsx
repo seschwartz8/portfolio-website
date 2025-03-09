@@ -1,15 +1,14 @@
-import { Box, CircularProgress } from "@mui/material";
+import { Box, CircularProgress, ThemeProvider } from "@mui/material";
 import { Suspense } from "react";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
-import "./EnvelopeAnimation.css";
 import "./HamburgerMenu.css";
-import { Footer, NavBar } from "./components";
+import { NavBar } from "./components";
 import AboutPage from "./features/about/index";
-import ContactPage from "./features/contact/index";
 import LandingPage from "./features/landing/index";
 import ProjectsPage from "./features/projects/index";
 import { appRoutes } from "./routes";
-import { zIndexMap } from "./utils";
+import { NavBarHeight } from "./utils/constants";
+import { theme } from "./utils/theme";
 
 function App() {
   return (
@@ -20,30 +19,32 @@ function App() {
         </Box>
       }
     >
-      <BrowserRouter>
-        <NavBar />
-        <Box
-          sx={{
-            minHeight: "100vh",
-            position: "relative",
-            zIndex: zIndexMap.appContainer,
-            overflow: "hidden",
-          }}
-        >
-          <Routes>
-            <Route path={`${appRoutes.landing}/`} element={<Outlet />}>
-              <Route index Component={LandingPage} />
-              <Route path={`${appRoutes.about}/*`} Component={AboutPage} />
-              <Route
-                path={`${appRoutes.projects}/*`}
-                Component={ProjectsPage}
-              />
-              <Route path={`${appRoutes.contact}/*`} Component={ContactPage} />
-            </Route>
-          </Routes>
-        </Box>
-        <Footer />
-      </BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <NavBar />
+          <Box
+            sx={(theme) => ({
+              height: `calc(100vh - ${NavBarHeight}px)`,
+              position: "relative",
+              zIndex: theme.zIndex.appContainer,
+              overflow: "hidden",
+              display: "flex",
+              flexDirection: "column",
+            })}
+          >
+            <Routes>
+              <Route path={`${appRoutes.landing}/`} element={<Outlet />}>
+                <Route index Component={LandingPage} />
+                <Route path={`${appRoutes.about}/*`} Component={AboutPage} />
+                <Route
+                  path={`${appRoutes.projects}/*`}
+                  Component={ProjectsPage}
+                />
+              </Route>
+            </Routes>
+          </Box>
+        </BrowserRouter>
+      </ThemeProvider>
     </Suspense>
   );
 }
