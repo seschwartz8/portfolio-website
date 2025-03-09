@@ -1,37 +1,51 @@
 import { Button, Grid } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
-import { useIsMobile } from "../../hooks";
+import { Link, useLocation } from "react-router-dom";
+import { useIsSmOrBelow } from "../../hooks/useIsSmOrBelow";
 import { AppRouteLabels, appRoutes, navBarRoutes } from "../../routes";
 import { NavBarHeight } from "../../utils/constants";
 import { HamburgerMenu } from "../HamburgerMenu";
 
 export function NavBar() {
-  const isMobile = useIsMobile();
+  const isMobile = useIsSmOrBelow();
+  const { pathname } = useLocation();
+  const isLandingPage = pathname === `/${appRoutes.landing}`;
 
   return (
     <AppBar
       position="sticky"
       sx={(theme) => ({
         height: NavBarHeight,
-        backgroundColor: theme.palette.text.primary,
+        backgroundColor: isLandingPage
+          ? "transparent"
+          : theme.palette.background.default,
+        boxShadow: "none",
       })}
     >
       <Grid
         container
         wrap="nowrap"
-        justifyContent="space-between"
+        justifyContent={isLandingPage ? "flex-end" : "space-between"}
         alignItems="center"
         sx={{ height: "100%", py: 1, px: 3 }}
       >
-        <Grid item>
-          <Link to={`${appRoutes.landing}/`} style={{ textDecoration: "none" }}>
-            <Typography variant="h5" sx={{ color: "white" }}>
-              Sasa Pettyjohn
-            </Typography>
-          </Link>
-        </Grid>
+        {!isLandingPage && (
+          <Grid item>
+            <Link
+              to={`${appRoutes.landing}/`}
+              style={{ textDecoration: "none" }}
+            >
+              <Typography
+                variant={"h5"}
+                sx={(theme) => ({ color: theme.palette.text.primary })}
+                fontWeight={700}
+              >
+                Sasa Pettyjohn
+              </Typography>
+            </Link>
+          </Grid>
+        )}
 
         <Grid item>
           <Grid item container sx={{ mr: 2 }} spacing={3}>
@@ -42,14 +56,17 @@ export function NavBar() {
             ) : (
               <>
                 {navBarRoutes.map((page) => (
-                  // WOULD LIKE TO GET THIS BUTTON HOVER WORKING
-                  // ALSO EXTRACT THIS TO BE SHARED WITH HAMBURGER MENU
+                  // EXTRACT THIS TO BE SHARED WITH HAMBURGER MENU
                   <Grid item key={page}>
                     <Link to={`${page}/`}>
                       <Button>
                         <Typography
                           variant="h6"
-                          sx={{ color: "white", textTransform: "none" }}
+                          sx={(theme) => ({
+                            color: theme.palette.text.primary,
+                            textTransform: "none",
+                          })}
+                          fontWeight={700}
                         >
                           {AppRouteLabels[page]}
                         </Typography>

@@ -26,6 +26,14 @@ export const theme = createTheme({
       main: "#60AB9A",
       dark: "#095140",
     },
+    text: {
+      // primary: "#f2f2f2",
+    },
+    background: {
+      default: "#f7f7f8",
+      // default: "#1d1e20",
+      // default: "#1d1d1d",
+    },
     contrastThreshold: 3,
     tonalOffset: 0.2,
   },

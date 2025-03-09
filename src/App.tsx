@@ -4,7 +4,7 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import "./HamburgerMenu.css";
 import { NavBar } from "./components";
 import AboutPage from "./features/about/index";
-import LandingPage from "./features/landing/index";
+import LandingPage from "./features/landing";
 import ProjectsPage from "./features/projects/index";
 import { appRoutes } from "./routes";
 import { NavBarHeight } from "./utils/constants";
@@ -30,6 +30,7 @@ function App() {
               overflow: "hidden",
               display: "flex",
               flexDirection: "column",
+              backgroundColor: theme.palette.background.default,
             })}
           >
             <Routes>

@@ -6,7 +6,14 @@ export default function AboutPage() {
   return (
     <PageView>
       <Box display="flex" flexDirection="column" alignItems="center" gap={2}>
-        <Typography variant="h3">About</Typography>
+        <Typography
+          variant="h3"
+          sx={(theme) => ({
+            color: theme.palette.text.primary,
+          })}
+        >
+          About
+        </Typography>
         <ActionIcons />
 
         <Box display="flex" flexDirection="column" gap={6} mt={2}>
