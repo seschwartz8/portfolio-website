@@ -40,7 +40,6 @@ export default function LandingPage() {
       <Box
         height="100vh"
         width="100%"
-        sx={{ border: "3px solid red" }}
         display="flex"
         flexDirection="column"
         alignItems="flex-start"
@@ -52,12 +51,14 @@ export default function LandingPage() {
             maxWidth: textMaxWidth,
           }}
           variant="h2"
+          fontWeight={700}
         >
           Hi, I'm Sasa Pettyjohn
         </Typography>
         <Typography
           sx={{ pl: textPaddingLeft, maxWidth: isMdOrBelow ? 100 : "auto" }}
           variant="h4"
+          fontWeight={700}
         >
           Lead Software Engineer
         </Typography>
