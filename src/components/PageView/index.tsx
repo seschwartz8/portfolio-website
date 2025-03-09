@@ -5,19 +5,13 @@ import { Footer } from "../Footer";
 export default function PageView({ children }: { children: React.ReactNode }) {
   return (
     <Box
-      //test
-      style={{
+      sx={{
         flex: 1,
         height: "100vh",
         overflowY: "auto",
-        border: "1px solid red",
       }}
     >
-      <Box
-        border="1px solid blue"
-        height={`calc(100vh - ${NavBarHeight}px)`}
-        p={3}
-      >
+      <Box height={`calc(100vh - ${NavBarHeight}px)`} p={3} pb={10}>
         {children}
       </Box>
       <Footer />
