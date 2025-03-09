@@ -7,7 +7,7 @@ export default function PageView({ children }: { children: React.ReactNode }) {
     <Box
       style={{
         flex: 1,
-        minHeight: "100vh",
+        height: "100vh",
         overflowY: "auto",
         border: "1px solid red",
       }}
