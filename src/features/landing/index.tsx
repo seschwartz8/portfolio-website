@@ -3,11 +3,9 @@ import landing from "../../assets/landing.jpeg";
 import { useIsLgOrBelow } from "../../hooks/useIsLgOrBelow";
 import { useIsMdOrBelow } from "../../hooks/useIsMdOrBelow";
 import { useIsSmOrBelow } from "../../hooks/useIsSmOrBelow";
-import { useIsXlOrBelow } from "../../hooks/useIsXlOrBelow";
 import { NavBarHeight } from "../../utils/constants";
 
 export default function LandingPage() {
-  const isXlOrBelow = useIsXlOrBelow();
   const isLgOrBelow = useIsLgOrBelow();
   const isMdOrBelow = useIsMdOrBelow();
   const isMobile = useIsSmOrBelow();
