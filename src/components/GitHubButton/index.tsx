@@ -9,7 +9,7 @@ export const GitHubButton = ({
   large?: boolean;
 }) => {
   return (
-    <Tooltip title="GitHub">
+    <Tooltip title="GitHub" enterDelay={300}>
       <Link
         rel="noopener noreferrer"
         target="_blank"

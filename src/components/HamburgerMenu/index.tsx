@@ -1,24 +1,24 @@
-import {
-  Button,
-  Dialog,
-  DialogContent,
-  Grid,
-  IconButton,
-  Typography,
-} from "@mui/material";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { AppRouteLabels, navBarRoutes } from "../../routes";
+import { Dialog, DialogContent, Grid, IconButton } from "@mui/material";
+import { useLocation } from "react-router-dom";
+import { navBarRoutes } from "../../routes";
 import { NavBarHeight } from "../../utils/constants";
+import { NavItem } from "../NavBar/NavItem";
 
-export function HamburgerMenu() {
-  const [open, setOpen] = useState(false);
+export function HamburgerMenu({
+  open,
+  setOpen,
+}: {
+  open: boolean;
+  setOpen: (open: boolean) => void;
+}) {
+  const { pathname } = useLocation();
+  const selectedRoute = pathname.split("/")[1];
   return (
     <>
       <IconButton
         sx={(theme) => ({ zIndex: theme.zIndex.hamburgerMenu })}
         size="small"
-        onClick={() => setOpen((isOpen) => !isOpen)}
+        onClick={() => setOpen(!open)}
       >
         <div id="hamburger" className={open ? "open" : ""}>
           <span id="hamburgerLine"></span>
@@ -35,17 +35,17 @@ export function HamburgerMenu() {
           open={open}
           onClose={() => setOpen(false)}
         >
-          <DialogContent sx={{ mt: `${NavBarHeight}px`, p: 10 }}>
+          <DialogContent
+            sx={(theme) => ({
+              mt: `${NavBarHeight}px`,
+              p: 10,
+              backgroundColor: theme.palette.background.default,
+            })}
+          >
             <Grid container direction="column" spacing={8} alignItems="center">
               {navBarRoutes.map((page) => (
-                <Grid item key={page}>
-                  <Link to={`${page}/`}>
-                    <Button>
-                      <Typography variant="h5">
-                        {AppRouteLabels[page]}
-                      </Typography>
-                    </Button>
-                  </Link>
+                <Grid item key={page} onClick={() => setOpen(false)}>
+                  <NavItem page={page} selectedRoute={selectedRoute} />
                 </Grid>
               ))}
             </Grid>

@@ -9,7 +9,7 @@ export const LinkedInButton = ({
   large?: boolean;
 }) => {
   return (
-    <Tooltip title="LinkedIn">
+    <Tooltip title="LinkedIn" enterDelay={300}>
       <Link
         rel="noopener noreferrer"
         target="_blank"

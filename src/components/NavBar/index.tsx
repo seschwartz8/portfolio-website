@@ -1,25 +1,34 @@
-import { Button, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Typography from "@mui/material/Typography";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useIsSmOrBelow } from "../../hooks/useIsSmOrBelow";
-import { AppRouteLabels, appRoutes, navBarRoutes } from "../../routes";
+import { appRoutes, navBarRoutes } from "../../routes";
 import { NavBarHeight } from "../../utils/constants";
 import { HamburgerMenu } from "../HamburgerMenu";
+import { NavItem } from "./NavItem";
 
 export function NavBar() {
   const isMobile = useIsSmOrBelow();
   const { pathname } = useLocation();
-  const isLandingPage = pathname === `/${appRoutes.landing}`;
+  const selectedRoute = pathname.split("/")[1];
+  const isLandingPage = selectedRoute === appRoutes.landing;
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
   return (
     <AppBar
       position="sticky"
       sx={(theme) => ({
         height: NavBarHeight,
-        backgroundColor: isLandingPage
-          ? "transparent"
-          : theme.palette.background.default,
+        backgroundColor:
+          isLandingPage && !hamburgerOpen
+            ? "transparent"
+            : theme.palette.background.default,
+        transition: theme.transitions.create(["background-color"], {
+          easing: theme.transitions.easing.easeIn,
+          duration: theme.transitions.duration.standard,
+        }),
         boxShadow: "none",
         zIndex: theme.zIndex.appBar,
       })}
@@ -49,30 +58,19 @@ export function NavBar() {
         )}
 
         <Grid item>
-          <Grid item container sx={{ mr: 2 }} spacing={3}>
+          <Grid item container spacing={3}>
             {isMobile ? (
               <Grid item>
-                <HamburgerMenu />
+                <HamburgerMenu
+                  open={hamburgerOpen}
+                  setOpen={setHamburgerOpen}
+                />
               </Grid>
             ) : (
               <>
                 {navBarRoutes.map((page) => (
-                  // EXTRACT THIS TO BE SHARED WITH HAMBURGER MENU
                   <Grid item key={page}>
-                    <Link to={`${page}/`}>
-                      <Button>
-                        <Typography
-                          variant="h5"
-                          sx={(theme) => ({
-                            color: theme.palette.text.primary,
-                            textTransform: "none",
-                          })}
-                          fontWeight={700}
-                        >
-                          {AppRouteLabels[page]}
-                        </Typography>
-                      </Button>
-                    </Link>
+                    <NavItem page={page} selectedRoute={selectedRoute} />
                   </Grid>
                 ))}
               </>

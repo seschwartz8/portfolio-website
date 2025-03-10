@@ -1,11 +1,15 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import clearblade_team from "../../assets/clearblade_team.jpg";
 import playing_guitar from "../../assets/playing_guitar.png";
 import typing from "../../assets/typing.avif";
 import { ActionIcons } from "../../components/ActionIcons.tsx/ActionIcons";
 import PageView from "../../components/PageView";
+import { useIsSmOrBelow } from "../../hooks/useIsSmOrBelow";
 
 export default function AboutPage() {
+  const theme = useTheme();
+  const isMobile = useIsSmOrBelow();
+
   return (
     <PageView>
       <Box display="flex" flexDirection="column" alignItems="center" gap={2}>
@@ -23,8 +27,11 @@ export default function AboutPage() {
           <Box
             display="flex"
             alignItems="center"
-            gap={8}
-            sx={{ maxWidth: 800 }}
+            gap={4}
+            sx={{
+              flexDirection: { xs: "column", md: "row" },
+              "& > *": { flex: 1 },
+            }}
           >
             <Box>
               <Box
@@ -35,10 +42,20 @@ export default function AboutPage() {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
-              ></Box>
+              >
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    backgroundColor: theme.palette.tint,
+                    opacity: 0.15,
+                    zIndex: theme.zIndex.landingImgOverlay,
+                  }}
+                />
+              </Box>
             </Box>
             <Box>
-              <Typography variant="h6">
+              <Typography variant="h6" sx={{ maxWidth: 400 }}>
                 I am a Lead Software Engineer with experience developing web
                 applications in React Typescript. I particularly enjoy building
                 apps that are modular, scalable, maintainable, and delightful to
@@ -49,8 +66,11 @@ export default function AboutPage() {
           <Box
             display="flex"
             alignItems="center"
-            gap={8}
-            sx={{ maxWidth: 800 }}
+            gap={4}
+            sx={{
+              flexDirection: { xs: "column", md: "row" },
+              "& > *": { flex: 1 },
+            }}
           >
             <Box>
               <Box
@@ -61,10 +81,20 @@ export default function AboutPage() {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
-              ></Box>
+              >
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    backgroundColor: theme.palette.tint,
+                    opacity: 0.15,
+                    zIndex: theme.zIndex.landingImgOverlay,
+                  }}
+                />
+              </Box>
             </Box>
             <Box>
-              <Typography variant="h6">
+              <Typography variant="h6" sx={{ maxWidth: 400 }}>
                 I have years of experience mentoring junior developers,
                 architecting and managing large-scale projects, and creating a
                 team culture that fosters excitement about the product.
@@ -74,8 +104,11 @@ export default function AboutPage() {
           <Box
             display="flex"
             alignItems="center"
-            gap={8}
-            sx={{ maxWidth: 800 }}
+            gap={4}
+            sx={{
+              flexDirection: { xs: "column", md: "row" },
+              "& > *": { flex: 1 },
+            }}
           >
             <Box>
               <Box
@@ -86,10 +119,20 @@ export default function AboutPage() {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
-              ></Box>
+              >
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    backgroundColor: theme.palette.tint,
+                    opacity: 0.15,
+                    zIndex: theme.zIndex.landingImgOverlay,
+                  }}
+                />
+              </Box>
             </Box>
             <Box>
-              <Typography variant="h6">
+              <Typography variant="h6" sx={{ maxWidth: 400 }}>
                 When I'm not coding? I'm probably writing or performing music,
                 perfecting my sourdough skills, or with some friends at a
                 boardgame cafe.

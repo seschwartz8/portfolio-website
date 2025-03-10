@@ -10,7 +10,7 @@ export const ResumeButton = ({
   large?: boolean;
 }) => {
   return (
-    <Tooltip title="Resume">
+    <Tooltip title="Resume" enterDelay={300}>
       <Link href={resume} download sx={{ color: "inherit" }}>
         <IconButton
           sx={(theme) => ({

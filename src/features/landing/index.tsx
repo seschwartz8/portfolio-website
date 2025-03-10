@@ -87,6 +87,7 @@ export default function LandingPage() {
               mt: 2,
               maxWidth: isMdOrBelow ? 100 : "auto",
               zIndex: theme.zIndex.landingImgText,
+              ml: -1.25,
             }}
           >
             <ActionIcons large />

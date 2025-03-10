@@ -22,7 +22,7 @@ export default function PageView({ children }: { children: React.ReactNode }) {
           overflowY: "auto",
         }}
       >
-        <Box height={`calc(100vh - ${NavBarHeight}px)`} p={3} pb={10}>
+        <Box minHeight={`calc(100vh - ${NavBarHeight}px)`} p={3} pb={10}>
           {children}
         </Box>
         <Footer />

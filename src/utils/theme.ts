@@ -48,10 +48,7 @@ export const theme = createTheme({
     tonalOffset: 0.2,
   },
   typography: {
-    fontFamily: [
-      "Roboto",
-      // "sans-serif",
-    ].join(","),
+    fontFamily: ["Roboto"].join(","),
   },
   zIndex: {
     appBar: 102,
