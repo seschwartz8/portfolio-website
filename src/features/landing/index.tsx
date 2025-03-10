@@ -1,5 +1,5 @@
 import { Box, Typography, useTheme } from "@mui/material";
-import landing from "../../assets/landing.jpeg";
+import landing from "../../assets/landing_color.jpeg";
 import { ActionIcons } from "../../components/ActionIcons.tsx/ActionIcons";
 import { useIsLgOrBelow } from "../../hooks/useIsLgOrBelow";
 import { useIsMdOrBelow } from "../../hooks/useIsMdOrBelow";

@@ -1,60 +1,58 @@
 import { Box, Typography } from "@mui/material";
-import portfolio from "../assets/portfolio.png";
+import { useIsSmOrBelow } from "../../../hooks/useIsSmOrBelow";
+import portfolio from "../assets/portfolio_color.png";
 
 export function Personal() {
+  const isMobile = useIsSmOrBelow();
   return (
-    <Box gap={3} display="flex" flexDirection="column">
-      <Box sx={{ border: "1px solid red", width: "100%" }}>
+    <Box
+      gap={8}
+      display="flex"
+      flexDirection="column"
+      sx={{ maxWidth: 1200, margin: "auto" }}
+    >
+      <Box sx={{ width: "100%" }}>
         <Typography align="center" variant="h4" gutterBottom>
           My portfolio website
         </Typography>
         <Typography align="center" variant="body1" color="text.secondary">
-          The website you are currently looking at was built by me from scratch
-          using React, Typescript, and MUI.
+          The website you are currently looking at was built by me from scratch!
         </Typography>
       </Box>
 
-      <Box display="flex" justifyContent="space-between" gap={3}>
-        <Box sx={{ border: "1px solid red", width: "50%", height: 300 }}>
-          Personal content, specifically mentioning this portfolio website!
-          Maybe list a few key other projects with descriptions, videos, images
+      <Box display="flex" justifyContent="space-between" gap={5}>
+        <Box
+          sx={{
+            width: isMobile ? "100%" : "50%",
+            height: 300,
+          }}
+        >
+          <div
+            style={{
+              backgroundImage: `url(${portfolio})`,
+              backgroundRepeat: "no-repeat",
+              height: "100%",
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+            }}
+          />
         </Box>
-        <Box sx={{ border: "1px solid blue", width: "50%", height: 300 }}>
-          two
+        <Box
+          sx={{
+            width: isMobile ? "100%" : "50%",
+            height: 300,
+            display: isMobile ? "none" : "block",
+          }}
+        >
+          <Typography variant="h6">
+            I built this website using React, Typescript, and MUI. It is
+            deployed using Firebase, and the source code is available on my
+            GitHub. It's not terribly complex as web development goes, but I
+            hope it helps you get a better sense of who I am and what I've
+            worked on.
+          </Typography>
         </Box>
       </Box>
-
-      <Box display="flex" justifyContent="space-between" gap={3}>
-        <Box sx={{ border: "1px solid red", width: "33%", height: 300 }}>
-          one
-        </Box>
-        <Box sx={{ border: "1px solid blue", width: "33%", height: 300 }}>
-          two
-        </Box>
-        <Box sx={{ border: "1px solid blue", width: "33%", height: 300 }}>
-          three
-        </Box>
-      </Box>
-
-      <Box sx={{ border: "1px solid red", width: "100%" }}>
-        <Typography align="center" variant="h4" gutterBottom>
-          Full width title/description box
-        </Typography>
-        <Typography align="center" variant="body1" color="text.secondary">
-          This is a full width title/description box. It is a box that is full
-          width of the page and contains a title and description.
-        </Typography>
-      </Box>
-      <div
-        style={{
-          backgroundImage: `url(${portfolio})`,
-          backgroundRepeat: "no-repeat",
-          height: 400,
-          width: 600,
-          backgroundSize: "contain",
-          backgroundPosition: "center",
-        }}
-      />
     </Box>
   );
 }
