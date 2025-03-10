@@ -4,11 +4,9 @@ import playing_guitar from "../../assets/playing_guitar.png";
 import typing from "../../assets/typing.avif";
 import { ActionIcons } from "../../components/ActionIcons.tsx/ActionIcons";
 import PageView from "../../components/PageView";
-import { useIsSmOrBelow } from "../../hooks/useIsSmOrBelow";
 
 export default function AboutPage() {
   const theme = useTheme();
-  const isMobile = useIsSmOrBelow();
 
   return (
     <PageView>
