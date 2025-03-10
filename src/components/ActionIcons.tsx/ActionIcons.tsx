@@ -15,6 +15,8 @@ export const ActionIcons = ({
       <LinkedInButton light={light} large={large} />
       <GitHubButton light={light} large={large} />
       <ResumeButton light={light} large={large} />
+      {/* Leaving email out for now */}
+      {/* <EmailMeButton light={light} large={large} /> */}
     </Box>
   );
 };
