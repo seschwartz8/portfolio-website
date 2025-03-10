@@ -1,8 +1,14 @@
 import ResumeIcon from "@mui/icons-material/Description";
 import { IconButton, Link, Tooltip } from "@mui/material";
-import resume from "../../assets/PLACEHOLDER_resume.pdf";
+import resume from "../../assets/resume.pdf";
 
-export const ResumeButton = ({ light = false }: { light?: boolean }) => {
+export const ResumeButton = ({
+  light = false,
+  large = false,
+}: {
+  light?: boolean;
+  large?: boolean;
+}) => {
   return (
     <Tooltip title="Resume">
       <Link href={resume} download sx={{ color: "inherit" }}>
@@ -13,7 +19,7 @@ export const ResumeButton = ({ light = false }: { light?: boolean }) => {
               : theme.palette.text.primary,
           })}
         >
-          <ResumeIcon />
+          <ResumeIcon fontSize={large ? "large" : "medium"} />
         </IconButton>
       </Link>
     </Tooltip>

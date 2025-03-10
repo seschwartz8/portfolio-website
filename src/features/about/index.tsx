@@ -1,4 +1,7 @@
 import { Box, Typography } from "@mui/material";
+import clearblade_team from "../../assets/clearblade_team.jpg";
+import playing_guitar from "../../assets/playing_guitar.png";
+import typing from "../../assets/typing.avif";
 import { ActionIcons } from "../../components/ActionIcons.tsx/ActionIcons";
 import PageView from "../../components/PageView";
 
@@ -25,7 +28,13 @@ export default function AboutPage() {
           >
             <Box>
               <Box
-                sx={{ height: 250, width: 400, backgroundColor: "red" }}
+                sx={{
+                  height: 250,
+                  width: 400,
+                  backgroundImage: `url(${typing})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               ></Box>
             </Box>
             <Box>
@@ -45,7 +54,13 @@ export default function AboutPage() {
           >
             <Box>
               <Box
-                sx={{ height: 250, width: 400, backgroundColor: "red" }}
+                sx={{
+                  height: 250,
+                  width: 400,
+                  backgroundImage: `url(${clearblade_team})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               ></Box>
             </Box>
             <Box>
@@ -64,7 +79,13 @@ export default function AboutPage() {
           >
             <Box>
               <Box
-                sx={{ height: 250, width: 400, backgroundColor: "red" }}
+                sx={{
+                  height: 250,
+                  width: 400,
+                  backgroundImage: `url(${playing_guitar})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               ></Box>
             </Box>
             <Box>

@@ -1,6 +1,7 @@
 /**
  * A file for defining the global MUI theme used in the project.
  */
+import "@fontsource/roboto/500.css";
 import { createTheme } from "@mui/material/styles";
 
 declare module "@mui/material/styles" {
@@ -10,6 +11,19 @@ declare module "@mui/material/styles" {
     appFooter: number;
     dialog: number;
     hamburgerMenu: number;
+    landingImg: number;
+    landingImgOverlay: number;
+    landingImgText: number;
+  }
+}
+
+declare module "@mui/material/styles/createPalette" {
+  // Extend the MUI palette options and palette interfaces
+  export interface PaletteOptions {
+    tint: string;
+  }
+  export interface Palette {
+    tint: string;
   }
 }
 
@@ -26,35 +40,24 @@ export const theme = createTheme({
       main: "#60AB9A",
       dark: "#095140",
     },
-    text: {
-      // primary: "#f2f2f2",
-    },
     background: {
-      default: "#f7f7f8",
-      // default: "#1d1e20",
-      // default: "#1d1d1d",
+      default: "#F1EEEA",
     },
+    tint: "#E9AF75",
     contrastThreshold: 3,
     tonalOffset: 0.2,
   },
   typography: {
     fontFamily: [
-      "GT Walsheim Pro",
-      "HK Grotesk",
-      "-apple-system",
-      "BlinkMacSystemFont",
-      "Segoe UI",
       "Roboto",
-      "Oxygen",
-      "Ubuntu",
-      "Cantarell",
-      "Fira Sans",
-      "Droid Sans",
-      "Helvetica Neue",
-      "sans-serif",
+      // "sans-serif",
     ].join(","),
   },
   zIndex: {
+    appBar: 102,
+    landingImgText: 102,
+    landingImg: 100,
+    landingImgOverlay: 101,
     appContainer: 10,
     appFooter: 1,
     dialog: 100,

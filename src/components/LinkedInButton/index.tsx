@@ -1,7 +1,13 @@
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { IconButton, Link, Tooltip } from "@mui/material";
 
-export const LinkedInButton = ({ light = false }: { light?: boolean }) => {
+export const LinkedInButton = ({
+  light = false,
+  large = false,
+}: {
+  light?: boolean;
+  large?: boolean;
+}) => {
   return (
     <Tooltip title="LinkedIn">
       <Link
@@ -16,7 +22,7 @@ export const LinkedInButton = ({ light = false }: { light?: boolean }) => {
               : theme.palette.text.primary,
           })}
         >
-          <LinkedInIcon />
+          <LinkedInIcon fontSize={large ? "large" : "medium"} />
         </IconButton>
       </Link>
     </Tooltip>

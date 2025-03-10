@@ -1,7 +1,13 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { IconButton, Link, Tooltip } from "@mui/material";
 
-export const GitHubButton = ({ light = false }: { light?: boolean }) => {
+export const GitHubButton = ({
+  light = false,
+  large = false,
+}: {
+  light?: boolean;
+  large?: boolean;
+}) => {
   return (
     <Tooltip title="GitHub">
       <Link
@@ -16,7 +22,7 @@ export const GitHubButton = ({ light = false }: { light?: boolean }) => {
               : theme.palette.text.primary,
           })}
         >
-          <GitHubIcon />
+          <GitHubIcon fontSize={large ? "large" : "medium"} />
         </IconButton>
       </Link>
     </Tooltip>

@@ -21,6 +21,7 @@ export function NavBar() {
           ? "transparent"
           : theme.palette.background.default,
         boxShadow: "none",
+        zIndex: theme.zIndex.appBar,
       })}
     >
       <Grid
@@ -61,7 +62,7 @@ export function NavBar() {
                     <Link to={`${page}/`}>
                       <Button>
                         <Typography
-                          variant="h6"
+                          variant="h5"
                           sx={(theme) => ({
                             color: theme.palette.text.primary,
                             textTransform: "none",
