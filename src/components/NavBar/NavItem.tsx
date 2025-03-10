@@ -12,6 +12,7 @@ export const NavItem = ({
   return (
     <Link to={`${page}/`}>
       <Button
+        disableRipple
         sx={(theme) => ({
           "&:active": {
             backgroundColor: theme.palette.action.hover,

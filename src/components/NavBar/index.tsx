@@ -25,10 +25,6 @@ export function NavBar() {
           isLandingPage && !hamburgerOpen
             ? "transparent"
             : theme.palette.background.default,
-        transition: theme.transitions.create(["background-color"], {
-          easing: theme.transitions.easing.easeIn,
-          duration: theme.transitions.duration.standard,
-        }),
         boxShadow: "none",
         zIndex: theme.zIndex.appBar,
       })}
