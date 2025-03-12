@@ -1,10 +1,11 @@
 import { Box, Typography } from "@mui/material";
 import { useState } from "react";
-import { useIsSmOrBelow } from "../../../hooks/useIsSmOrBelow";
+import { useIsSmOrBelow } from "../../hooks/useIsSmOrBelow";
 import ia_dashboard_threshold_mapping_movie from "../assets/ia_dashboard_threshold_mappings.mov";
 import ia_dashboard_widget_filters_movie from "../assets/ia_dashboard_widget_filters.mov";
 import ia_homepage from "../assets/ia_homepage.png";
-import { ImageZoomModal } from "./ImageZoomModal";
+import { ImageZoomModal } from "./components/ImageZoomModal";
+import { ProjVideo } from "./components/ProjVideo";
 
 export function ClearBlade() {
   const isMobile = useIsSmOrBelow();
@@ -97,29 +98,10 @@ export function ClearBlade() {
               display: isMobile ? "none" : "block",
             }}
           >
-            <video
+            <ProjVideo
+              src={ia_dashboard_threshold_mapping_movie}
               onClick={() => setZoomedImg(ia_dashboard_threshold_mapping_movie)}
-              autoPlay
-              loop
-              muted
-              playsInline
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "contain",
-                cursor: "pointer",
-              }}
-            >
-              <source
-                src={ia_dashboard_threshold_mapping_movie}
-                type="video/mp4"
-              />
-              <source
-                src={ia_dashboard_threshold_mapping_movie}
-                type="video/quicktime"
-              />
-              Your browser does not support the video tag.
-            </video>
+            />
           </Box>
           <Box
             sx={{
@@ -128,28 +110,10 @@ export function ClearBlade() {
               display: isMobile ? "none" : "block",
             }}
           >
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "contain",
-                cursor: "pointer",
-              }}
-            >
-              <source
-                src={ia_dashboard_widget_filters_movie}
-                type="video/mp4"
-              />
-              <source
-                src={ia_dashboard_widget_filters_movie}
-                type="video/quicktime"
-              />
-              Your browser does not support the video tag.
-            </video>
+            <ProjVideo
+              src={ia_dashboard_widget_filters_movie}
+              onClick={() => setZoomedImg(ia_dashboard_widget_filters_movie)}
+            />
           </Box>
         </Box>
 

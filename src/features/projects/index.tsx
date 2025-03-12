@@ -2,10 +2,10 @@ import { Box, Typography } from "@mui/material";
 import { useState } from "react";
 import { ActionIcons } from "../../components/ActionIcons.tsx/ActionIcons";
 import PageView from "../../components/PageView";
-import { ClearBlade } from "./components/ClearBlade";
-import { Exposurepedia } from "./components/Exposurepedia";
-import { Personal } from "./components/Personal";
-import { TabViewer } from "./components/TabViewer";
+import { TabViewer } from "../../components/TabViewer";
+import { ClearBlade } from "./ClearBlade";
+import { Exposurepedia } from "./Exposurepedia";
+import { Personal } from "./Personal";
 
 type ProjectTabs = "ClearBlade" | "Exposurepedia" | "Personal";
 

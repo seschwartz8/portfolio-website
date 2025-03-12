@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { useIsSmOrBelow } from "../../../hooks/useIsSmOrBelow";
+import { useIsSmOrBelow } from "../../hooks/useIsSmOrBelow";
 
 export function Exposurepedia() {
   const isMobile = useIsSmOrBelow();
