@@ -1,50 +1,138 @@
 import { Box, Typography } from "@mui/material";
+import { useIsSmOrBelow } from "../../../hooks/useIsSmOrBelow";
 
 export function Exposurepedia() {
+  const isMobile = useIsSmOrBelow();
+
   return (
     <Box gap={3} display="flex" flexDirection="column">
-      <Box sx={{ border: "1px solid red", width: "100%" }}>
+      <Box sx={{ width: "100%" }}>
         <Typography align="center" variant="h4" gutterBottom>
-          Exposurepedia
+          Exposurepedia{" "}
         </Typography>
         <Typography align="center" variant="body1" color="text.secondary">
-          Exposurepedia content here, with an overview of the business, my role,
-          listing a few key project with descriptions, videos, images
-          {/* // */}
-          Home and about pages, exposurepedia search with tree filters, admin
-          portal, OIDC
+          As the the Principal Frontend Engineer of Exposurepedia, I built the
+          entire frontend application and the associated backend APIs.
+          Exposurepedia is a website intended to help Psychology professionals
+          find and organize resources for conducting exposure therapy.
         </Typography>
       </Box>
 
-      <Box display="flex" justifyContent="space-between" gap={3}>
-        <Box sx={{ border: "1px solid red", width: "50%", height: 300 }}>
-          one
+      <Box sx={{ width: "100%" }}>
+        <Typography align="center" variant="h5" gutterBottom>
+          Search engine
+        </Typography>
+      </Box>
+
+      <Box display="flex" justifyContent="space-between" gap={5}>
+        <Box
+          sx={{
+            width: isMobile ? "100%" : "50%",
+            height: 300,
+          }}
+        >
+          {/* <div
+            style={{
+              backgroundImage: `url(${portfolio})`,
+              backgroundRepeat: "no-repeat",
+              height: "100%",
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+            }}
+          /> */}
+          img or something
         </Box>
-        <Box sx={{ border: "1px solid blue", width: "50%", height: 300 }}>
-          two
+        <Box
+          sx={{
+            width: isMobile ? "100%" : "50%",
+            height: 300,
+            display: isMobile ? "none" : "block",
+          }}
+        >
+          <Typography variant="h6">
+            This search engine style page allows users to search, filter, and
+            bookmark exposure ideas. They can also select exposures and add them
+            to custom hierarchy plans, used for treating individual patients.
+          </Typography>
         </Box>
       </Box>
 
-      <Box display="flex" justifyContent="space-between" gap={3}>
-        <Box sx={{ border: "1px solid red", width: "33%", height: 300 }}>
-          one
+      <Box sx={{ width: "100%" }}>
+        <Typography align="center" variant="h5" gutterBottom>
+          Admin portal
+        </Typography>
+      </Box>
+
+      <Box display="flex" justifyContent="space-between" gap={5}>
+        <Box
+          sx={{
+            width: isMobile ? "100%" : "50%",
+            height: 300,
+          }}
+        >
+          {/* <div
+            style={{
+              backgroundImage: `url(${portfolio})`,
+              backgroundRepeat: "no-repeat",
+              height: "100%",
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+            }}
+          /> */}
+          img or something
         </Box>
-        <Box sx={{ border: "1px solid blue", width: "33%", height: 300 }}>
-          two
-        </Box>
-        <Box sx={{ border: "1px solid blue", width: "33%", height: 300 }}>
-          three
+        <Box
+          sx={{
+            width: isMobile ? "100%" : "50%",
+            height: 300,
+            display: isMobile ? "none" : "block",
+          }}
+        >
+          <Typography variant="h6">
+            This portal allows admin users to approve or deny new user requests
+            and review or edit new exposure submissions before adding them to
+            the database.
+          </Typography>
         </Box>
       </Box>
 
-      <Box sx={{ border: "1px solid red", width: "100%" }}>
-        <Typography align="center" variant="h4" gutterBottom>
-          Full width title/description box
+      <Box sx={{ width: "100%" }}>
+        <Typography align="center" variant="h5" gutterBottom>
+          Authorization
         </Typography>
-        <Typography align="center" variant="body1" color="text.secondary">
-          This is a full width title/description box. It is a box that is full
-          width of the page and contains a title and description.
-        </Typography>
+      </Box>
+
+      <Box display="flex" justifyContent="space-between" gap={5}>
+        <Box
+          sx={{
+            width: isMobile ? "100%" : "50%",
+            height: 300,
+          }}
+        >
+          {/* <div
+            style={{
+              backgroundImage: `url(${portfolio})`,
+              backgroundRepeat: "no-repeat",
+              height: "100%",
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+            }}
+          /> */}
+          img or something
+        </Box>
+        <Box
+          sx={{
+            width: isMobile ? "100%" : "50%",
+            height: 300,
+            display: isMobile ? "none" : "block",
+          }}
+        >
+          <Typography variant="h6">
+            I built an authorization system that includes authorizing via
+            Google, registration, protected routing, and granting of multiple
+            types of user roles.
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );
