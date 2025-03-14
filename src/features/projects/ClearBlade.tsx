@@ -1,9 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import { useState } from "react";
 import { useIsSmOrBelow } from "../../hooks/useIsSmOrBelow";
-import ia_dashboard_threshold_mapping_movie from "../assets/ia_dashboard_threshold_mappings.mov";
-import ia_dashboard_widget_filters_movie from "../assets/ia_dashboard_widget_filters.mov";
-import ia_homepage from "../assets/ia_homepage.png";
+import ia_dashboard_threshold_mapping_movie from "./assets/ia_dashboard_threshold_mappings.mov";
+import ia_dashboard_widget_filters_movie from "./assets/ia_dashboard_widget_filters.mov";
+import ia_homepage from "./assets/ia_homepage.png";
 import { ImageZoomModal } from "./components/ImageZoomModal";
 import { ProjVideo } from "./components/ProjVideo";
 
@@ -119,7 +119,7 @@ export function ClearBlade() {
 
         <Box sx={{ width: "100%" }}>
           <Typography align="center" variant="h5" gutterBottom>
-            Roles and permissions architecture
+            Roles and permissions
           </Typography>
           <Typography align="center" variant="body1" color="text.secondary">
             Intelligent Assets supports many kinds of users, and therefore

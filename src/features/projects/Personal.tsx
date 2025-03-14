@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { useIsSmOrBelow } from "../../hooks/useIsSmOrBelow";
-import portfolio from "../assets/portfolio_color.png";
+import portfolio from "./assets/portfolio_color.png";
 
 export function Personal() {
   const isMobile = useIsSmOrBelow();

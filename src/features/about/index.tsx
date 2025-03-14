@@ -54,10 +54,10 @@ export default function AboutPage() {
             </Box>
             <Box>
               <Typography variant="h6" sx={{ maxWidth: 400 }}>
-                I am a Lead Software Engineer with experience developing web
-                applications in React Typescript. I particularly enjoy building
-                apps that are modular, scalable, maintainable, and delightful to
-                use.
+                I am a Lead Software Engineer with years of experience
+                developing web applications in React Typescript. I particularly
+                enjoy building apps that are modular, scalable, maintainable,
+                and delightful to use.
               </Typography>
             </Box>
           </Box>
@@ -93,9 +93,9 @@ export default function AboutPage() {
             </Box>
             <Box>
               <Typography variant="h6" sx={{ maxWidth: 400 }}>
-                I have years of experience mentoring junior developers,
-                architecting and managing large-scale projects, and creating a
-                team culture that fosters excitement about the product.
+                I excel at mentoring junior developers, architecting and
+                managing large-scale projects, and creating a team culture that
+                fosters excitement about the product.
               </Typography>
             </Box>
           </Box>
