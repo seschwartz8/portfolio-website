@@ -6,7 +6,7 @@ export function Personal() {
   const isMobile = useIsSmOrBelow();
   return (
     <Box
-      gap={8}
+      gap={5}
       display="flex"
       flexDirection="column"
       sx={{ maxWidth: 1200, margin: "auto" }}
@@ -44,7 +44,7 @@ export function Personal() {
             display: isMobile ? "none" : "block",
           }}
         >
-          <Typography variant="h6">
+          <Typography variant="body1" color="text.secondary">
             I built this website using React, Typescript, and MUI. It is
             deployed using Firebase, and the source code is available on my
             GitHub. It's not terribly complex as web development goes, but I

@@ -5,7 +5,7 @@ export function Exposurepedia() {
   const isMobile = useIsSmOrBelow();
 
   return (
-    <Box gap={3} display="flex" flexDirection="column">
+    <Box gap={5} display="flex" flexDirection="column">
       <Box sx={{ width: "100%" }}>
         <Typography align="center" variant="h4" gutterBottom>
           Exposurepedia{" "}
@@ -31,16 +31,8 @@ export function Exposurepedia() {
             height: 300,
           }}
         >
-          {/* <div
-            style={{
-              backgroundImage: `url(${portfolio})`,
-              backgroundRepeat: "no-repeat",
-              height: "100%",
-              backgroundSize: "contain",
-              backgroundPosition: "center",
-            }}
-          /> */}
           img or something
+          {/* <ProjImg src={ia_homepage} /> */}
         </Box>
         <Box
           sx={{
@@ -49,7 +41,7 @@ export function Exposurepedia() {
             display: isMobile ? "none" : "block",
           }}
         >
-          <Typography variant="h6">
+          <Typography variant="body1" color="text.secondary">
             This search engine style page allows users to search, filter, and
             bookmark exposure ideas. They can also select exposures and add them
             to custom hierarchy plans, used for treating individual patients.
@@ -70,15 +62,7 @@ export function Exposurepedia() {
             height: 300,
           }}
         >
-          {/* <div
-            style={{
-              backgroundImage: `url(${portfolio})`,
-              backgroundRepeat: "no-repeat",
-              height: "100%",
-              backgroundSize: "contain",
-              backgroundPosition: "center",
-            }}
-          /> */}
+          {/* <ProjImg src={ia_homepage} /> */}
           img or something
         </Box>
         <Box
@@ -88,7 +72,7 @@ export function Exposurepedia() {
             display: isMobile ? "none" : "block",
           }}
         >
-          <Typography variant="h6">
+          <Typography variant="body1" color="text.secondary">
             This portal allows admin users to approve or deny new user requests
             and review or edit new exposure submissions before adding them to
             the database.
@@ -109,15 +93,7 @@ export function Exposurepedia() {
             height: 300,
           }}
         >
-          {/* <div
-            style={{
-              backgroundImage: `url(${portfolio})`,
-              backgroundRepeat: "no-repeat",
-              height: "100%",
-              backgroundSize: "contain",
-              backgroundPosition: "center",
-            }}
-          /> */}
+          {/* <ProjImg src={ia_homepage} /> */}
           img or something
         </Box>
         <Box
@@ -127,7 +103,7 @@ export function Exposurepedia() {
             display: isMobile ? "none" : "block",
           }}
         >
-          <Typography variant="h6">
+          <Typography variant="body1" color="text.secondary">
             I built an authorization system that includes authorizing via
             Google, registration, protected routing, and granting of multiple
             types of user roles.
