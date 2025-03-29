@@ -1,18 +1,15 @@
 import { Box, Modal } from "@mui/material";
-import { ProjVideo } from "./ProjVideo";
 
 interface ImageZoomModalProps {
   imageUrl: string | null;
   isOpen: boolean;
   onClose: () => void;
-  isVideo?: boolean;
 }
 
 export function ImageZoomModal({
   imageUrl,
   isOpen,
   onClose,
-  isVideo = false,
 }: ImageZoomModalProps) {
   if (!imageUrl) return null;
 
@@ -33,19 +30,15 @@ export function ImageZoomModal({
           outline: "none",
         }}
       >
-        {isVideo ? (
-          <ProjVideo src={imageUrl} onClick={onClose} />
-        ) : (
-          <img
-            src={imageUrl}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "contain",
-            }}
-            onClick={onClose}
-          />
-        )}
+        <img
+          src={imageUrl}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+          }}
+          onClick={onClose}
+        />
       </Box>
     </Modal>
   );

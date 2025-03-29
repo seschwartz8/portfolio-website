@@ -1,10 +1,4 @@
-export const ProjVideo = ({
-  src,
-  onClick,
-}: {
-  src: string;
-  onClick: () => void;
-}) => {
+export const ProjVideo = ({ src }: { src: string }) => {
   return (
     <video
       src={src}
@@ -13,7 +7,6 @@ export const ProjVideo = ({
         height: "100%",
         objectFit: "contain",
       }}
-      onClick={onClick}
       controls
       autoPlay
     >

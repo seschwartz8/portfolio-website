@@ -1,15 +1,19 @@
 import { Box, Typography } from "@mui/material";
-import { useState } from "react";
 import { useIsSmOrBelow } from "../../hooks/useIsSmOrBelow";
+import ia_chatbot2 from "./assets/ia_chatbot2.png";
+import ia_chatbot_creating_assets_movie from "./assets/ia_chatbot_creating_assets.mov";
+import ia_custom_roles_movie from "./assets/ia_creating_custom_role.mov";
 import ia_dashboard_threshold_mapping_movie from "./assets/ia_dashboard_threshold_mappings.mov";
 import ia_dashboard_widget_filters_movie from "./assets/ia_dashboard_widget_filters.mov";
 import ia_homepage from "./assets/ia_homepage.png";
-import { ImageZoomModal } from "./components/ImageZoomModal";
+import ia_microfrontend_dashboard from "./assets/ia_microfrontend_dashboard.png";
+import ia_store from "./assets/ia_store.png";
+import ia_store_checkout from "./assets/ia_store_checkout.png";
+import { ProjImg } from "./components/ProjImg";
 import { ProjVideo } from "./components/ProjVideo";
 
 export function ClearBlade() {
   const isMobile = useIsSmOrBelow();
-  const [zoomedImg, setZoomedImg] = useState<string | null>(null);
 
   return (
     <>
@@ -47,17 +51,7 @@ export function ClearBlade() {
               height: 300,
             }}
           >
-            <div
-              onClick={() => setZoomedImg(ia_homepage)}
-              style={{
-                backgroundImage: `url(${ia_homepage})`,
-                backgroundRepeat: "no-repeat",
-                height: "100%",
-                backgroundSize: "contain",
-                backgroundPosition: "center",
-                cursor: "pointer",
-              }}
-            />
+            <ProjImg src={ia_homepage} />
           </Box>
           <Box
             sx={{
@@ -98,10 +92,7 @@ export function ClearBlade() {
               display: isMobile ? "none" : "block",
             }}
           >
-            <ProjVideo
-              src={ia_dashboard_threshold_mapping_movie}
-              onClick={() => setZoomedImg(ia_dashboard_threshold_mapping_movie)}
-            />
+            <ProjVideo src={ia_dashboard_threshold_mapping_movie} />
           </Box>
           <Box
             sx={{
@@ -110,10 +101,7 @@ export function ClearBlade() {
               display: isMobile ? "none" : "block",
             }}
           >
-            <ProjVideo
-              src={ia_dashboard_widget_filters_movie}
-              onClick={() => setZoomedImg(ia_dashboard_widget_filters_movie)}
-            />
+            <ProjVideo src={ia_dashboard_widget_filters_movie} />
           </Box>
         </Box>
 
@@ -123,11 +111,40 @@ export function ClearBlade() {
           </Typography>
           <Typography align="center" variant="body1" color="text.secondary">
             Intelligent Assets supports many kinds of users, and therefore
-            requires a complex roles and permissions architecture. Users must be
-            able to build custom roles and add optional constraints to
-            permissions. I architected the data structures necessary to achieve
-            these business needs, as well as the UI that goes with it.
+            requires a complex roles and permissions architecture. I architected
+            the data structures necessary to achieve these business needs, as
+            well as the UI that goes with it. Additionally, I designed the IAM
+            architecture for two other ClearBlade applications, and implemented
+            a system that allows roles from one application to map to the
+            others.
           </Typography>
+        </Box>
+        <Box display="flex" justifyContent="space-between" gap={5}>
+          <Box
+            sx={{
+              width: isMobile ? "100%" : "50%",
+              height: 300,
+              display: isMobile ? "none" : "block",
+            }}
+          >
+            <ProjVideo src={ia_custom_roles_movie} />
+          </Box>
+          <Box
+            sx={{
+              width: isMobile ? "100%" : "50%",
+              height: 300,
+              display: isMobile ? "none" : "block",
+            }}
+          >
+            <Typography variant="body1" color="text.secondary">
+              Users must be able to build custom roles and add optional
+              constraints to permissions. When creating a custom role you can
+              use an existing role as a template, or start fresh. You can
+              customize every permission that users with the role will have, and
+              the UI will limit their access on the frontend and backend
+              accordingly.
+            </Typography>
+          </Box>
         </Box>
 
         <Box sx={{ width: "100%" }}>
@@ -142,6 +159,26 @@ export function ClearBlade() {
             met.
           </Typography>
         </Box>
+        <Box display="flex" justifyContent="space-between" gap={5}>
+          <Box
+            sx={{
+              width: isMobile ? "100%" : "50%",
+              height: 300,
+              display: isMobile ? "none" : "block",
+            }}
+          >
+            <ProjVideo src={ia_chatbot_creating_assets_movie} />
+          </Box>
+          <Box
+            sx={{
+              width: isMobile ? "100%" : "50%",
+              height: 300,
+              display: isMobile ? "none" : "block",
+            }}
+          >
+            <ProjImg src={ia_chatbot2} />
+          </Box>
+        </Box>
 
         <Box sx={{ width: "100%" }}>
           <Typography align="center" variant="h5" gutterBottom>
@@ -154,6 +191,26 @@ export function ClearBlade() {
             checkout process, and payment processing using Stripe, as well as a
             billing page for admin users to view and manage subscriptions.
           </Typography>
+        </Box>
+        <Box display="flex" justifyContent="space-between" gap={5}>
+          <Box
+            sx={{
+              width: isMobile ? "100%" : "50%",
+              height: 300,
+              display: isMobile ? "none" : "block",
+            }}
+          >
+            <ProjImg src={ia_store} />
+          </Box>
+          <Box
+            sx={{
+              width: isMobile ? "100%" : "50%",
+              height: 300,
+              display: isMobile ? "none" : "block",
+            }}
+          >
+            <ProjImg src={ia_store_checkout} />
+          </Box>
         </Box>
 
         <Box sx={{ width: "100%" }}>
@@ -173,13 +230,32 @@ export function ClearBlade() {
             Assets offers.
           </Typography>
         </Box>
+        <Box display="flex" justifyContent="space-between" gap={5}>
+          <Box
+            sx={{
+              width: isMobile ? "100%" : "50%",
+              height: 300,
+              display: isMobile ? "none" : "block",
+            }}
+          >
+            <ProjImg src={ia_microfrontend_dashboard} />
+          </Box>
+          <Box
+            sx={{
+              width: isMobile ? "100%" : "50%",
+              height: 300,
+              display: isMobile ? "none" : "block",
+            }}
+          >
+            <Typography variant="body1" color="text.secondary">
+              The microfrontend dashboards give you a completely clean slate to
+              build whatever you want within the page. Here is an example of a
+              completely custom diagram that is being rendered using a
+              microfrontend application.
+            </Typography>
+          </Box>
+        </Box>
       </Box>
-      <ImageZoomModal
-        isVideo={zoomedImg?.endsWith(".mov")}
-        imageUrl={zoomedImg}
-        isOpen={!!zoomedImg}
-        onClose={() => setZoomedImg(null)}
-      />
     </>
   );
 }
