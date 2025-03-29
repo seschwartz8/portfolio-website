@@ -44,7 +44,12 @@ export function ClearBlade() {
           </Typography>
         </Box>
 
-        <Box display="flex" justifyContent="space-between" gap={5}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          gap={5}
+          flexWrap={isMobile ? "wrap" : "nowrap"}
+        >
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
@@ -56,8 +61,7 @@ export function ClearBlade() {
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
-              height: 300,
-              display: isMobile ? "none" : "block",
+              display: "block",
             }}
           >
             <Typography variant="body1" color="text.secondary">
@@ -84,12 +88,17 @@ export function ClearBlade() {
           </Typography>
         </Box>
 
-        <Box display="flex" justifyContent="space-between" gap={5}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          gap={5}
+          flexWrap={isMobile ? "wrap" : "nowrap"}
+        >
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
               height: 300,
-              display: isMobile ? "none" : "block",
+              display: "block",
             }}
           >
             <ProjVideo src={ia_dashboard_threshold_mapping_movie} />
@@ -98,7 +107,7 @@ export function ClearBlade() {
             sx={{
               width: isMobile ? "100%" : "50%",
               height: 300,
-              display: isMobile ? "none" : "block",
+              display: "block",
             }}
           >
             <ProjVideo src={ia_dashboard_widget_filters_movie} />
@@ -119,12 +128,17 @@ export function ClearBlade() {
             others.
           </Typography>
         </Box>
-        <Box display="flex" justifyContent="space-between" gap={5}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          gap={5}
+          flexWrap={isMobile ? "wrap" : "nowrap"}
+        >
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
               height: 300,
-              display: isMobile ? "none" : "block",
+              display: "block",
             }}
           >
             <ProjVideo src={ia_custom_roles_movie} />
@@ -132,8 +146,7 @@ export function ClearBlade() {
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
-              height: 300,
-              display: isMobile ? "none" : "block",
+              display: "block",
             }}
           >
             <Typography variant="body1" color="text.secondary">
@@ -159,12 +172,17 @@ export function ClearBlade() {
             met.
           </Typography>
         </Box>
-        <Box display="flex" justifyContent="space-between" gap={5}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          gap={5}
+          flexWrap={isMobile ? "wrap" : "nowrap"}
+        >
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
               height: 300,
-              display: isMobile ? "none" : "block",
+              display: "block",
             }}
           >
             <ProjVideo src={ia_chatbot_creating_assets_movie} />
@@ -173,7 +191,7 @@ export function ClearBlade() {
             sx={{
               width: isMobile ? "100%" : "50%",
               height: 300,
-              display: isMobile ? "none" : "block",
+              display: "block",
             }}
           >
             <ProjImg src={ia_chatbot2} />
@@ -192,12 +210,17 @@ export function ClearBlade() {
             billing page for admin users to view and manage subscriptions.
           </Typography>
         </Box>
-        <Box display="flex" justifyContent="space-between" gap={5}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          gap={5}
+          flexWrap={isMobile ? "wrap" : "nowrap"}
+        >
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
               height: 300,
-              display: isMobile ? "none" : "block",
+              display: "block",
             }}
           >
             <ProjImg src={ia_store} />
@@ -206,7 +229,7 @@ export function ClearBlade() {
             sx={{
               width: isMobile ? "100%" : "50%",
               height: 300,
-              display: isMobile ? "none" : "block",
+              display: "block",
             }}
           >
             <ProjImg src={ia_store_checkout} />
@@ -230,12 +253,17 @@ export function ClearBlade() {
             Assets offers.
           </Typography>
         </Box>
-        <Box display="flex" justifyContent="space-between" gap={5}>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          gap={5}
+          flexWrap={isMobile ? "wrap" : "nowrap"}
+        >
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
               height: 300,
-              display: isMobile ? "none" : "block",
+              display: "block",
             }}
           >
             <ProjImg src={ia_microfrontend_dashboard} />
@@ -243,8 +271,7 @@ export function ClearBlade() {
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
-              height: 300,
-              display: isMobile ? "none" : "block",
+              display: "block",
             }}
           >
             <Typography variant="body1" color="text.secondary">

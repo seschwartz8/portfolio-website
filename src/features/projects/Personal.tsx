@@ -20,7 +20,12 @@ export function Personal() {
         </Typography>
       </Box>
 
-      <Box display="flex" justifyContent="space-between" gap={5}>
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        gap={5}
+        flexWrap={isMobile ? "wrap" : "nowrap"}
+      >
         <Box
           sx={{
             width: isMobile ? "100%" : "50%",
@@ -40,8 +45,7 @@ export function Personal() {
         <Box
           sx={{
             width: isMobile ? "100%" : "50%",
-            height: 300,
-            display: isMobile ? "none" : "block",
+            display: "block",
           }}
         >
           <Typography variant="body1" color="text.secondary">

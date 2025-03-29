@@ -6,6 +6,7 @@ export const ProjVideo = ({ src }: { src: string }) => {
         width: "100%",
         height: "100%",
         objectFit: "contain",
+        objectPosition: "center top",
       }}
       controls
       autoPlay

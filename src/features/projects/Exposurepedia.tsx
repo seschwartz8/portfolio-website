@@ -1,11 +1,23 @@
 import { Box, Typography } from "@mui/material";
 import { useIsSmOrBelow } from "../../hooks/useIsSmOrBelow";
+import exposurepedia_about from "./assets/exposurepedia_about.png";
+import exposurepedia_admin from "./assets/exposurepedia_admin.mov";
+import exposurepedia_homepage from "./assets/exposurepedia_home.png";
+import exposurepedia_register from "./assets/exposurepedia_register.png";
+import exposurepedia_search_movie from "./assets/exposurepedia_search.mov";
+import { ProjImg } from "./components/ProjImg";
+import { ProjVideo } from "./components/ProjVideo";
 
 export function Exposurepedia() {
   const isMobile = useIsSmOrBelow();
 
   return (
-    <Box gap={5} display="flex" flexDirection="column">
+    <Box
+      gap={5}
+      display="flex"
+      flexDirection="column"
+      sx={{ maxWidth: 1200, margin: "auto" }}
+    >
       <Box sx={{ width: "100%" }}>
         <Typography align="center" variant="h4" gutterBottom>
           Exposurepedia{" "}
@@ -18,27 +30,53 @@ export function Exposurepedia() {
         </Typography>
       </Box>
 
-      <Box sx={{ width: "100%" }}>
-        <Typography align="center" variant="h5" gutterBottom>
-          Search engine
-        </Typography>
-      </Box>
-
-      <Box display="flex" justifyContent="space-between" gap={5}>
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        gap={5}
+        flexWrap={isMobile ? "wrap" : "nowrap"}
+      >
         <Box
           sx={{
             width: isMobile ? "100%" : "50%",
             height: 300,
           }}
         >
-          img or something
-          {/* <ProjImg src={ia_homepage} /> */}
+          <ProjImg src={exposurepedia_homepage} />
         </Box>
         <Box
           sx={{
             width: isMobile ? "100%" : "50%",
             height: 300,
-            display: isMobile ? "none" : "block",
+          }}
+        >
+          <ProjImg src={exposurepedia_about} />
+        </Box>
+      </Box>
+
+      <Box sx={{ width: "100%" }}>
+        <Typography align="center" variant="h5" gutterBottom>
+          Search engine
+        </Typography>
+      </Box>
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        gap={5}
+        flexWrap={isMobile ? "wrap" : "nowrap"}
+      >
+        <Box
+          sx={{
+            width: isMobile ? "100%" : "50%",
+            height: 300,
+          }}
+        >
+          <ProjVideo src={exposurepedia_search_movie} />
+        </Box>
+        <Box
+          sx={{
+            width: isMobile ? "100%" : "50%",
+            display: "block",
           }}
         >
           <Typography variant="body1" color="text.secondary">
@@ -51,62 +89,66 @@ export function Exposurepedia() {
 
       <Box sx={{ width: "100%" }}>
         <Typography align="center" variant="h5" gutterBottom>
-          Admin portal
-        </Typography>
-      </Box>
-
-      <Box display="flex" justifyContent="space-between" gap={5}>
-        <Box
-          sx={{
-            width: isMobile ? "100%" : "50%",
-            height: 300,
-          }}
-        >
-          {/* <ProjImg src={ia_homepage} /> */}
-          img or something
-        </Box>
-        <Box
-          sx={{
-            width: isMobile ? "100%" : "50%",
-            height: 300,
-            display: isMobile ? "none" : "block",
-          }}
-        >
-          <Typography variant="body1" color="text.secondary">
-            This portal allows admin users to approve or deny new user requests
-            and review or edit new exposure submissions before adding them to
-            the database.
-          </Typography>
-        </Box>
-      </Box>
-
-      <Box sx={{ width: "100%" }}>
-        <Typography align="center" variant="h5" gutterBottom>
           Authorization
         </Typography>
       </Box>
-
-      <Box display="flex" justifyContent="space-between" gap={5}>
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        gap={5}
+        flexWrap={isMobile ? "wrap" : "nowrap"}
+      >
         <Box
           sx={{
             width: isMobile ? "100%" : "50%",
-            height: 300,
-          }}
-        >
-          {/* <ProjImg src={ia_homepage} /> */}
-          img or something
-        </Box>
-        <Box
-          sx={{
-            width: isMobile ? "100%" : "50%",
-            height: 300,
-            display: isMobile ? "none" : "block",
+            display: "block",
           }}
         >
           <Typography variant="body1" color="text.secondary">
             I built an authorization system that includes authorizing via
             Google, registration, protected routing, and granting of multiple
             types of user roles.
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            width: isMobile ? "100%" : "50%",
+            height: 300,
+          }}
+        >
+          <ProjImg src={exposurepedia_register} />
+        </Box>
+      </Box>
+
+      <Box sx={{ width: "100%" }}>
+        <Typography align="center" variant="h5" gutterBottom>
+          Admin portal
+        </Typography>
+      </Box>
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        gap={5}
+        flexWrap={isMobile ? "wrap" : "nowrap"}
+      >
+        <Box
+          sx={{
+            width: isMobile ? "100%" : "50%",
+            height: 300,
+          }}
+        >
+          <ProjVideo src={exposurepedia_admin} />
+        </Box>
+        <Box
+          sx={{
+            width: isMobile ? "100%" : "50%",
+            display: "block",
+          }}
+        >
+          <Typography variant="body1" color="text.secondary">
+            This portal allows admin users to approve or deny new user requests
+            and review or edit new exposure submissions before adding them to
+            the database.
           </Typography>
         </Box>
       </Box>

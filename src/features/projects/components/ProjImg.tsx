@@ -13,12 +13,11 @@ export const ProjImg = ({ src }: { src: string }) => {
           backgroundRepeat: "no-repeat",
           height: "100%",
           backgroundSize: "contain",
-          backgroundPosition: "center",
+          backgroundPosition: "center top",
           cursor: "pointer",
         }}
       />
       <ImageZoomModal
-        isVideo={false}
         imageUrl={zoomedImg}
         isOpen={!!zoomedImg}
         onClose={() => setZoomedImg(null)}
