@@ -27,31 +27,33 @@ export function HamburgerMenu({
           <span id="hamburgerLine"></span>
         </div>
       </IconButton>
-      {open && (
-        <Dialog
-          transitionDuration={600}
-          sx={(theme) => ({ zIndex: theme.zIndex.dialog })}
-          fullScreen
-          open={open}
-          onClose={() => setOpen(false)}
+
+      <Dialog
+        transitionDuration={{
+          enter: 600,
+          exit: 800,
+        }}
+        sx={(theme) => ({ zIndex: theme.zIndex.dialog })}
+        fullScreen
+        open={open}
+        onClose={() => setOpen(false)}
+      >
+        <DialogContent
+          sx={(theme) => ({
+            mt: `${NavBarHeight}px`,
+            p: 10,
+            backgroundColor: theme.palette.background.default,
+          })}
         >
-          <DialogContent
-            sx={(theme) => ({
-              mt: `${NavBarHeight}px`,
-              p: 10,
-              backgroundColor: theme.palette.background.default,
-            })}
-          >
-            <Grid container direction="column" spacing={8} alignItems="center">
-              {navBarRoutes.map((page) => (
-                <Grid item key={page} onClick={() => setOpen(false)}>
-                  <NavItem page={page} selectedRoute={selectedRoute} />
-                </Grid>
-              ))}
-            </Grid>
-          </DialogContent>
-        </Dialog>
-      )}
+          <Grid container direction="column" spacing={8} alignItems="center">
+            {navBarRoutes.map((page) => (
+              <Grid item key={page} onClick={() => setOpen(false)}>
+                <NavItem page={page} selectedRoute={selectedRoute} />
+              </Grid>
+            ))}
+          </Grid>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }

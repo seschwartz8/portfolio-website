@@ -39,6 +39,7 @@ export function NavBar() {
         {!isLandingPage && (
           <Grid item>
             <Link
+              onClick={() => setHamburgerOpen(false)}
               to={`${appRoutes.landing}/`}
               style={{ textDecoration: "none" }}
             >

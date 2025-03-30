@@ -34,6 +34,7 @@ export function TabViewer<TabIds extends string>({
       >
         <Tabs
           value={theSelectedTab}
+          variant="scrollable"
           onChange={handleChange}
           sx={(theme) => ({
             "& .MuiTabs-indicator": {

@@ -4,9 +4,11 @@ import playing_guitar from "../../assets/playing_guitar.png";
 import typing from "../../assets/typing.avif";
 import { ActionIcons } from "../../components/ActionIcons.tsx/ActionIcons";
 import PageView from "../../components/PageView";
+import { useIsSmOrBelow } from "../../hooks/useIsSmOrBelow";
 
 export default function AboutPage() {
   const theme = useTheme();
+  const isSmOrBelow = useIsSmOrBelow();
 
   return (
     <PageView>
@@ -35,7 +37,7 @@ export default function AboutPage() {
               <Box
                 sx={{
                   height: 250,
-                  width: 400,
+                  width: isSmOrBelow ? "100vw" : 400,
                   backgroundImage: `url(${typing})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
@@ -53,7 +55,13 @@ export default function AboutPage() {
               </Box>
             </Box>
             <Box>
-              <Typography variant="h6" sx={{ maxWidth: 400 }}>
+              <Typography
+                variant="h6"
+                sx={{
+                  maxWidth: 400,
+                  px: isSmOrBelow ? 2 : 0,
+                }}
+              >
                 I am a Lead Software Engineer with years of experience
                 developing web applications in React Typescript. I particularly
                 enjoy building apps that are modular, scalable, maintainable,
@@ -74,7 +82,7 @@ export default function AboutPage() {
               <Box
                 sx={{
                   height: 250,
-                  width: 400,
+                  width: isSmOrBelow ? "100vw" : 400,
                   backgroundImage: `url(${clearblade_team})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
@@ -92,7 +100,13 @@ export default function AboutPage() {
               </Box>
             </Box>
             <Box>
-              <Typography variant="h6" sx={{ maxWidth: 400 }}>
+              <Typography
+                variant="h6"
+                sx={{
+                  maxWidth: 400,
+                  px: isSmOrBelow ? 2 : 0,
+                }}
+              >
                 I excel at mentoring junior developers, architecting and
                 managing large-scale projects, and creating a team culture that
                 fosters excitement about the product.
@@ -112,7 +126,7 @@ export default function AboutPage() {
               <Box
                 sx={{
                   height: 250,
-                  width: 400,
+                  width: isSmOrBelow ? "100vw" : 400,
                   backgroundImage: `url(${playing_guitar})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
@@ -130,7 +144,13 @@ export default function AboutPage() {
               </Box>
             </Box>
             <Box>
-              <Typography variant="h6" sx={{ maxWidth: 400 }}>
+              <Typography
+                variant="h6"
+                sx={{
+                  maxWidth: 400,
+                  px: isSmOrBelow ? 2 : 0,
+                }}
+              >
                 When I'm not coding? I'm probably writing or performing music,
                 perfecting my sourdough skills, or with some friends at a
                 boardgame cafe.
