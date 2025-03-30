@@ -60,7 +60,7 @@ export default function LandingPage() {
         >
           <Typography
             sx={{
-              mt: isMobile ? 8 : isMdOrBelow ? 10 : 20,
+              mt: isMobile ? 15 : isMdOrBelow ? 10 : 20,
               pl: textPaddingLeft,
               maxWidth: textMaxWidth,
               zIndex: theme.zIndex.landingImgText,
