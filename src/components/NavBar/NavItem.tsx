@@ -10,7 +10,7 @@ export const NavItem = ({
   selectedRoute: string;
 }) => {
   return (
-    <Link to={`${page}/`}>
+    <Link to={`${page}/`} style={{ textDecoration: "none" }}>
       <Button
         disableRipple
         sx={(theme) => ({
