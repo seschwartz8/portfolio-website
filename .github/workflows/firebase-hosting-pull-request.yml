@@ -16,5 +16,5 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SASAPORTFOLIO_69E71 }}
-          projectId: sasaportfolio-69e71
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_SARAH_PETTYJOHN }}
+          projectId: sarah-pettyjohn
