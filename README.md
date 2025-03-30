@@ -40,8 +40,8 @@ This portfolio website showcases my work in web development. It also provides ac
 
 ##### Homepage
 
-![Homepage](./assets/homepage_example_img.png)
+![Homepage](./src/assets/homepage_example_img.png)
 
 ##### Projects Page
 
-![Projects](./img/projects_example_img.png)
+![Projects](./src/assets/projects_example_img.png)
