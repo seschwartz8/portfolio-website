@@ -10,6 +10,19 @@ export default function AboutPage() {
   const theme = useTheme();
   const isSmOrBelow = useIsSmOrBelow();
 
+  const yearsSince2020 =
+    (new Date().getTime() - new Date("2020-05-01").getTime()) /
+    (1000 * 60 * 60 * 24 * 365);
+  const wholeYears = Math.floor(yearsSince2020);
+  const fraction = yearsSince2020 - wholeYears;
+
+  const yearsOfExp =
+    fraction <= 0.25
+      ? `${wholeYears} years`
+      : fraction < 0.75
+      ? `more than ${wholeYears} years`
+      : `${wholeYears + 1} years`;
+
   return (
     <PageView>
       <Box display="flex" flexDirection="column" alignItems="center" gap={2}>
@@ -62,7 +75,7 @@ export default function AboutPage() {
                   px: isSmOrBelow ? 2 : 0,
                 }}
               >
-                I am a Lead Software Engineer with years of experience
+                I am a Lead Software Engineer with {yearsOfExp} of experience
                 developing web applications in React Typescript. I particularly
                 enjoy building apps that are modular, scalable, maintainable,
                 and delightful to use.

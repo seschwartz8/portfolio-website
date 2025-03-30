@@ -10,6 +10,7 @@ export const ProjVideo = ({ src }: { src: string }) => {
       }}
       controls
       autoPlay
+      playsInline
     >
       <source src={src} type="video/mp4" />
       <source src={src} type="video/quicktime" />
