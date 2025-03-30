@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { useIsSmOrBelow } from "../../hooks/useIsSmOrBelow";
 import portfolio from "./assets/portfolio_color.png";
+import { ProjImg } from "./components/ProjImg";
 
 export function Personal() {
   const isMobile = useIsSmOrBelow();
@@ -32,15 +33,7 @@ export function Personal() {
             height: isMobile ? 150 : 300,
           }}
         >
-          <div
-            style={{
-              backgroundImage: `url(${portfolio})`,
-              backgroundRepeat: "no-repeat",
-              height: "100%",
-              backgroundSize: "contain",
-              backgroundPosition: "center",
-            }}
-          />
+          <ProjImg src={portfolio} />
         </Box>
         <Box
           sx={{
