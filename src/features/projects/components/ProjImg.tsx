@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useIsSmOrBelow } from "../../../hooks/useIsSmOrBelow";
 import { ImageZoomModal } from "./ImageZoomModal";
 
 export const ProjImg = ({ src }: { src: string }) => {
   const [zoomedImg, setZoomedImg] = useState<string | null>(null);
+  const isMobile = useIsSmOrBelow();
 
   return (
     <>
@@ -19,7 +21,7 @@ export const ProjImg = ({ src }: { src: string }) => {
       />
       <ImageZoomModal
         imageUrl={zoomedImg}
-        isOpen={!!zoomedImg}
+        isOpen={!!zoomedImg && !isMobile}
         onClose={() => setZoomedImg(null)}
       />
     </>
