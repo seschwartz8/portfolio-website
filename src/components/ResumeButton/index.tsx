@@ -11,7 +11,11 @@ export const ResumeButton = ({
 }) => {
   return (
     <Tooltip title="Resume" enterDelay={300}>
-      <Link href={resume} download sx={{ color: "inherit" }}>
+      <Link
+        href={resume}
+        sx={{ color: "inherit" }}
+        download="S_Pettyjohn_Resume.pdf"
+      >
         <IconButton
           sx={(theme) => ({
             color: light
