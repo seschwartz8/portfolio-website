@@ -1,6 +1,6 @@
 # Portfolio Website
 
-- Checkout the website at:  https://sasapettyjohn.web.app
+- Checkout the website at:  https://spettyjohn.web.app
 - If for some reason you are unable to view the site, please feel free to contact me at sasapettyjohn@gmail.com
 
 #### By Sarah "Sasa" Pettyjohn, Current Version: February 2025
