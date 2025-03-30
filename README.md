@@ -24,10 +24,8 @@ This portfolio website showcases my work in web development. It also provides ac
 
 - clone repository to your desktop
 - cd into the root directory
-
-### `npm install`
-
-### `npm run dev`(starts app on localhost:5173)
+- `npm install`
+- `npm run dev`(starts app on localhost:5173)
 
 ## Technologies Used
 
@@ -41,6 +39,10 @@ This portfolio website showcases my work in web development. It also provides ac
 ##### Homepage
 
 ![Homepage](./src/assets/homepage_example_img.png)
+
+##### About Page
+
+![About](./src/assets/about_example_img.png)
 
 ##### Projects Page
 
