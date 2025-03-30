@@ -47,3 +47,9 @@ This portfolio website showcases my work in web development. It also provides ac
 ##### Projects Page
 
 ![Projects](./src/assets/projects_example_img.png)
+
+## How to deploy
+
+- Make changes to master
+- `npm run build`
+- `firebase deploy`
