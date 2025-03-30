@@ -29,7 +29,7 @@ export function Personal() {
         <Box
           sx={{
             width: isMobile ? "100%" : "50%",
-            height: 300,
+            height: isMobile ? 150 : 300,
           }}
         >
           <div

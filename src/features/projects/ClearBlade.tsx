@@ -53,7 +53,7 @@ export function ClearBlade() {
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
-              height: 300,
+              height: isMobile ? 150 : 300,
             }}
           >
             <ProjImg src={ia_homepage} />
@@ -97,7 +97,7 @@ export function ClearBlade() {
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
-              height: 300,
+              height: isMobile ? 150 : 300,
               display: "block",
             }}
           >
@@ -106,7 +106,7 @@ export function ClearBlade() {
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
-              height: 300,
+              height: isMobile ? 150 : 300,
               display: "block",
             }}
           >
@@ -137,7 +137,7 @@ export function ClearBlade() {
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
-              height: 300,
+              height: isMobile ? 150 : 300,
               display: "block",
             }}
           >
@@ -181,7 +181,7 @@ export function ClearBlade() {
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
-              height: 300,
+              height: isMobile ? 150 : 300,
               display: "block",
             }}
           >
@@ -190,7 +190,7 @@ export function ClearBlade() {
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
-              height: 300,
+              height: isMobile ? 150 : 300,
               display: "block",
             }}
           >
@@ -219,7 +219,7 @@ export function ClearBlade() {
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
-              height: 300,
+              height: isMobile ? 150 : 300,
               display: "block",
             }}
           >
@@ -228,7 +228,7 @@ export function ClearBlade() {
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
-              height: 300,
+              height: isMobile ? 150 : 300,
               display: "block",
             }}
           >
@@ -262,7 +262,7 @@ export function ClearBlade() {
           <Box
             sx={{
               width: isMobile ? "100%" : "50%",
-              height: 300,
+              height: isMobile ? 150 : 300,
               display: "block",
             }}
           >

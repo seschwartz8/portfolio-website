@@ -39,7 +39,7 @@ export function Exposurepedia() {
         <Box
           sx={{
             width: isMobile ? "100%" : "50%",
-            height: 300,
+            height: isMobile ? 150 : 300,
           }}
         >
           <ProjImg src={exposurepedia_homepage} />
@@ -47,7 +47,7 @@ export function Exposurepedia() {
         <Box
           sx={{
             width: isMobile ? "100%" : "50%",
-            height: 300,
+            height: isMobile ? 150 : 300,
           }}
         >
           <ProjImg src={exposurepedia_about} />
@@ -68,7 +68,7 @@ export function Exposurepedia() {
         <Box
           sx={{
             width: isMobile ? "100%" : "50%",
-            height: 300,
+            height: isMobile ? 150 : 300,
           }}
         >
           <ProjVideo src={exposurepedia_search_movie} />
@@ -113,7 +113,7 @@ export function Exposurepedia() {
         <Box
           sx={{
             width: isMobile ? "100%" : "50%",
-            height: 300,
+            height: isMobile ? 150 : 300,
           }}
         >
           <ProjImg src={exposurepedia_register} />
@@ -134,7 +134,7 @@ export function Exposurepedia() {
         <Box
           sx={{
             width: isMobile ? "100%" : "50%",
-            height: 300,
+            height: isMobile ? 150 : 300,
           }}
         >
           <ProjVideo src={exposurepedia_admin} />
