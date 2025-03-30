@@ -20,7 +20,7 @@ export default function LandingPage() {
     ? 400
     : "auto";
 
-  const textPaddingLeft = isMdOrBelow ? 6 : 12;
+  const textPaddingLeft = isMobile ? 4 : isMdOrBelow ? 6 : 12;
 
   return (
     <>
@@ -60,7 +60,7 @@ export default function LandingPage() {
         >
           <Typography
             sx={{
-              mt: isMobile ? 5 : 20,
+              mt: isMobile ? 8 : isMdOrBelow ? 10 : 20,
               pl: textPaddingLeft,
               maxWidth: textMaxWidth,
               zIndex: theme.zIndex.landingImgText,
@@ -68,7 +68,7 @@ export default function LandingPage() {
             variant="h2"
             fontWeight={700}
           >
-            Hi, I'm Sasa Pettyjohn
+            {isMobile ? "Hi, I'm Sasa" : "Hi, I'm Sasa Pettyjohn"}
           </Typography>
           <Typography
             sx={{

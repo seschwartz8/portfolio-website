@@ -45,7 +45,18 @@ export function NavBar() {
             >
               <Typography
                 variant={"h5"}
-                sx={(theme) => ({ color: theme.palette.text.primary })}
+                sx={(theme) => ({
+                  color: theme.palette.text.primary,
+
+                  // If screen gets so narrow that it would cause this text to wrap, show just 4 characters (Sasa) instead
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  "@media (max-width: 250px)": {
+                    "&": {
+                      width: "4ch",
+                    },
+                  },
+                })}
                 fontWeight={700}
               >
                 Sasa Pettyjohn
