@@ -23,7 +23,7 @@ export function Exposurepedia() {
           Exposurepedia{" "}
         </Typography>
         <Typography align="center" variant="body1" color="text.secondary">
-          As the the Principal Frontend Engineer of Exposurepedia, I built the
+          As the Principal Frontend Engineer of Exposurepedia, I built the
           entire frontend application and the associated backend APIs.
           Exposurepedia is a website intended to help Psychology professionals
           find and organize resources for conducting exposure therapy.
