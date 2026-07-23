@@ -1,45 +1,44 @@
-import { Box, Modal } from "@mui/material";
+import { Fade, Modal } from "@mui/material";
 
 interface ImageZoomModalProps {
   imageUrl: string | null;
-  isOpen: boolean;
+  alt?: string;
   onClose: () => void;
 }
 
-export function ImageZoomModal({
-  imageUrl,
-  isOpen,
-  onClose,
-}: ImageZoomModalProps) {
-  if (!imageUrl) return null;
-
+/**
+ * Full-screen preview of a project screenshot. The tile crops to fill; this
+ * shows the whole frame. Click anywhere (or the backdrop) to dismiss.
+ */
+export function ImageZoomModal({ imageUrl, alt, onClose }: ImageZoomModalProps) {
   return (
     <Modal
-      open={isOpen}
+      open={!!imageUrl}
       onClose={onClose}
+      closeAfterTransition
       sx={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        p: { xs: 3, md: 6 },
       }}
+      slotProps={{ backdrop: { sx: { backgroundColor: "rgba(43,40,36,0.82)" } } }}
     >
-      <Box
-        sx={{
-          maxWidth: "90vw",
-          maxHeight: "90vh",
-          outline: "none",
-        }}
-      >
+      <Fade in={!!imageUrl} timeout={300}>
         <img
-          src={imageUrl}
-          style={{
-            width: "100%",
-            height: "100%",
-            objectFit: "contain",
-          }}
+          src={imageUrl ?? ""}
+          alt={alt}
           onClick={onClose}
+          style={{
+            maxWidth: "92vw",
+            maxHeight: "88vh",
+            objectFit: "contain",
+            borderRadius: 12,
+            outline: "none",
+            cursor: "zoom-out",
+          }}
         />
-      </Box>
+      </Fade>
     </Modal>
   );
 }
