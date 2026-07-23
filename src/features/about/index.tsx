@@ -34,34 +34,14 @@ export default function AboutPage() {
         padding: { xs: "28px 24px 40px", md: "10px 60px 44px" },
       }}
     >
-      <Box sx={{ maxWidth: 640 }}>
-        <Eyebrow sx={{ mb: 2.5, animation: riseIn(0, "0.6s") }}>About</Eyebrow>
-        <Typography
-          variant="h2"
-          sx={{
-            fontSize: { xs: 30, md: "clamp(34px,3.4vw,50px)" },
-            lineHeight: 1.12,
-            m: 0,
-            animation: riseIn(0.06),
-          }}
-        >
-          Engineer, mentor,{" "}
-          <Box
-            component="em"
-            sx={{ fontStyle: "italic", color: colors.accent }}
-          >
-            creative
-          </Box>
-          .
-        </Typography>
-      </Box>
+      <Eyebrow sx={{ animation: riseIn(0, "0.6s") }}>About</Eyebrow>
 
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           gap: { xs: "40px", md: "56px" },
-          mt: { xs: "36px", md: "52px" },
+          mt: { xs: "32px", md: "44px" },
         }}
       >
         {rows.map((row, i) => (
@@ -80,6 +60,7 @@ export default function AboutPage() {
           >
             <Box
               sx={{
+                position: "relative",
                 height: { xs: 220, md: 300 },
                 borderRadius: radii.mediaLarge,
                 overflow: "hidden",
@@ -97,6 +78,17 @@ export default function AboutPage() {
                   height: "100%",
                   objectFit: "cover",
                   display: "block",
+                }}
+              />
+              {/* Warm wash so photos settle into the cream palette. */}
+              <Box
+                aria-hidden
+                sx={{
+                  position: "absolute",
+                  inset: 0,
+                  backgroundColor: colors.tint,
+                  opacity: 0.15,
+                  pointerEvents: "none",
                 }}
               />
             </Box>

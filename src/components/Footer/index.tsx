@@ -1,19 +1,17 @@
 import { Box, Link as MuiLink } from "@mui/material";
 import { colors, fonts, motion, radii, layout } from "../../theme/tokens";
 import { EMAIL, socialLinks } from "../../utils/contact";
-import { Eyebrow } from "../common/Eyebrow";
 
 /**
- * The persistent dark "Get in touch" footer shown on every view: a mailto link
- * set in Playfair italic, plus pill buttons to LinkedIn, GitHub and the résumé.
- * Stacks and centers on mobile.
+ * The persistent dark footer shown at the bottom of every view: a mailto link
+ * set in Playfair italic, plus pill buttons to LinkedIn, GitHub and the résumé
+ * (each opens in a new tab). Stacks and centers on mobile.
  */
 export function Footer() {
   return (
     <Box
       component="footer"
       sx={(theme) => ({
-        flex: "0 0 auto",
         zIndex: theme.zIndex.footer,
         backgroundColor: colors.footer,
         color: colors.onDark,
@@ -21,35 +19,30 @@ export function Footer() {
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
         justifyContent: "space-between",
-        alignItems: { xs: "stretch", md: "center" },
+        alignItems: "center",
         gap: "18px",
       })}
     >
-      <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
-        <Eyebrow color={colors.gold} sx={{ fontSize: 12, mb: 1 }}>
-          Get in touch
-        </Eyebrow>
-        <MuiLink
-          href={`mailto:${EMAIL}`}
-          sx={{
-            fontFamily: fonts.display,
-            fontStyle: "italic",
-            fontSize: { xs: 22, md: 26 },
-            color: colors.onDark,
-            textDecoration: "none",
-            transition: `color ${motion.duration.hover} ease`,
-            "&:hover": { color: colors.gold },
-          }}
-        >
-          {EMAIL}
-        </MuiLink>
-      </Box>
+      <MuiLink
+        href={`mailto:${EMAIL}`}
+        sx={{
+          fontFamily: fonts.display,
+          fontStyle: "italic",
+          fontSize: { xs: 22, md: 26 },
+          color: colors.onDark,
+          textDecoration: "none",
+          transition: `color ${motion.duration.hover} ease`,
+          "&:hover": { color: colors.gold },
+        }}
+      >
+        {EMAIL}
+      </MuiLink>
 
       <Box
         sx={{
           display: "flex",
           gap: "10px",
-          justifyContent: { xs: "center", md: "flex-end" },
+          justifyContent: "center",
           flexWrap: "wrap",
         }}
       >
@@ -57,8 +50,7 @@ export function Footer() {
           <MuiLink
             key={link.label}
             href={link.href}
-            download={"download" in link ? link.download : undefined}
-            target={"download" in link ? undefined : "_blank"}
+            target="_blank"
             rel="noopener noreferrer"
             sx={{
               fontFamily: fonts.mono,

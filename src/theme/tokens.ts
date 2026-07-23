@@ -28,6 +28,8 @@ export const colors = {
   accentDark: "#8F4D33",
   /** Warm gold — footer eyebrow, CTA arrow. */
   gold: "#E9AF75",
+  /** Warm wash laid over photos so they blend into the cream palette. */
+  tint: "#E9AF75",
   /** Dark footer background. */
   footer: "#2B2824",
   /** Cream text used on dark surfaces. */
@@ -78,6 +80,6 @@ export const layout = {
   /** Horizontal content padding. */
   bodyPad: { xs: "28px 24px 40px", md: "10px 60px 44px" },
   projPad: { xs: "20px 24px 40px", md: "10px 60px 44px" },
-  navPad: { xs: "20px 24px", md: "32px 60px" },
+  navPad: { xs: "14px 24px", md: "18px 60px" },
   footerPad: { xs: "24px", md: "24px 60px" },
 } as const;

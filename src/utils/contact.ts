@@ -7,6 +7,6 @@ export const EMAIL = "sasapettyjohn@gmail.com";
 export const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/sasa-schwartz/" },
   { label: "GitHub", href: "https://github.com/seschwartz8" },
-  // Résumé is a bundled PDF asset; it downloads rather than navigating away.
-  { label: "Resume", href: resume, download: "S_Pettyjohn_Resume.pdf" },
+  // Résumé is a bundled PDF asset; it opens in a new tab.
+  { label: "Resume", href: resume },
 ] as const;

@@ -1,6 +1,4 @@
 import { Box } from "@mui/material";
-import { Eyebrow } from "../../../components/common/Eyebrow";
-import { riseIn } from "../../../theme/animations";
 import { colors, fonts, motion } from "../../../theme/tokens";
 import type { ProjectGroup } from "../data";
 
@@ -23,16 +21,10 @@ export function ProjectTabs({ groups, activeId, onSelect }: ProjectTabsProps) {
         top: 0,
         zIndex: theme.zIndex.tabBar,
         background: "linear-gradient(#EDEAE1 78%,rgba(237,234,225,0))",
+        pt: { xs: "8px", md: "12px" },
         pb: "18px",
       })}
     >
-      <Eyebrow
-        color={colors.faint}
-        sx={{ mb: 1.75, animation: riseIn(0, "0.6s") }}
-      >
-        Selected work
-      </Eyebrow>
-
       <Box sx={{ display: "flex", gap: { xs: "20px", md: "30px" }, flexWrap: "wrap" }}>
         {groups.map((group) => {
           const isActive = group.id === activeId;
