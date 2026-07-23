@@ -1,91 +1,52 @@
-import { Grid } from "@mui/material";
-import AppBar from "@mui/material/AppBar";
-import Typography from "@mui/material/Typography";
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { useIsSmOrBelow } from "../../hooks/useIsSmOrBelow";
-import { appRoutes, navBarRoutes } from "../../routes";
-import { NavBarHeight } from "../../utils/constants";
-import { HamburgerMenu } from "../HamburgerMenu";
-import { NavItem } from "./NavItem";
+import { Box } from "@mui/material";
+import { Link } from "react-router-dom";
+import { navBarRoutes, AppRouteLabels } from "../../routes";
+import { colors, fonts, layout } from "../../theme/tokens";
+import { NavLink } from "./NavLink";
 
+/**
+ * Fixed top navigation. The wordmark returns home; the links animate an
+ * underline on hover and mark the active route. Sits on the cream canvas
+ * above all page content.
+ */
 export function NavBar() {
-  const isMobile = useIsSmOrBelow();
-  const { pathname } = useLocation();
-  const selectedRoute = pathname.split("/")[1];
-  const isLandingPage = selectedRoute === appRoutes.landing;
-  const [hamburgerOpen, setHamburgerOpen] = useState(false);
-
   return (
-    <AppBar
-      position="sticky"
+    <Box
+      component="nav"
       sx={(theme) => ({
-        height: NavBarHeight,
-        backgroundColor:
-          isLandingPage && !hamburgerOpen
-            ? "transparent"
-            : theme.palette.background.default,
-        boxShadow: "none",
-        zIndex: theme.zIndex.appBar,
+        flex: "0 0 auto",
+        zIndex: theme.zIndex.nav,
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: layout.navPad,
       })}
     >
-      <Grid
-        container
-        wrap="nowrap"
-        justifyContent={isLandingPage ? "flex-end" : "space-between"}
-        alignItems="center"
-        sx={{ height: "100%", py: 1, px: 3 }}
+      <Box
+        component={Link}
+        to="/"
+        sx={{
+          fontFamily: fonts.mono,
+          fontSize: { xs: 13, md: 15 },
+          letterSpacing: "0.2em",
+          color: colors.ink,
+          textDecoration: "none",
+        }}
       >
-        {!isLandingPage && (
-          <Grid item>
-            <Link
-              onClick={() => setHamburgerOpen(false)}
-              to={`${appRoutes.landing}/`}
-              style={{ textDecoration: "none" }}
-            >
-              <Typography
-                variant={"h5"}
-                sx={(theme) => ({
-                  color: theme.palette.text.primary,
+        SASA PETTYJOHN
+      </Box>
 
-                  // If screen gets so narrow that it would cause this text to wrap, show just 4 characters (Sasa) instead
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
-                  "@media (max-width: 250px)": {
-                    "&": {
-                      width: "4ch",
-                    },
-                  },
-                })}
-                fontWeight={700}
-              >
-                Sasa Pettyjohn
-              </Typography>
-            </Link>
-          </Grid>
-        )}
-
-        <Grid item>
-          <Grid item container spacing={3}>
-            {isMobile ? (
-              <Grid item>
-                <HamburgerMenu
-                  open={hamburgerOpen}
-                  setOpen={setHamburgerOpen}
-                />
-              </Grid>
-            ) : (
-              <>
-                {navBarRoutes.map((page) => (
-                  <Grid item key={page}>
-                    <NavItem page={page} selectedRoute={selectedRoute} />
-                  </Grid>
-                ))}
-              </>
-            )}
-          </Grid>
-        </Grid>
-      </Grid>
-    </AppBar>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: { xs: "20px", md: "36px" },
+        }}
+      >
+        {navBarRoutes.map((route) => (
+          <NavLink key={route} to={route} label={AppRouteLabels[route]} />
+        ))}
+      </Box>
+    </Box>
   );
 }
