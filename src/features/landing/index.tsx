@@ -1,99 +1,138 @@
-import { Box, Typography, useTheme } from "@mui/material";
-import landing from "../../assets/landing_color.jpeg";
-import { ActionIcons } from "../../components/ActionIcons.tsx/ActionIcons";
-import { useIsLgOrBelow } from "../../hooks/useIsLgOrBelow";
-import { useIsMdOrBelow } from "../../hooks/useIsMdOrBelow";
-import { useIsSmOrBelow } from "../../hooks/useIsSmOrBelow";
-import { NavBarHeight } from "../../utils/constants";
+import { Box, Typography } from "@mui/material";
+import landingPhoto from "../../assets/landing_color.jpeg";
+import { CTAButton } from "../../components/common/CTAButton";
+import { Eyebrow } from "../../components/common/Eyebrow";
+import { riseIn, zoomIn } from "../../theme/animations";
+import { colors, fonts } from "../../theme/tokens";
+import { appRoutes } from "../../routes";
+import { yearsOfExperience } from "../../utils/experience";
 
+/** Cream scrim over the photo so left-aligned text stays legible. */
+const scrim = {
+  xs: "linear-gradient(180deg,rgba(237,234,225,0.86) 0%,rgba(237,234,225,0.5) 45%,rgba(237,234,225,0.2) 100%)",
+  md: "linear-gradient(90deg,rgba(237,234,225,0.92) 0%,rgba(237,234,225,0.6) 32%,rgba(237,234,225,0) 62%)",
+};
+
+/**
+ * The "Ambient" landing hero (the chosen default). A full-bleed portrait sits
+ * under the whole hero and slowly zooms in on load; a cream scrim washes over
+ * it — horizontal on desktop, top-to-bottom on mobile — so the left-aligned
+ * intro reads clearly. Text and CTAs rise in with a gentle stagger.
+ */
 export default function LandingPage() {
-  const isLgOrBelow = useIsLgOrBelow();
-  const isMdOrBelow = useIsMdOrBelow();
-  const isMobile = useIsSmOrBelow();
-  const theme = useTheme();
-
-  const textMaxWidth = isMobile
-    ? 200
-    : isMdOrBelow
-    ? 300
-    : isLgOrBelow
-    ? 400
-    : "auto";
-
-  const textPaddingLeft = isMobile ? 4 : isMdOrBelow ? 6 : 12;
-
   return (
-    <>
-      <div
-        style={{
-          backgroundImage: `url(${landing})`,
-          backgroundRepeat: "no-repeat",
-          minHeight: "100vh",
+    <Box
+      sx={{
+        position: "relative",
+        height: "100%",
+        minHeight: "520px",
+        overflow: "hidden",
+      }}
+    >
+      {/* Photo layer — slow settle-in zoom. */}
+      <Box
+        aria-hidden
+        sx={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: `url(${landingPhoto})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          marginTop: `-${NavBarHeight}px`,
-          position: "fixed",
-          left: 0,
-          right: 0,
-          bottom: 0,
+          animation: `${zoomIn} 1.8s cubic-bezier(.2,.7,.2,1) both`,
+        }}
+      />
+
+      {/* Legibility scrim. */}
+      <Box
+        aria-hidden
+        sx={(theme) => ({
+          position: "absolute",
+          inset: 0,
+          background: scrim,
+          pointerEvents: "none",
+          zIndex: theme.zIndex.scrim,
+        })}
+      />
+
+      {/* Content. */}
+      <Box
+        sx={{
+          position: "relative",
+          zIndex: 2,
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: { xs: "28px 24px 40px", md: "10px 60px 44px" },
+          maxWidth: { xs: "100%", md: "54%" },
+          pointerEvents: "none",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: theme.palette.tint,
-            opacity: 0.05,
-            zIndex: theme.zIndex.landingImgOverlay,
+        <Eyebrow sx={{ mb: 3, animation: riseIn() }}>
+          Lead Software Engineer
+        </Eyebrow>
+
+        <Typography
+          variant="h1"
+          sx={{
+            fontSize: { xs: "46px", md: "clamp(48px,6vw,88px)" },
+            lineHeight: 1.02,
+            maxWidth: "15ch",
+            m: 0,
           }}
-        />
-        <Box
-          height="100vh"
-          width="100%"
-          display="flex"
-          flexDirection="column"
-          alignItems="flex-start"
-          zIndex={theme.zIndex.landingImg}
         >
-          <Typography
-            sx={{
-              mt: isMobile ? 15 : isMdOrBelow ? 10 : 20,
-              pl: textPaddingLeft,
-              maxWidth: textMaxWidth,
-              zIndex: theme.zIndex.landingImgText,
-            }}
-            variant="h2"
-            fontWeight={700}
-          >
-            {isMobile ? "Hi, I'm Sasa" : "Hi, I'm Sasa Pettyjohn"}
-          </Typography>
-          <Typography
-            sx={{
-              pl: textPaddingLeft,
-              maxWidth: isMdOrBelow ? 100 : "auto",
-              zIndex: theme.zIndex.landingImgText,
-            }}
-            variant="h4"
-            fontWeight={700}
-          >
-            Lead Software Engineer
-          </Typography>
           <Box
+            component="span"
+            sx={{ display: "block", animation: riseIn(0.08) }}
+          >
+            Hi, I'm Sasa
+          </Box>
+          <Box
+            component="span"
             sx={{
-              pl: textPaddingLeft,
-              mt: 2,
-              maxWidth: isMdOrBelow ? 100 : "auto",
-              zIndex: theme.zIndex.landingImgText,
-              ml: -1.25,
+              display: "block",
+              fontStyle: "italic",
+              color: colors.accent,
+              animation: riseIn(0.16),
             }}
           >
-            <ActionIcons large />
+            Pettyjohn.
           </Box>
+        </Typography>
+
+        <Typography
+          sx={{
+            fontFamily: fonts.body,
+            maxWidth: 420,
+            fontSize: { xs: 16, md: 18 },
+            lineHeight: 1.65,
+            color: colors.mutedSoft,
+            mt: "26px",
+            animation: riseIn(0.3),
+          }}
+        >
+          A Lead Software Engineer with {yearsOfExperience()} building web apps
+          in React &amp; TypeScript — modular, scalable, and delightful to use.
+        </Typography>
+
+        <Box
+          sx={{
+            display: "flex",
+            gap: "14px",
+            mt: "34px",
+            flexWrap: "wrap",
+            pointerEvents: "auto",
+            animation: riseIn(0.42),
+          }}
+        >
+          <CTAButton to={`/${appRoutes.projects}`} arrow>
+            View Projects
+          </CTAButton>
+          <CTAButton to={`/${appRoutes.about}`} emphasis="secondary">
+            About Me
+          </CTAButton>
         </Box>
-      </div>
-    </>
+      </Box>
+    </Box>
   );
 }
