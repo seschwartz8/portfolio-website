@@ -48,17 +48,25 @@ export function Footer() {
         >
           {EMAIL}
         </MuiLink>
-        <Typography
-          component="span"
+        <Box
           sx={{
-            fontFamily: fonts.mono,
-            fontSize: 12,
-            letterSpacing: "0.1em",
+            display: "flex",
+            alignItems: "center",
+            gap: "6px",
             color: "rgba(237,234,225,0.6)",
+            fontFamily: fonts.mono,
           }}
         >
-          &copy; {CREATED}
-        </Typography>
+          <Box component="span" sx={{ fontSize: 16, lineHeight: 1 }}>
+            &copy;
+          </Box>
+          <Typography
+            component="span"
+            sx={{ fontFamily: fonts.mono, fontSize: 12, letterSpacing: "0.1em" }}
+          >
+            {CREATED}
+          </Typography>
+        </Box>
       </Box>
 
       <Box
