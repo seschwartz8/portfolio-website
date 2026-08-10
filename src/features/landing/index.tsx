@@ -13,11 +13,28 @@ import { yearsOfExperience } from "../../utils/experience";
 const desktopScrim =
   "linear-gradient(90deg,rgba(237,234,225,0.92) 0%,rgba(237,234,225,0.6) 32%,rgba(237,234,225,0) 62%)";
 
-/** The intro copy + CTAs, shared by both hero layouts. */
-function HeroContent() {
+/** The intro copy + CTAs, shared by both hero layouts. On mobile (no nav) the
+ *  "About Me" CTA is added and the social icons drop to their own line. */
+function HeroContent({ isMobile = false }: { isMobile?: boolean }) {
   return (
     <>
-      <Eyebrow sx={{ mb: 3, animation: riseIn() }}>Lead Software Engineer</Eyebrow>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "12px",
+          mb: 3,
+        }}
+      >
+        <Eyebrow sx={{ animation: riseIn() }}>Lead Software Engineer</Eyebrow>
+        {/* On mobile the nav is hidden, so the social icons live top-right here. */}
+        {isMobile && (
+          <Box sx={{ mr: "-8px", pointerEvents: "auto", animation: riseIn() }}>
+            <SocialIcons size="small" />
+          </Box>
+        )}
+      </Box>
 
       <Typography
         variant="h1"
@@ -61,10 +78,10 @@ function HeroContent() {
 
       <Box
         sx={{
+          mt: "32px",
           display: "flex",
           alignItems: "center",
-          gap: "20px",
-          mt: "32px",
+          gap: isMobile ? "14px" : "20px",
           flexWrap: "wrap",
           pointerEvents: "auto",
           animation: riseIn(0.42),
@@ -73,9 +90,15 @@ function HeroContent() {
         <CTAButton to={`/${appRoutes.projects}`} arrow>
           View Projects
         </CTAButton>
-        <Box sx={{ ml: "-8px" }}>
-          <SocialIcons />
-        </Box>
+        {isMobile ? (
+          <CTAButton to={`/${appRoutes.about}`} emphasis="secondary">
+            About Me
+          </CTAButton>
+        ) : (
+          <Box sx={{ ml: "-8px" }}>
+            <SocialIcons />
+          </Box>
+        )}
       </Box>
     </>
   );
@@ -134,8 +157,8 @@ export default function LandingPage() {
           flexDirection: "column",
         }}
       >
-        <Box sx={{ padding: "28px 24px 20px" }}>
-          <HeroContent />
+        <Box sx={{ padding: "20px 24px 20px" }}>
+          <HeroContent isMobile />
         </Box>
         <Box
           sx={{

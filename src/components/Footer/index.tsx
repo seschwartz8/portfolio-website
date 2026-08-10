@@ -1,6 +1,10 @@
-import { Box, Link as MuiLink } from "@mui/material";
+import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
+import { Box, Link as MuiLink, Typography } from "@mui/material";
 import { colors, fonts, motion, radii, layout } from "../../theme/tokens";
 import { EMAIL, socialLinks } from "../../utils/contact";
+
+/** When the current design went live. */
+const CREATED = "August 2026";
 
 /**
  * The persistent dark footer shown at the bottom of every view: a mailto link
@@ -23,20 +27,49 @@ export function Footer() {
         gap: "18px",
       })}
     >
-      <MuiLink
-        href={`mailto:${EMAIL}`}
+      <Box
         sx={{
-          fontFamily: fonts.display,
-          fontStyle: "italic",
-          fontSize: { xs: 22, md: 26 },
-          color: colors.onDark,
-          textDecoration: "none",
-          transition: `color ${motion.duration.hover} ease`,
-          "&:hover": { color: colors.gold },
+          display: "flex",
+          flexDirection: "column",
+          alignItems: { xs: "center", md: "flex-start" },
+          gap: "8px",
         }}
       >
-        {EMAIL}
-      </MuiLink>
+        <MuiLink
+          href={`mailto:${EMAIL}`}
+          sx={{
+            fontFamily: fonts.display,
+            fontStyle: "italic",
+            fontSize: { xs: 22, md: 26 },
+            color: colors.onDark,
+            textDecoration: "none",
+            transition: `color ${motion.duration.hover} ease`,
+            "&:hover": { color: colors.gold },
+          }}
+        >
+          {EMAIL}
+        </MuiLink>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "6px",
+            color: "rgba(237,234,225,0.6)",
+          }}
+        >
+          <CalendarMonthOutlinedIcon sx={{ fontSize: 15 }} />
+          <Typography
+            component="span"
+            sx={{
+              fontFamily: fonts.mono,
+              fontSize: 12,
+              letterSpacing: "0.1em",
+            }}
+          >
+            {CREATED}
+          </Typography>
+        </Box>
+      </Box>
 
       <Box
         sx={{

@@ -1,6 +1,8 @@
 import { Box } from "@mui/material";
 import { useEffect, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import { useIsMobile } from "../../hooks/useIsMobile";
+import { appRoutes } from "../../routes";
 import { colors } from "../../theme/tokens";
 import { Footer } from "../Footer";
 import { NavBar } from "../NavBar";
@@ -10,10 +12,17 @@ import { NavBar } from "../NavBar";
  * single scrollable region. The footer lives at the end of that region, so it
  * only comes into view once the page is scrolled to the bottom. Scroll position
  * resets when the route changes.
+ *
+ * On mobile the landing view hides the nav for an unobstructed, full-height
+ * hero; the CTA and footer carry navigation there.
  */
 export function AppLayout() {
   const mainRef = useRef<HTMLElement>(null);
   const { pathname } = useLocation();
+  const isMobile = useIsMobile();
+
+  const isLanding = pathname === `/${appRoutes.landing}`;
+  const showNav = !(isMobile && isLanding);
 
   useEffect(() => {
     mainRef.current?.scrollTo({ top: 0 });
@@ -30,7 +39,7 @@ export function AppLayout() {
         color: colors.ink,
       }}
     >
-      <NavBar />
+      {showNav && <NavBar />}
 
       {/* Definite-height block scroller: pages fill it via `height: 100%`,
           and the footer sits just below the fold until scrolled to. */}
