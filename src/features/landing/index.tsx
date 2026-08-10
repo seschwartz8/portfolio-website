@@ -87,16 +87,17 @@ function HeroContent({ isMobile = false }: { isMobile?: boolean }) {
           animation: riseIn(0.42),
         }}
       >
-        <CTAButton to={`/${appRoutes.projects}`} arrow>
-          View Projects
-        </CTAButton>
-        {/* On mobile the nav is hidden, so the landing carries "About Me" too;
-            the social icons sit top-right (desktop keeps them in the nav). */}
+        {/* On mobile the nav is hidden, so the landing carries "About Me" too
+            (on the left); the social icons sit top-right. Desktop keeps the
+            single primary CTA and its icons in the nav. */}
         {isMobile && (
           <CTAButton to={`/${appRoutes.about}`} emphasis="secondary">
             About Me
           </CTAButton>
         )}
+        <CTAButton to={`/${appRoutes.projects}`} arrow>
+          View Projects
+        </CTAButton>
       </Box>
     </>
   );
