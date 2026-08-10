@@ -1,4 +1,3 @@
-import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import { Box, Link as MuiLink, Typography } from "@mui/material";
 import { colors, fonts, motion, radii, layout } from "../../theme/tokens";
 import { EMAIL, socialLinks } from "../../utils/contact";
@@ -49,26 +48,17 @@ export function Footer() {
         >
           {EMAIL}
         </MuiLink>
-        <Box
+        <Typography
+          component="span"
           sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: "6px",
+            fontFamily: fonts.mono,
+            fontSize: 12,
+            letterSpacing: "0.1em",
             color: "rgba(237,234,225,0.6)",
           }}
         >
-          <CalendarMonthOutlinedIcon sx={{ fontSize: 15 }} />
-          <Typography
-            component="span"
-            sx={{
-              fontFamily: fonts.mono,
-              fontSize: 12,
-              letterSpacing: "0.1em",
-            }}
-          >
-            {CREATED}
-          </Typography>
-        </Box>
+          &copy; {CREATED}
+        </Typography>
       </Box>
 
       <Box
