@@ -16,7 +16,7 @@ import expSearch from "./assets/exposurepedia_search.mov";
 import expRegister from "./assets/exposurepedia_register.png";
 import expAdmin from "./assets/exposurepedia_admin.mov";
 // Personal
-import portfolio from "./assets/portfolio_color.png";
+import portfolio from "./assets/portfolio_redesign.png";
 
 export type MediaType = "IMAGE" | "VIDEO";
 
@@ -139,7 +139,7 @@ export const projectGroups: ProjectGroup[] = [
     id: "personal",
     label: "Personal",
     title: "My portfolio website",
-    role: "BUILT FROM SCRATCH",
+    role: "",
     intro:
       "The website you are currently looking at was built by me from scratch!",
     sections: [

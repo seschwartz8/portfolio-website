@@ -32,18 +32,20 @@ export function ProjectGroup({ group }: { group: ProjectGroupData }) {
         >
           {group.title}
         </Typography>
-        <Typography
-          component="span"
-          sx={{
-            fontFamily: fonts.mono,
-            fontSize: 12,
-            letterSpacing: "0.12em",
-            color: colors.accent,
-            animation: slideInAnim(0.05),
-          }}
-        >
-          {group.role}
-        </Typography>
+        {group.role && (
+          <Typography
+            component="span"
+            sx={{
+              fontFamily: fonts.mono,
+              fontSize: 12,
+              letterSpacing: "0.12em",
+              color: colors.accent,
+              animation: slideInAnim(0.05),
+            }}
+          >
+            {group.role}
+          </Typography>
+        )}
       </Box>
 
       <Typography
