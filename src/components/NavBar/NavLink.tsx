@@ -27,6 +27,8 @@ export function NavLink({ to, label }: NavLinkProps) {
         letterSpacing: "0.16em",
         textTransform: "uppercase",
         textDecoration: "none",
+        // Space Mono only ships 400/700, so nudge weight subtly with a stroke.
+        WebkitTextStroke: "0.4px currentColor",
         padding: "4px 0",
         color: isActive ? colors.accent : colors.ink,
         transition: `color ${motion.duration.hover} ease`,

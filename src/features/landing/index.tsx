@@ -2,14 +2,19 @@ import { Box, Typography } from "@mui/material";
 import landingPhoto from "../../assets/landing_color.jpeg";
 import { CTAButton } from "../../components/common/CTAButton";
 import { Eyebrow } from "../../components/common/Eyebrow";
+import { SocialIcons } from "../../components/common/SocialIcons";
 import { riseIn, zoomIn } from "../../theme/animations";
 import { colors, fonts } from "../../theme/tokens";
 import { appRoutes } from "../../routes";
 import { yearsOfExperience } from "../../utils/experience";
 
-/** Cream scrim over the photo so left-aligned text stays legible. */
+/**
+ * Cream scrim over the photo so left-aligned text stays legible. On mobile the
+ * text sits over the photo, so the wash stays heavy through the whole text zone
+ * before opening up to reveal the portrait lower down.
+ */
 const scrim = {
-  xs: "linear-gradient(180deg,rgba(237,234,225,0.86) 0%,rgba(237,234,225,0.5) 45%,rgba(237,234,225,0.2) 100%)",
+  xs: "linear-gradient(180deg,rgba(237,234,225,0.96) 0%,rgba(237,234,225,0.9) 38%,rgba(237,234,225,0.62) 66%,rgba(237,234,225,0.2) 100%)",
   md: "linear-gradient(90deg,rgba(237,234,225,0.92) 0%,rgba(237,234,225,0.6) 32%,rgba(237,234,225,0) 62%)",
 };
 
@@ -111,14 +116,15 @@ export default function LandingPage() {
             animation: riseIn(0.3),
           }}
         >
-          A Lead Software Engineer with {yearsOfExperience()} building web apps
-          in React &amp; TypeScript — modular, scalable, and delightful to use.
+          A Lead Software Engineer with {yearsOfExperience()} of experience
+          building web apps.
         </Typography>
 
         <Box
           sx={{
             display: "flex",
-            gap: "14px",
+            alignItems: "center",
+            gap: "20px",
             mt: "34px",
             flexWrap: "wrap",
             pointerEvents: "auto",
@@ -128,9 +134,9 @@ export default function LandingPage() {
           <CTAButton to={`/${appRoutes.projects}`} arrow>
             View Projects
           </CTAButton>
-          <CTAButton to={`/${appRoutes.about}`} emphasis="secondary">
-            About Me
-          </CTAButton>
+          <Box sx={{ ml: "-8px" }}>
+            <SocialIcons />
+          </Box>
         </Box>
       </Box>
     </Box>

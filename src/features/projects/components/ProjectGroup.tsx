@@ -86,27 +86,12 @@ export function ProjectGroup({ group }: { group: ProjectGroupData }) {
             <MediaTile section={section} />
 
             <Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "baseline",
-                  gap: "12px",
-                  mb: "10px",
-                }}
+              <Typography
+                variant="h3"
+                sx={{ fontSize: 22, lineHeight: 1.15, m: 0, mb: "10px" }}
               >
-                <Box
-                  component="span"
-                  sx={{ fontFamily: fonts.mono, fontSize: 12, color: colors.accent }}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </Box>
-                <Typography
-                  variant="h3"
-                  sx={{ fontSize: 22, lineHeight: 1.15, m: 0 }}
-                >
-                  {section.heading}
-                </Typography>
-              </Box>
+                {section.heading}
+              </Typography>
               <Typography
                 sx={{
                   fontSize: 16,

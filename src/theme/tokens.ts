@@ -80,6 +80,6 @@ export const layout = {
   /** Horizontal content padding. */
   bodyPad: { xs: "28px 24px 40px", md: "10px 60px 44px" },
   projPad: { xs: "20px 24px 40px", md: "10px 60px 44px" },
-  navPad: { xs: "14px 24px", md: "18px 60px" },
+  navPad: { xs: "14px 24px", md: "14px 60px" },
   footerPad: { xs: "24px", md: "24px 60px" },
 } as const;
