@@ -50,6 +50,4 @@ This portfolio website showcases my work in web development. It also provides ac
 
 ## How to deploy
 
-- Make changes to master
-- `npm run build`
-- `firebase deploy`
+Deployment is automated with GitHub Actions (Firebase Hosting). A PR that is opened against master will automatically deploy once merged.
