@@ -3,7 +3,7 @@
 - Checkout the website at:  https://spettyjohn.web.app
 - If for some reason you are unable to view the site, please feel free to contact me at sasapettyjohn@gmail.com
 
-#### By Sarah "Sasa" Pettyjohn, Current Version: March 2025
+#### By Sarah "Sasa" Pettyjohn, Current Version: August 2026
 
 ---
 
@@ -50,6 +50,4 @@ This portfolio website showcases my work in web development. It also provides ac
 
 ## How to deploy
 
-- Make changes to master
-- `npm run build`
-- `firebase deploy`
+Deployment is automated with GitHub Actions (Firebase Hosting). A PR that is opened against master will automatically deploy once merged.

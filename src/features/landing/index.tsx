@@ -1,99 +1,214 @@
-import { Box, Typography, useTheme } from "@mui/material";
-import landing from "../../assets/landing_color.jpeg";
-import { ActionIcons } from "../../components/ActionIcons.tsx/ActionIcons";
-import { useIsLgOrBelow } from "../../hooks/useIsLgOrBelow";
-import { useIsMdOrBelow } from "../../hooks/useIsMdOrBelow";
-import { useIsSmOrBelow } from "../../hooks/useIsSmOrBelow";
-import { NavBarHeight } from "../../utils/constants";
+import { Box, Typography } from "@mui/material";
+import landingPhoto from "../../assets/landing_color.jpeg";
+import { CTAButton } from "../../components/common/CTAButton";
+import { Eyebrow } from "../../components/common/Eyebrow";
+import { SocialIcons } from "../../components/common/SocialIcons";
+import { useIsMobile } from "../../hooks/useIsMobile";
+import { riseIn, zoomIn } from "../../theme/animations";
+import { colors, fonts } from "../../theme/tokens";
+import { appRoutes } from "../../routes";
+import { yearsOfExperience } from "../../utils/experience";
 
-export default function LandingPage() {
-  const isLgOrBelow = useIsLgOrBelow();
-  const isMdOrBelow = useIsMdOrBelow();
-  const isMobile = useIsSmOrBelow();
-  const theme = useTheme();
+/** Horizontal cream scrim (desktop only) so left-aligned text reads over the photo. */
+const desktopScrim =
+  "linear-gradient(90deg,rgba(237,234,225,0.92) 0%,rgba(237,234,225,0.6) 32%,rgba(237,234,225,0) 62%)";
 
-  const textMaxWidth = isMobile
-    ? 200
-    : isMdOrBelow
-    ? 300
-    : isLgOrBelow
-    ? 400
-    : "auto";
-
-  const textPaddingLeft = isMobile ? 4 : isMdOrBelow ? 6 : 12;
-
+/** The intro copy + CTAs, shared by both hero layouts. On mobile (no nav) the
+ *  "About Me" CTA is added and the social icons drop to their own line. */
+function HeroContent({ isMobile = false }: { isMobile?: boolean }) {
   return (
     <>
-      <div
-        style={{
-          backgroundImage: `url(${landing})`,
-          backgroundRepeat: "no-repeat",
-          minHeight: "100vh",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          marginTop: `-${NavBarHeight}px`,
-          position: "fixed",
-          left: 0,
-          right: 0,
-          bottom: 0,
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "12px",
+          mb: 3,
         }}
       >
-        <div
-          style={{
+        <Eyebrow sx={{ animation: riseIn() }}>Lead Software Engineer</Eyebrow>
+        {/* On mobile the nav is hidden, so the social icons live top-right here. */}
+        {isMobile && (
+          <Box sx={{ mr: "-8px", pointerEvents: "auto", animation: riseIn() }}>
+            <SocialIcons size="small" />
+          </Box>
+        )}
+      </Box>
+
+      <Typography
+        variant="h1"
+        sx={{
+          fontSize: { xs: "clamp(44px,13vw,60px)", md: "clamp(48px,6vw,88px)" },
+          lineHeight: 1.02,
+          maxWidth: "15ch",
+          m: 0,
+        }}
+      >
+        <Box component="span" sx={{ display: "block", animation: riseIn(0.08) }}>
+          Hi, I'm Sasa
+        </Box>
+        <Box
+          component="span"
+          sx={{
+            display: "block",
+            fontStyle: "italic",
+            color: colors.accent,
+            animation: riseIn(0.16),
+          }}
+        >
+          Pettyjohn.
+        </Box>
+      </Typography>
+
+      <Typography
+        sx={{
+          fontFamily: fonts.body,
+          maxWidth: 420,
+          fontSize: { xs: 16, md: 18 },
+          lineHeight: 1.65,
+          color: colors.mutedSoft,
+          mt: "24px",
+          animation: riseIn(0.3),
+        }}
+      >
+        A Lead Software Engineer with {yearsOfExperience()} of experience building
+        web apps.
+      </Typography>
+
+      <Box
+        sx={{
+          mt: "32px",
+          display: "flex",
+          alignItems: "center",
+          gap: isMobile ? "14px" : "20px",
+          flexWrap: "wrap",
+          pointerEvents: "auto",
+          animation: riseIn(0.42),
+        }}
+      >
+        <CTAButton to={`/${appRoutes.projects}`} arrow>
+          View Projects
+        </CTAButton>
+        {/* On mobile the nav is hidden, so the landing carries "About Me" too;
+            the social icons sit top-right (desktop keeps them in the nav). */}
+        {isMobile && (
+          <CTAButton to={`/${appRoutes.about}`} emphasis="secondary">
+            About Me
+          </CTAButton>
+        )}
+      </Box>
+    </>
+  );
+}
+
+/** The portrait, with a slow settle-in zoom on load. `blendTop` fades the top
+ *  edge into the cream canvas so the mobile stack has no hard seam. */
+function HeroPhoto({ blendTop = false }: { blendTop?: boolean }) {
+  return (
+    <>
+      <Box
+        aria-hidden
+        sx={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: `url(${landingPhoto})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          animation: `${zoomIn} 1.8s cubic-bezier(.2,.7,.2,1) both`,
+        }}
+      />
+      {blendTop && (
+        <Box
+          aria-hidden
+          sx={{
             position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: theme.palette.tint,
-            opacity: 0.05,
-            zIndex: theme.zIndex.landingImgOverlay,
+            inset: 0,
+            background:
+              "linear-gradient(180deg,#EDEAE1 0%,rgba(237,234,225,0) 22%)",
+            pointerEvents: "none",
           }}
         />
-        <Box
-          height="100vh"
-          width="100%"
-          display="flex"
-          flexDirection="column"
-          alignItems="flex-start"
-          zIndex={theme.zIndex.landingImg}
-        >
-          <Typography
-            sx={{
-              mt: isMobile ? 15 : isMdOrBelow ? 10 : 20,
-              pl: textPaddingLeft,
-              maxWidth: textMaxWidth,
-              zIndex: theme.zIndex.landingImgText,
-            }}
-            variant="h2"
-            fontWeight={700}
-          >
-            {isMobile ? "Hi, I'm Sasa" : "Hi, I'm Sasa Pettyjohn"}
-          </Typography>
-          <Typography
-            sx={{
-              pl: textPaddingLeft,
-              maxWidth: isMdOrBelow ? 100 : "auto",
-              zIndex: theme.zIndex.landingImgText,
-            }}
-            variant="h4"
-            fontWeight={700}
-          >
-            Lead Software Engineer
-          </Typography>
-          <Box
-            sx={{
-              pl: textPaddingLeft,
-              mt: 2,
-              maxWidth: isMdOrBelow ? 100 : "auto",
-              zIndex: theme.zIndex.landingImgText,
-              ml: -1.25,
-            }}
-          >
-            <ActionIcons large />
-          </Box>
-        </Box>
-      </div>
+      )}
     </>
+  );
+}
+
+/**
+ * The "Ambient" landing hero (the chosen default).
+ *
+ * - Desktop: a full-bleed portrait with a horizontal cream scrim; the intro
+ *   sits over the light left side.
+ * - Mobile: the intro sits on the cream canvas above the portrait, which fills
+ *   the rest of the view and blends up into the canvas — so the photo is fully
+ *   visible while the text stays perfectly legible.
+ */
+export default function LandingPage() {
+  const isMobile = useIsMobile();
+
+  if (isMobile) {
+    return (
+      <Box
+        sx={{
+          minHeight: "100%",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <Box sx={{ padding: "20px 24px 20px" }}>
+          <HeroContent isMobile />
+        </Box>
+        <Box
+          sx={{
+            position: "relative",
+            flex: 1,
+            minHeight: "42vh",
+            overflow: "hidden",
+          }}
+        >
+          <HeroPhoto blendTop />
+        </Box>
+      </Box>
+    );
+  }
+
+  return (
+    <Box
+      sx={{
+        position: "relative",
+        height: "100%",
+        minHeight: "520px",
+        overflow: "hidden",
+      }}
+    >
+      <HeroPhoto />
+
+      <Box
+        aria-hidden
+        sx={(theme) => ({
+          position: "absolute",
+          inset: 0,
+          background: desktopScrim,
+          pointerEvents: "none",
+          zIndex: theme.zIndex.scrim,
+        })}
+      />
+
+      <Box
+        sx={{
+          position: "relative",
+          zIndex: 2,
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: "10px 60px 44px",
+          maxWidth: "54%",
+          pointerEvents: "none",
+        }}
+      >
+        <HeroContent />
+      </Box>
+    </Box>
   );
 }

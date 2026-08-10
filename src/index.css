@@ -1,17 +1,28 @@
-/* Removes the bounce on scroll */
-html {
-  height: 100%;
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-}
-body {
-  height: 100%;
-  overflow: auto;
-  margin: 0;
-  -webkit-overflow-scrolling: touch;
-}
-
+/* Full-height app shell: html/body/#root fill the viewport and never scroll —
+   only the <main> region between the fixed nav and footer scrolls. */
+html,
+body,
 #root {
   height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #edeae1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessibility: honor a reduced-motion preference by neutralizing every
+   entrance, ambient loop and hover transition site-wide. Content still lands
+   in its final (visible) state because all keyframes end there. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

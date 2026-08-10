@@ -1,52 +1,31 @@
-import { Box, CircularProgress, ThemeProvider } from "@mui/material";
-import { Suspense } from "react";
-import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
-import "./HamburgerMenu.css";
-import { NavBar } from "./components";
-import AboutPage from "./features/about/index";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { AppLayout } from "./components/AppLayout";
+import AboutPage from "./features/about";
 import LandingPage from "./features/landing";
-import ProjectsPage from "./features/projects/index";
+import ProjectsPage from "./features/projects";
 import { appRoutes } from "./routes";
-import { NavBarHeight } from "./utils/constants";
-import { theme } from "./utils/theme";
+import { theme } from "./theme";
 
+/**
+ * Application root: global theme + router. All three views share the persistent
+ * {@link AppLayout} shell (fixed nav + footer, scrollable main). Navigating
+ * remounts the page component, which replays each view's entrance animations.
+ */
 function App() {
   return (
-    <Suspense
-      fallback={
-        <Box width="100%" display="flex" justifyContent="center">
-          <CircularProgress />
-        </Box>
-      }
-    >
-      <ThemeProvider theme={theme}>
-        <BrowserRouter>
-          <NavBar />
-          <Box
-            sx={(theme) => ({
-              height: `calc(100vh - ${NavBarHeight}px)`,
-              position: "relative",
-              zIndex: theme.zIndex.appContainer,
-              overflow: "hidden",
-              display: "flex",
-              flexDirection: "column",
-              backgroundColor: theme.palette.background.default,
-            })}
-          >
-            <Routes>
-              <Route path={`${appRoutes.landing}/`} element={<Outlet />}>
-                <Route index Component={LandingPage} />
-                <Route path={`${appRoutes.about}/*`} Component={AboutPage} />
-                <Route
-                  path={`${appRoutes.projects}/*`}
-                  Component={ProjectsPage}
-                />
-              </Route>
-            </Routes>
-          </Box>
-        </BrowserRouter>
-      </ThemeProvider>
-    </Suspense>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <BrowserRouter>
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route path={`/${appRoutes.landing}`} element={<LandingPage />} />
+            <Route path={`/${appRoutes.about}`} element={<AboutPage />} />
+            <Route path={`/${appRoutes.projects}`} element={<ProjectsPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
