@@ -57,7 +57,12 @@ export function Footer() {
             fontFamily: fonts.mono,
           }}
         >
-          <Box component="span" sx={{ fontSize: 16, lineHeight: 1 }}>
+          {/* Space Mono draws © high in its box; nudge it down to optically
+              center it against the date text (em-based, so it holds at any size). */}
+          <Box
+            component="span"
+            sx={{ fontSize: 16, lineHeight: 1, transform: "translateY(0.16em)" }}
+          >
             &copy;
           </Box>
           <Typography
